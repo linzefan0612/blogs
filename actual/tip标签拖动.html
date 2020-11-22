@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>基于vue的tip标签拖动 | 林某人的技术博客</title>
+    <meta name="description" content="分享基础知识、踩的坑、实战demo等等">
+    <meta name="generator" content="VuePress 1.4.0">
+    <link rel="icon" href="https://www.linzefan.top/images/favicon.ico">
+  <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?0d5727949bf626613621bcc26ef60fed";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+      </script>
+    
+    <link rel="preload" href="/blogs/assets/css/0.styles.7efc2f73.css" as="style"><link rel="preload" href="/blogs/assets/js/app.f6682633.js" as="script"><link rel="preload" href="/blogs/assets/js/2.3ba6d93a.js" as="script"><link rel="preload" href="/blogs/assets/js/14.57e10d35.js" as="script"><link rel="prefetch" href="/blogs/assets/js/10.afee2c86.js"><link rel="prefetch" href="/blogs/assets/js/11.3e2bc908.js"><link rel="prefetch" href="/blogs/assets/js/12.88713729.js"><link rel="prefetch" href="/blogs/assets/js/13.58a66ba9.js"><link rel="prefetch" href="/blogs/assets/js/15.36cec071.js"><link rel="prefetch" href="/blogs/assets/js/16.77b49e89.js"><link rel="prefetch" href="/blogs/assets/js/17.887acfe7.js"><link rel="prefetch" href="/blogs/assets/js/18.a085c9e8.js"><link rel="prefetch" href="/blogs/assets/js/19.9080a35c.js"><link rel="prefetch" href="/blogs/assets/js/20.5d1ac224.js"><link rel="prefetch" href="/blogs/assets/js/21.a76006d3.js"><link rel="prefetch" href="/blogs/assets/js/22.b2651397.js"><link rel="prefetch" href="/blogs/assets/js/23.ccd28672.js"><link rel="prefetch" href="/blogs/assets/js/24.e42fffcf.js"><link rel="prefetch" href="/blogs/assets/js/25.2bfed8bf.js"><link rel="prefetch" href="/blogs/assets/js/26.949650b9.js"><link rel="prefetch" href="/blogs/assets/js/27.341beabf.js"><link rel="prefetch" href="/blogs/assets/js/28.193e9b0a.js"><link rel="prefetch" href="/blogs/assets/js/29.6af09bdb.js"><link rel="prefetch" href="/blogs/assets/js/3.1aa7baf7.js"><link rel="prefetch" href="/blogs/assets/js/30.25d32756.js"><link rel="prefetch" href="/blogs/assets/js/31.e1ed34e2.js"><link rel="prefetch" href="/blogs/assets/js/32.094ecee0.js"><link rel="prefetch" href="/blogs/assets/js/33.95d15345.js"><link rel="prefetch" href="/blogs/assets/js/34.76a4730b.js"><link rel="prefetch" href="/blogs/assets/js/35.60cb64f5.js"><link rel="prefetch" href="/blogs/assets/js/36.b4aff0bd.js"><link rel="prefetch" href="/blogs/assets/js/37.583d628f.js"><link rel="prefetch" href="/blogs/assets/js/38.10f1df61.js"><link rel="prefetch" href="/blogs/assets/js/39.dc600283.js"><link rel="prefetch" href="/blogs/assets/js/4.52899354.js"><link rel="prefetch" href="/blogs/assets/js/40.f9db3b93.js"><link rel="prefetch" href="/blogs/assets/js/41.74f9c9ee.js"><link rel="prefetch" href="/blogs/assets/js/42.9a390624.js"><link rel="prefetch" href="/blogs/assets/js/43.b38524bb.js"><link rel="prefetch" href="/blogs/assets/js/44.aad304d7.js"><link rel="prefetch" href="/blogs/assets/js/45.fb10845b.js"><link rel="prefetch" href="/blogs/assets/js/46.ca9c851e.js"><link rel="prefetch" href="/blogs/assets/js/47.600b4c3e.js"><link rel="prefetch" href="/blogs/assets/js/48.d0ef1f66.js"><link rel="prefetch" href="/blogs/assets/js/49.f8022ef1.js"><link rel="prefetch" href="/blogs/assets/js/5.fbc3b8f5.js"><link rel="prefetch" href="/blogs/assets/js/50.9741f61a.js"><link rel="prefetch" href="/blogs/assets/js/51.5545444c.js"><link rel="prefetch" href="/blogs/assets/js/52.7dfc6c24.js"><link rel="prefetch" href="/blogs/assets/js/53.7d57bb01.js"><link rel="prefetch" href="/blogs/assets/js/54.ef8bacff.js"><link rel="prefetch" href="/blogs/assets/js/6.089331c4.js"><link rel="prefetch" href="/blogs/assets/js/7.f81a77bf.js"><link rel="prefetch" href="/blogs/assets/js/8.0a3fe8a0.js"><link rel="prefetch" href="/blogs/assets/js/9.4a62a533.js">
+    <link rel="stylesheet" href="/blogs/assets/css/0.styles.7efc2f73.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blogs/" class="home-link router-link-active"><img src="https://www.linzefan.top/images/logo.jpg" alt="林某人的技术博客" class="logo"> <span class="site-name can-hide">林某人的技术博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blogs/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础篇" class="dropdown-title"><span class="title">基础篇</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/sidebar/HTML/" class="nav-link">
+  Html
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/CSS/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/JS/" class="nav-link">
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/Ajax/" class="nav-link">
+  Ajax
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/VUE/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/REACT/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/SSR/" class="nav-link">
+  SSR
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/ES6/" class="nav-link">
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/JQUERY/" class="nav-link">
+  Jquery
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/WEBPACK/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/Git/" class="nav-link">
+  Git
+</a></li></ul></div></div><div class="nav-item"><a href="/blogs/advanced/实时通讯.html" class="nav-link">
+  进阶篇
+</a></div><div class="nav-item"><a href="/blogs/actual/" class="nav-link router-link-active">
+  实战篇
+</a></div><div class="nav-item"><a href="/blogs/issue/" class="nav-link">
+  踩过的那些坑
+</a></div><div class="nav-item"><a href="http://blog.poetries.top/FE-Interview-Questions/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  大牛总结面试题
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="/blogs/Gitalk/" class="nav-link">
+  留言板
+</a></div><div class="nav-item"><a href="/blogs/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="https://github.com/linzefan0612" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blogs/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础篇" class="dropdown-title"><span class="title">基础篇</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/sidebar/HTML/" class="nav-link">
+  Html
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/CSS/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/JS/" class="nav-link">
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/Ajax/" class="nav-link">
+  Ajax
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/VUE/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/REACT/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/SSR/" class="nav-link">
+  SSR
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/ES6/" class="nav-link">
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/JQUERY/" class="nav-link">
+  Jquery
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/WEBPACK/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/Git/" class="nav-link">
+  Git
+</a></li></ul></div></div><div class="nav-item"><a href="/blogs/advanced/实时通讯.html" class="nav-link">
+  进阶篇
+</a></div><div class="nav-item"><a href="/blogs/actual/" class="nav-link router-link-active">
+  实战篇
+</a></div><div class="nav-item"><a href="/blogs/issue/" class="nav-link">
+  踩过的那些坑
+</a></div><div class="nav-item"><a href="http://blog.poetries.top/FE-Interview-Questions/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  大牛总结面试题
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="/blogs/Gitalk/" class="nav-link">
+  留言板
+</a></div><div class="nav-item"><a href="/blogs/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="https://github.com/linzefan0612" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>小功能</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>h5跳转微信小程序</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>axios请求封装</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>实用的函数</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>vue-cli多环境配置</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>移动端适配方案</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>拼音转换</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>tip标签拖动</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blogs/actual/tip标签拖动.html" class="active sidebar-link">基于vue的tip标签拖动</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="基于vue的tip标签拖动"><a href="#基于vue的tip标签拖动" class="header-anchor">#</a> 基于vue的tip标签拖动</h1> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>upload-portrait<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!-- 图片盒子 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>main-img<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">:src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>imgSrc<span class="token punctuation">&quot;</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>userIcon<span class="token punctuation">&quot;</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>上传图片<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token comment">&lt;!-- 点击按钮 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>is-android<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      修改头像
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span>
+        <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>file<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>inputFile<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">accept</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>image/*<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">@change</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>handleFileImg<span class="token punctuation">&quot;</span></span>
+      <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!-- 裁剪 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>cropper<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token comment">&lt;!-- option是配置，格式是对象，getbase64Data是组件的一个方法获取裁剪完的头像 2.14新增一个获取getblobData的方法 --&gt;</span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h5-cropper</span>
+        <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>cropper<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">hide-input</span>
+        <span class="token attr-name">:option</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>option<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">@getbase64Data</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>getbase64Data<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">@getblobData</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>getblobData<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">@getFile</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>getFile<span class="token punctuation">&quot;</span></span>
+      <span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h5-cropper</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">import</span> H5Cropper <span class="token keyword">from</span> <span class="token string">&quot;vue-cropper-h5&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      isAndroidBtn<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      userId<span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+
+      <span class="token comment">// 图片</span>
+      fileSrc<span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+      imgSrc<span class="token operator">:</span> <span class="token string">&quot;&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">created</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 将头像显示</span>
+    <span class="token function">handleFileImg</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">let</span> self <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+      <span class="token keyword">let</span> $target <span class="token operator">=</span> e<span class="token punctuation">.</span>target <span class="token operator">||</span> e<span class="token punctuation">.</span>srcElement<span class="token punctuation">;</span>
+      <span class="token keyword">let</span> file <span class="token operator">=</span> $target<span class="token punctuation">.</span>files<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>cropper<span class="token punctuation">.</span><span class="token function">loadFile</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;相册&quot;</span><span class="token punctuation">,</span> file<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">getbase64Data</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>imgSrc <span class="token operator">=</span> data<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">getblobData</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;裁剪后数据Blob &quot;</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">getFile</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">let</span> self <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;获取裁剪完成的 File 数据 &quot;</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>data<span class="token punctuation">.</span>size <span class="token operator">/</span> <span class="token number">1024</span> <span class="token operator">&gt;</span> <span class="token number">1024</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 大于1m压缩</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">photoCompress</span><span class="token punctuation">(</span>
+          data<span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            width<span class="token operator">:</span> <span class="token number">640</span><span class="token punctuation">,</span>
+            height<span class="token operator">:</span> <span class="token number">640</span><span class="token punctuation">,</span>
+            quality<span class="token operator">:</span> <span class="token number">0.2</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">base64Url</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">let</span> blob <span class="token operator">=</span> self<span class="token punctuation">.</span><span class="token function">convertBase64UrlToBlob</span><span class="token punctuation">(</span>base64Url<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">let</span> file <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span>
+              <span class="token punctuation">[</span>blob<span class="token punctuation">]</span><span class="token punctuation">,</span>
+              <span class="token string">&quot;user_file_icon&quot;</span> <span class="token operator">+</span> Date<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;.png&quot;</span><span class="token punctuation">,</span>
+              <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">&quot;image/png&quot;</span> <span class="token punctuation">}</span>
+            <span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">// 调接口</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 直接上传</span>
+        <span class="token comment">// 调接口</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">// 压缩图片</span>
+    <span class="token comment">/*
+       三个参数
+       file：一个是文件(类型是图片格式)，
+       w：一个是文件压缩的后宽度，宽度越小，字节越小 width宽度 height高度 quality图片质量
+       objDiv：一个是容器或者回调函数
+       photoCompress()
+    */</span>
+    <span class="token function">photoCompress</span><span class="token punctuation">(</span><span class="token parameter">file<span class="token punctuation">,</span> w<span class="token punctuation">,</span> objDiv</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">let</span> self <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+      <span class="token keyword">var</span> ready <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileReader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment">/*开始读取指定的Blob对象或File对象中的内容. 当读取操作完成时,readyState属性的值会成为DONE,如果设置了onloadend事件处理程序,则调用之.同时,result属性中将包含一个data: URL格式的字符串以表示所读取文件的内容.*/</span>
+      ready<span class="token punctuation">.</span><span class="token function">readAsDataURL</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      ready<span class="token punctuation">.</span><span class="token function-variable function">onload</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> re <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>result<span class="token punctuation">;</span>
+        self<span class="token punctuation">.</span><span class="token function">canvasDataURL</span><span class="token punctuation">(</span>re<span class="token punctuation">,</span> w<span class="token punctuation">,</span> objDiv<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">canvasDataURL</span><span class="token punctuation">(</span><span class="token parameter">path<span class="token punctuation">,</span> obj<span class="token punctuation">,</span> callback</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">var</span> img <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Image</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      img<span class="token punctuation">.</span>src <span class="token operator">=</span> path<span class="token punctuation">;</span>
+      img<span class="token punctuation">.</span><span class="token function-variable function">onload</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> that <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+        <span class="token comment">// 默认按比例压缩</span>
+        <span class="token keyword">var</span> w <span class="token operator">=</span> that<span class="token punctuation">.</span>width<span class="token punctuation">,</span>
+          h <span class="token operator">=</span> that<span class="token punctuation">.</span>height<span class="token punctuation">,</span>
+          scale <span class="token operator">=</span> w <span class="token operator">/</span> h<span class="token punctuation">;</span>
+        w <span class="token operator">=</span> obj<span class="token punctuation">.</span>width <span class="token operator">||</span> w<span class="token punctuation">;</span>
+        h <span class="token operator">=</span> obj<span class="token punctuation">.</span>height <span class="token operator">||</span> w <span class="token operator">/</span> scale<span class="token punctuation">;</span>
+        <span class="token keyword">var</span> quality <span class="token operator">=</span> <span class="token number">0.7</span><span class="token punctuation">;</span> <span class="token comment">// 默认图片质量为0.7</span>
+        <span class="token comment">//生成canvas</span>
+        <span class="token keyword">var</span> canvas <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">&quot;canvas&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> ctx <span class="token operator">=</span> canvas<span class="token punctuation">.</span><span class="token function">getContext</span><span class="token punctuation">(</span><span class="token string">&quot;2d&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 创建属性节点</span>
+        <span class="token keyword">var</span> anw <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createAttribute</span><span class="token punctuation">(</span><span class="token string">&quot;width&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        anw<span class="token punctuation">.</span>nodeValue <span class="token operator">=</span> w<span class="token punctuation">;</span>
+        <span class="token keyword">var</span> anh <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createAttribute</span><span class="token punctuation">(</span><span class="token string">&quot;height&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        anh<span class="token punctuation">.</span>nodeValue <span class="token operator">=</span> h<span class="token punctuation">;</span>
+        canvas<span class="token punctuation">.</span><span class="token function">setAttributeNode</span><span class="token punctuation">(</span>anw<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        canvas<span class="token punctuation">.</span><span class="token function">setAttributeNode</span><span class="token punctuation">(</span>anh<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ctx<span class="token punctuation">.</span><span class="token function">drawImage</span><span class="token punctuation">(</span>that<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> w<span class="token punctuation">,</span> h<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 图像质量</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>obj<span class="token punctuation">.</span>quality <span class="token operator">&amp;&amp;</span> obj<span class="token punctuation">.</span>quality <span class="token operator">&lt;=</span> <span class="token number">1</span> <span class="token operator">&amp;&amp;</span> obj<span class="token punctuation">.</span>quality <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          quality <span class="token operator">=</span> obj<span class="token punctuation">.</span>quality<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">// quality值越小，所绘制出的图像越模糊</span>
+        <span class="token keyword">var</span> base64 <span class="token operator">=</span> canvas<span class="token punctuation">.</span><span class="token function">toDataURL</span><span class="token punctuation">(</span><span class="token string">&quot;image/jpeg&quot;</span><span class="token punctuation">,</span> quality<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 回调函数返回base64的值</span>
+        <span class="token function">callback</span><span class="token punctuation">(</span>base64<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">// 转化为blob</span>
+    <span class="token function">convertBase64UrlToBlob</span><span class="token punctuation">(</span><span class="token parameter">urlData</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">var</span> arr <span class="token operator">=</span> urlData<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">&quot;,&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        mime <span class="token operator">=</span> arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex">/:(.*?);/</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        bstr <span class="token operator">=</span> <span class="token function">atob</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        n <span class="token operator">=</span> bstr<span class="token punctuation">.</span>length<span class="token punctuation">,</span>
+        u8arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">while</span> <span class="token punctuation">(</span>n<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        u8arr<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">=</span> bstr<span class="token punctuation">.</span><span class="token function">charCodeAt</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Blob</span><span class="token punctuation">(</span><span class="token punctuation">[</span>u8arr<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> type<span class="token operator">:</span> mime <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  components<span class="token operator">:</span> <span class="token punctuation">{</span> H5Cropper <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>scss<span class="token punctuation">&quot;</span></span> <span class="token attr-name">scoped</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+<span class="token selector">.upload-portrait</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>100vh<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #000000<span class="token punctuation">;</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token selector">;
+  .main-img</span> <span class="token punctuation">{</span>
+    <span class="token property">margin-top</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 375px<span class="token selector">;
+    img</span> <span class="token punctuation">{</span>
+      <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+      <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.edit-btn</span> <span class="token punctuation">{</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">bottom</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateX</span><span class="token punctuation">(</span>-50%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 235px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 44px<span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span>100<span class="token punctuation">,</span> 174<span class="token punctuation">,</span> 232<span class="token punctuation">,</span> 1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">border-radius</span><span class="token punctuation">:</span> 22px<span class="token punctuation">;</span>
+    <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> 14px<span class="token punctuation">;</span>
+    <span class="token property">font-family</span><span class="token punctuation">:</span> PingFangSC-Medium<span class="token punctuation">,</span> PingFang SC<span class="token punctuation">;</span>
+    <span class="token property">font-weight</span><span class="token punctuation">:</span> 500<span class="token punctuation">;</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span>255<span class="token punctuation">,</span> 255<span class="token punctuation">,</span> 255<span class="token punctuation">,</span> 1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">line-height</span><span class="token punctuation">:</span> 44px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.image-flie-btn</span> <span class="token punctuation">{</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">z-index</span><span class="token punctuation">:</span> 2020<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+    <span class="token property">bottom</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.camera-flie-btn</span> <span class="token punctuation">{</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">z-index</span><span class="token punctuation">:</span> 2020<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+    <span class="token property">bottom</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">// .cropper</span> <span class="token punctuation">{</span>
+  //   <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  // <span class="token punctuation">}</span>
+
+  <span class="token selector">.is-android</span> <span class="token punctuation">{</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> 80px auto 0<span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span>100<span class="token punctuation">,</span> 174<span class="token punctuation">,</span> 232<span class="token punctuation">,</span> 1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span>255<span class="token punctuation">,</span> 255<span class="token punctuation">,</span> 255<span class="token punctuation">,</span> 1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 235px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 44px<span class="token punctuation">;</span>
+    <span class="token property">border-radius</span><span class="token punctuation">:</span> 22px<span class="token punctuation">;</span>
+    <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> 14px<span class="token punctuation">;</span>
+    <span class="token property">font-weight</span><span class="token punctuation">:</span> 500<span class="token punctuation">;</span>
+    <span class="token property">line-height</span><span class="token punctuation">:</span> 44px<span class="token selector">;
+    input</span> <span class="token punctuation">{</span>
+      <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+      <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+      <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+      <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">/deep/ .action-sheet .van-overlay</span> <span class="token punctuation">{</span>
+    <span class="token property">z-index</span><span class="token punctuation">:</span> 9 <span class="token important">!important</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">/deep/ .action-sheet .van-popup</span> <span class="token punctuation">{</span>
+    <span class="token property">z-index</span><span class="token punctuation">:</span> 10 <span class="token important">!important</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blogs/actual/拼音转换.html" class="prev">
+        拼音转换
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blogs/assets/js/app.f6682633.js" defer></script><script src="/blogs/assets/js/2.3ba6d93a.js" defer></script><script src="/blogs/assets/js/14.57e10d35.js" defer></script>
+  </body>
+</html>

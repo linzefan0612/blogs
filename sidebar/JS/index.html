@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Js 基础 | 林某人的技术博客</title>
+    <meta name="description" content="分享基础知识、踩的坑、实战demo等等">
+    <meta name="generator" content="VuePress 1.4.0">
+    <link rel="icon" href="https://www.linzefan.top/images/favicon.ico">
+  <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?0d5727949bf626613621bcc26ef60fed";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+      </script>
+    
+    <link rel="preload" href="/blogs/assets/css/0.styles.7efc2f73.css" as="style"><link rel="preload" href="/blogs/assets/js/app.f6682633.js" as="script"><link rel="preload" href="/blogs/assets/js/2.3ba6d93a.js" as="script"><link rel="preload" href="/blogs/assets/js/44.aad304d7.js" as="script"><link rel="prefetch" href="/blogs/assets/js/10.afee2c86.js"><link rel="prefetch" href="/blogs/assets/js/11.3e2bc908.js"><link rel="prefetch" href="/blogs/assets/js/12.88713729.js"><link rel="prefetch" href="/blogs/assets/js/13.58a66ba9.js"><link rel="prefetch" href="/blogs/assets/js/14.57e10d35.js"><link rel="prefetch" href="/blogs/assets/js/15.36cec071.js"><link rel="prefetch" href="/blogs/assets/js/16.77b49e89.js"><link rel="prefetch" href="/blogs/assets/js/17.887acfe7.js"><link rel="prefetch" href="/blogs/assets/js/18.a085c9e8.js"><link rel="prefetch" href="/blogs/assets/js/19.9080a35c.js"><link rel="prefetch" href="/blogs/assets/js/20.5d1ac224.js"><link rel="prefetch" href="/blogs/assets/js/21.a76006d3.js"><link rel="prefetch" href="/blogs/assets/js/22.b2651397.js"><link rel="prefetch" href="/blogs/assets/js/23.ccd28672.js"><link rel="prefetch" href="/blogs/assets/js/24.e42fffcf.js"><link rel="prefetch" href="/blogs/assets/js/25.2bfed8bf.js"><link rel="prefetch" href="/blogs/assets/js/26.949650b9.js"><link rel="prefetch" href="/blogs/assets/js/27.341beabf.js"><link rel="prefetch" href="/blogs/assets/js/28.193e9b0a.js"><link rel="prefetch" href="/blogs/assets/js/29.6af09bdb.js"><link rel="prefetch" href="/blogs/assets/js/3.1aa7baf7.js"><link rel="prefetch" href="/blogs/assets/js/30.25d32756.js"><link rel="prefetch" href="/blogs/assets/js/31.e1ed34e2.js"><link rel="prefetch" href="/blogs/assets/js/32.094ecee0.js"><link rel="prefetch" href="/blogs/assets/js/33.95d15345.js"><link rel="prefetch" href="/blogs/assets/js/34.76a4730b.js"><link rel="prefetch" href="/blogs/assets/js/35.60cb64f5.js"><link rel="prefetch" href="/blogs/assets/js/36.b4aff0bd.js"><link rel="prefetch" href="/blogs/assets/js/37.583d628f.js"><link rel="prefetch" href="/blogs/assets/js/38.10f1df61.js"><link rel="prefetch" href="/blogs/assets/js/39.dc600283.js"><link rel="prefetch" href="/blogs/assets/js/4.52899354.js"><link rel="prefetch" href="/blogs/assets/js/40.f9db3b93.js"><link rel="prefetch" href="/blogs/assets/js/41.74f9c9ee.js"><link rel="prefetch" href="/blogs/assets/js/42.9a390624.js"><link rel="prefetch" href="/blogs/assets/js/43.b38524bb.js"><link rel="prefetch" href="/blogs/assets/js/45.fb10845b.js"><link rel="prefetch" href="/blogs/assets/js/46.ca9c851e.js"><link rel="prefetch" href="/blogs/assets/js/47.600b4c3e.js"><link rel="prefetch" href="/blogs/assets/js/48.d0ef1f66.js"><link rel="prefetch" href="/blogs/assets/js/49.f8022ef1.js"><link rel="prefetch" href="/blogs/assets/js/5.fbc3b8f5.js"><link rel="prefetch" href="/blogs/assets/js/50.9741f61a.js"><link rel="prefetch" href="/blogs/assets/js/51.5545444c.js"><link rel="prefetch" href="/blogs/assets/js/52.7dfc6c24.js"><link rel="prefetch" href="/blogs/assets/js/53.7d57bb01.js"><link rel="prefetch" href="/blogs/assets/js/54.ef8bacff.js"><link rel="prefetch" href="/blogs/assets/js/6.089331c4.js"><link rel="prefetch" href="/blogs/assets/js/7.f81a77bf.js"><link rel="prefetch" href="/blogs/assets/js/8.0a3fe8a0.js"><link rel="prefetch" href="/blogs/assets/js/9.4a62a533.js">
+    <link rel="stylesheet" href="/blogs/assets/css/0.styles.7efc2f73.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blogs/" class="home-link router-link-active"><img src="https://www.linzefan.top/images/logo.jpg" alt="林某人的技术博客" class="logo"> <span class="site-name can-hide">林某人的技术博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blogs/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础篇" class="dropdown-title"><span class="title">基础篇</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/sidebar/HTML/" class="nav-link">
+  Html
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/CSS/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/JS/" class="nav-link router-link-exact-active router-link-active">
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/Ajax/" class="nav-link">
+  Ajax
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/VUE/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/REACT/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/SSR/" class="nav-link">
+  SSR
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/ES6/" class="nav-link">
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/JQUERY/" class="nav-link">
+  Jquery
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/WEBPACK/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/Git/" class="nav-link">
+  Git
+</a></li></ul></div></div><div class="nav-item"><a href="/blogs/advanced/实时通讯.html" class="nav-link">
+  进阶篇
+</a></div><div class="nav-item"><a href="/blogs/actual/" class="nav-link">
+  实战篇
+</a></div><div class="nav-item"><a href="/blogs/issue/" class="nav-link">
+  踩过的那些坑
+</a></div><div class="nav-item"><a href="http://blog.poetries.top/FE-Interview-Questions/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  大牛总结面试题
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="/blogs/Gitalk/" class="nav-link">
+  留言板
+</a></div><div class="nav-item"><a href="/blogs/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="https://github.com/linzefan0612" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blogs/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础篇" class="dropdown-title"><span class="title">基础篇</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/sidebar/HTML/" class="nav-link">
+  Html
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/CSS/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/JS/" class="nav-link router-link-exact-active router-link-active">
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/Ajax/" class="nav-link">
+  Ajax
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/VUE/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/REACT/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/SSR/" class="nav-link">
+  SSR
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/ES6/" class="nav-link">
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/JQUERY/" class="nav-link">
+  Jquery
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/WEBPACK/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/Git/" class="nav-link">
+  Git
+</a></li></ul></div></div><div class="nav-item"><a href="/blogs/advanced/实时通讯.html" class="nav-link">
+  进阶篇
+</a></div><div class="nav-item"><a href="/blogs/actual/" class="nav-link">
+  实战篇
+</a></div><div class="nav-item"><a href="/blogs/issue/" class="nav-link">
+  踩过的那些坑
+</a></div><div class="nav-item"><a href="http://blog.poetries.top/FE-Interview-Questions/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  大牛总结面试题
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="/blogs/Gitalk/" class="nav-link">
+  留言板
+</a></div><div class="nav-item"><a href="/blogs/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="https://github.com/linzefan0612" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>HTML</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>CSS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>JS</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blogs/sidebar/JS/" class="active sidebar-link">Js 基础</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blogs/sidebar/JS/#组成部分" class="sidebar-link">组成部分</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/JS/#基本特点" class="sidebar-link">基本特点</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/JS/#命名规范" class="sidebar-link">命名规范</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/JS/#数据类型" class="sidebar-link">数据类型</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blogs/sidebar/JS/#五种基本类型" class="sidebar-link">五种基本类型</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/JS/#三大引用类型" class="sidebar-link">三大引用类型</a></li></ul></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/JS/#闭包" class="sidebar-link">闭包</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blogs/sidebar/JS/#概念" class="sidebar-link">概念</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/JS/#作用" class="sidebar-link">作用</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/JS/#缺点" class="sidebar-link">缺点</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/JS/#优化" class="sidebar-link">优化</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/JS/#例子" class="sidebar-link">例子</a></li></ul></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/JS/#递归" class="sidebar-link">递归</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blogs/sidebar/JS/#常见应用场景" class="sidebar-link">常见应用场景</a></li></ul></li></ul></li><li><a href="/blogs/sidebar/JS/原型链.html" class="sidebar-link">原型链</a></li><li><a href="/blogs/sidebar/JS/常用Api.html" class="sidebar-link">常用 Api</a></li><li><a href="/blogs/sidebar/JS/正则表达式.html" class="sidebar-link">正则表达式</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>ES6</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Jquery</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Ajax</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>React</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>webpack</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Git</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>SSR</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="js-基础"><a href="#js-基础" class="header-anchor">#</a> Js 基础</h1> <blockquote><p>JS 是一种解释型或即时编译型的编程语言，网页脚本语言</p></blockquote> <h2 id="组成部分"><a href="#组成部分" class="header-anchor">#</a> 组成部分</h2> <p><img src="https://bkimg.cdn.bcebos.com/pic/730e0cf3d7ca7bcb3409f115bf096b63f624a89d?x-bce-process=image/watermark,g_7,image_d2F0ZXIvYmFpa2U3Mg==,xp_5,yp_5" alt="avatar"></p> <ol><li>ECMAScript，描述了该语言的语法和基本对象</li> <li>文档对象模型（DOM），描述处理网页内容的方法和接口。</li> <li>浏览器对象模型（BOM），描述与浏览器进行交互的方法和接口。</li></ol> <h2 id="基本特点"><a href="#基本特点" class="header-anchor">#</a> 基本特点</h2> <ol><li>是一种解释性脚本语言(代码不进行预编译)</li> <li>主要用来向 HTML（标准通用标记语言下的一个应用）页面添加交互行为,简单理解为给页面添加交互行为，让页面动起来</li> <li>可以直接嵌入 HTML 页面，但写成单独的 js 文件有利于结构和行为的分离</li> <li>跨平台特性，在绝大多数浏览器的支持下，可以在多种平台下运行</li> <li>可以实现 web 页面的人机交互</li> <li>Javascript 脚本语言同其他语言一样，有它自身的基本数据类型，表达式和算术运算符及程序的基本程序框架</li></ol> <h2 id="命名规范"><a href="#命名规范" class="header-anchor">#</a> 命名规范</h2> <ol><li>只能用 英文字母、数字、 _（下划线） 、$ 、四种构成</li> <li>不能用 数字开头</li> <li>不能是 js 系统关键字 或 保留关键字</li></ol> <blockquote><p>附上 js 系统关键字或保留关键字图</p></blockquote> <h2 id="数据类型"><a href="#数据类型" class="header-anchor">#</a> 数据类型</h2> <h3 id="五种基本类型"><a href="#五种基本类型" class="header-anchor">#</a> 五种基本类型</h3> <p><strong>Number</strong></p> <ul><li>Number 类型包含整数和浮点数</li></ul> <p><strong>String</strong></p> <ul><li>字符串有 length 属性。</li></ul> <p><strong>Boolean</strong></p> <ul><li>该类型只有两个值，true 和 false</li></ul> <p><strong>Null</strong></p> <ul><li>null 类型被看做空对象指针，前文说到 null 类型也是空的对象引用</li></ul> <p><strong>Undefined</strong></p> <ul><li>只有一个值，即 undefined 值。使用 var 声明了变量，但未给变量初始化值，那么这个变量的值就是 undefined。</li></ul> <h3 id="三大引用类型"><a href="#三大引用类型" class="header-anchor">#</a> 三大引用类型</h3> <p><strong>Object</strong></p> <ul><li>对象 new Object()</li></ul> <p><strong>Array</strong></p> <ul><li>数组 new Array();</li></ul> <p><strong>Function</strong></p> <ul><li>函数 function(){}</li></ul> <h2 id="闭包"><a href="#闭包" class="header-anchor">#</a> 闭包</h2> <h3 id="概念"><a href="#概念" class="header-anchor">#</a> 概念</h3> <ul><li>其实就是一种函数，一种可以访问另外一个函数内部变量的函数</li></ul> <h3 id="作用"><a href="#作用" class="header-anchor">#</a> 作用</h3> <ol><li>延长局部变量的生命周期，一进入函数就创建局部变量,出了这个函数的大括号，变量就会被销毁</li> <li>闭包相当于是连接函数内部和外部的桥梁</li></ol> <h3 id="缺点"><a href="#缺点" class="header-anchor">#</a> 缺点</h3> <p>会导致内存泄露，一块内存空间一直占用着没被回收</p> <h3 id="优化"><a href="#优化" class="header-anchor">#</a> 优化</h3> <p>少用闭包，如果这个闭包不用了就记得把闭包赋值为 null</p> <h3 id="例子"><a href="#例子" class="header-anchor">#</a> 例子</h3> <ul><li>想要循环延时输出结果 0 1 2 3 4</li></ul> <div class="language- extra-class"><pre class="language-text"><code>for (var i = 0; i &lt; 5; ++i) {
+  (function(i) {
+    setTimeout(function() {
+      console.log(i + &quot; &quot;);
+    }, 100);
+  })(i);
+}
+输出结果为 5 5 5 5 5
+</code></pre></div><p>原因： js 运行环境为单线程，setTimeout 注册的函数需要等到线程空闲时才能执行，此时 for 循环已经结束，i 值为 5，又因为循环中 setTimeout 接受的参数函数通过闭包访问变量 i，所以 5 个定时输出都是 5。</p> <ul><li>正确写法</li></ul> <div class="language- extra-class"><pre class="language-text"><code>for (var i = 0; i &lt; 5; ++i) {
+  (function(i) {
+    setTimeout(function() {
+      console.log(i + &quot; &quot;);
+    }, 100);
+  })(i);
+}
+</code></pre></div><h2 id="递归"><a href="#递归" class="header-anchor">#</a> 递归</h2> <p>简单来说，就是函数变量自己</p> <h3 id="常见应用场景"><a href="#常见应用场景" class="header-anchor">#</a> 常见应用场景</h3> <div class="language- extra-class"><pre class="language-text"><code>// 遍历dom树
+function traversal(node){
+      //对node的处理
+      if(node &amp;&amp; node.nodeType === 1){
+          console.log(node.tagName);
+      }
+      var i = 0, childNodes = node.childNodes,item;
+      for(; i &lt; childNodes.length ; i++){
+          item = childNodes[i];
+          if(item.nodeType === 1){
+              //递归先序遍历子节点
+              traversal(item);
+          }
+      }
+  }
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blogs/sidebar/CSS/样式初始化.html" class="prev">
+        样式初始化文件
+      </a></span> <span class="next"><a href="/blogs/sidebar/JS/原型链.html">
+        原型链
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blogs/assets/js/app.f6682633.js" defer></script><script src="/blogs/assets/js/2.3ba6d93a.js" defer></script><script src="/blogs/assets/js/44.aad304d7.js" defer></script>
+  </body>
+</html>

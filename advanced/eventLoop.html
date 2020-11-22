@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>EventLoop | 林某人的技术博客</title>
+    <meta name="description" content="分享基础知识、踩的坑、实战demo等等">
+    <meta name="generator" content="VuePress 1.4.0">
+    <link rel="icon" href="https://www.linzefan.top/images/favicon.ico">
+  <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?0d5727949bf626613621bcc26ef60fed";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+      </script>
+    
+    <link rel="preload" href="/blogs/assets/css/0.styles.7efc2f73.css" as="style"><link rel="preload" href="/blogs/assets/js/app.f6682633.js" as="script"><link rel="preload" href="/blogs/assets/js/2.3ba6d93a.js" as="script"><link rel="preload" href="/blogs/assets/js/21.a76006d3.js" as="script"><link rel="prefetch" href="/blogs/assets/js/10.afee2c86.js"><link rel="prefetch" href="/blogs/assets/js/11.3e2bc908.js"><link rel="prefetch" href="/blogs/assets/js/12.88713729.js"><link rel="prefetch" href="/blogs/assets/js/13.58a66ba9.js"><link rel="prefetch" href="/blogs/assets/js/14.57e10d35.js"><link rel="prefetch" href="/blogs/assets/js/15.36cec071.js"><link rel="prefetch" href="/blogs/assets/js/16.77b49e89.js"><link rel="prefetch" href="/blogs/assets/js/17.887acfe7.js"><link rel="prefetch" href="/blogs/assets/js/18.a085c9e8.js"><link rel="prefetch" href="/blogs/assets/js/19.9080a35c.js"><link rel="prefetch" href="/blogs/assets/js/20.5d1ac224.js"><link rel="prefetch" href="/blogs/assets/js/22.b2651397.js"><link rel="prefetch" href="/blogs/assets/js/23.ccd28672.js"><link rel="prefetch" href="/blogs/assets/js/24.e42fffcf.js"><link rel="prefetch" href="/blogs/assets/js/25.2bfed8bf.js"><link rel="prefetch" href="/blogs/assets/js/26.949650b9.js"><link rel="prefetch" href="/blogs/assets/js/27.341beabf.js"><link rel="prefetch" href="/blogs/assets/js/28.193e9b0a.js"><link rel="prefetch" href="/blogs/assets/js/29.6af09bdb.js"><link rel="prefetch" href="/blogs/assets/js/3.1aa7baf7.js"><link rel="prefetch" href="/blogs/assets/js/30.25d32756.js"><link rel="prefetch" href="/blogs/assets/js/31.e1ed34e2.js"><link rel="prefetch" href="/blogs/assets/js/32.094ecee0.js"><link rel="prefetch" href="/blogs/assets/js/33.95d15345.js"><link rel="prefetch" href="/blogs/assets/js/34.76a4730b.js"><link rel="prefetch" href="/blogs/assets/js/35.60cb64f5.js"><link rel="prefetch" href="/blogs/assets/js/36.b4aff0bd.js"><link rel="prefetch" href="/blogs/assets/js/37.583d628f.js"><link rel="prefetch" href="/blogs/assets/js/38.10f1df61.js"><link rel="prefetch" href="/blogs/assets/js/39.dc600283.js"><link rel="prefetch" href="/blogs/assets/js/4.52899354.js"><link rel="prefetch" href="/blogs/assets/js/40.f9db3b93.js"><link rel="prefetch" href="/blogs/assets/js/41.74f9c9ee.js"><link rel="prefetch" href="/blogs/assets/js/42.9a390624.js"><link rel="prefetch" href="/blogs/assets/js/43.b38524bb.js"><link rel="prefetch" href="/blogs/assets/js/44.aad304d7.js"><link rel="prefetch" href="/blogs/assets/js/45.fb10845b.js"><link rel="prefetch" href="/blogs/assets/js/46.ca9c851e.js"><link rel="prefetch" href="/blogs/assets/js/47.600b4c3e.js"><link rel="prefetch" href="/blogs/assets/js/48.d0ef1f66.js"><link rel="prefetch" href="/blogs/assets/js/49.f8022ef1.js"><link rel="prefetch" href="/blogs/assets/js/5.fbc3b8f5.js"><link rel="prefetch" href="/blogs/assets/js/50.9741f61a.js"><link rel="prefetch" href="/blogs/assets/js/51.5545444c.js"><link rel="prefetch" href="/blogs/assets/js/52.7dfc6c24.js"><link rel="prefetch" href="/blogs/assets/js/53.7d57bb01.js"><link rel="prefetch" href="/blogs/assets/js/54.ef8bacff.js"><link rel="prefetch" href="/blogs/assets/js/6.089331c4.js"><link rel="prefetch" href="/blogs/assets/js/7.f81a77bf.js"><link rel="prefetch" href="/blogs/assets/js/8.0a3fe8a0.js"><link rel="prefetch" href="/blogs/assets/js/9.4a62a533.js">
+    <link rel="stylesheet" href="/blogs/assets/css/0.styles.7efc2f73.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blogs/" class="home-link router-link-active"><img src="https://www.linzefan.top/images/logo.jpg" alt="林某人的技术博客" class="logo"> <span class="site-name can-hide">林某人的技术博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blogs/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础篇" class="dropdown-title"><span class="title">基础篇</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/sidebar/HTML/" class="nav-link">
+  Html
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/CSS/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/JS/" class="nav-link">
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/Ajax/" class="nav-link">
+  Ajax
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/VUE/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/REACT/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/SSR/" class="nav-link">
+  SSR
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/ES6/" class="nav-link">
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/JQUERY/" class="nav-link">
+  Jquery
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/WEBPACK/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/Git/" class="nav-link">
+  Git
+</a></li></ul></div></div><div class="nav-item"><a href="/blogs/advanced/实时通讯.html" class="nav-link">
+  进阶篇
+</a></div><div class="nav-item"><a href="/blogs/actual/" class="nav-link">
+  实战篇
+</a></div><div class="nav-item"><a href="/blogs/issue/" class="nav-link">
+  踩过的那些坑
+</a></div><div class="nav-item"><a href="http://blog.poetries.top/FE-Interview-Questions/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  大牛总结面试题
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="/blogs/Gitalk/" class="nav-link">
+  留言板
+</a></div><div class="nav-item"><a href="/blogs/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="https://github.com/linzefan0612" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blogs/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础篇" class="dropdown-title"><span class="title">基础篇</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/sidebar/HTML/" class="nav-link">
+  Html
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/CSS/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/JS/" class="nav-link">
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/Ajax/" class="nav-link">
+  Ajax
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/VUE/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/REACT/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/SSR/" class="nav-link">
+  SSR
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/ES6/" class="nav-link">
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/JQUERY/" class="nav-link">
+  Jquery
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/WEBPACK/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/Git/" class="nav-link">
+  Git
+</a></li></ul></div></div><div class="nav-item"><a href="/blogs/advanced/实时通讯.html" class="nav-link">
+  进阶篇
+</a></div><div class="nav-item"><a href="/blogs/actual/" class="nav-link">
+  实战篇
+</a></div><div class="nav-item"><a href="/blogs/issue/" class="nav-link">
+  踩过的那些坑
+</a></div><div class="nav-item"><a href="http://blog.poetries.top/FE-Interview-Questions/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  大牛总结面试题
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="/blogs/Gitalk/" class="nav-link">
+  留言板
+</a></div><div class="nav-item"><a href="/blogs/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="https://github.com/linzefan0612" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>实时通讯</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>跨文档交流</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>eventLoop</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blogs/advanced/eventLoop.html" class="active sidebar-link">EventLoop</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blogs/advanced/eventLoop.html#event-loop-是什么" class="sidebar-link">Event Loop 是什么</a></li><li class="sidebar-sub-header"><a href="/blogs/advanced/eventLoop.html#进程和线程" class="sidebar-link">进程和线程</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blogs/advanced/eventLoop.html#定义" class="sidebar-link">定义</a></li></ul></li><li class="sidebar-sub-header"><a href="/blogs/advanced/eventLoop.html#js-的单线程" class="sidebar-link">JS 的单线程</a></li><li class="sidebar-sub-header"><a href="/blogs/advanced/eventLoop.html#浏览器" class="sidebar-link">浏览器</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blogs/advanced/eventLoop.html#浏览器的多线程" class="sidebar-link">浏览器的多线程</a></li></ul></li><li class="sidebar-sub-header"><a href="/blogs/advanced/eventLoop.html#浏览器主线程常驻线程" class="sidebar-link">浏览器主线程常驻线程</a></li><li class="sidebar-sub-header"><a href="/blogs/advanced/eventLoop.html#浏览器端的-event-loop" class="sidebar-link">浏览器端的 Event Loop</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blogs/advanced/eventLoop.html#同步任务和异步任务" class="sidebar-link">同步任务和异步任务</a></li><li class="sidebar-sub-header"><a href="/blogs/advanced/eventLoop.html#event-loop" class="sidebar-link">Event Loop</a></li></ul></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>this指向</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>XMLHttpRequest</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="eventloop"><a href="#eventloop" class="header-anchor">#</a> EventLoop</h1> <blockquote><p>本文转自 https://juejin.im/post/5e80595c518825739f6af6f4</p></blockquote> <h2 id="event-loop-是什么"><a href="#event-loop-是什么" class="header-anchor">#</a> Event Loop 是什么</h2> <blockquote><p>In computer science, the event loop is a programming construct or design pattern that waits for and dispatches events or messages in a program. The event loop works by making a request to some internal or external &quot;event provider&quot; (that generally blocks the request until an event has arrived), then calls the relevant event handler (&quot;dispatches the event&quot;). The event loop is also sometimes referred to as the message dispatcher, message loop, message pump, or run loop.</p></blockquote> <ul><li>上面这段是 Wikipedia 对 Event Loop 的解释，简单的来说就是 Event Loop 是一个程序结构，用于等待和分派消息和事件我个人的理解是 JS 中的 Event Loop 是浏览器或 Node 的一种协调 JavaScript 单线程运行时不会阻塞的一种机制。</li></ul> <h2 id="进程和线程"><a href="#进程和线程" class="header-anchor">#</a> 进程和线程</h2> <ul><li>上文我说了 Event Loop 是单线程阻塞问题的一种解决机制，所以在正式开始前还是要先从进程和线程的角度来聊一聊。众所周知的一件事是，JavaScript 是一个单线程机制的语言，那我们先来看看进程和线程的定义：</li></ul> <h3 id="定义"><a href="#定义" class="header-anchor">#</a> 定义</h3> <ol><li>进程：进程是 CPU 资源分配的最小单位</li> <li>线程：线程是 CPU 调度的最小单位</li></ol> <ul><li>简单来说，进程简单理解就是我们平常使用的程序，如 QQ，浏览器，网盘等。进程拥有自己独立的内存空间地址，拥有一个或多个线程，而线程就是对进程粒度的进一步划分。</li> <li>更通俗的来说，进程就像是一家工厂，多个工厂之间是独立存在的。而线程就像是工厂中的那些工人，共享资源，完成同一个大目标。</li></ul> <h2 id="js-的单线程"><a href="#js-的单线程" class="header-anchor">#</a> JS 的单线程</h2> <p>很多人都知道的是，JavaScript 是一门动态的解释型的语言，具有跨平台性。在被问到 JavaScript 为什么是一门单线程的语言，有的人可能会这么回答：“语言特性决定了 JavaScript 是一个单线程语言，JavaScript 天生是一个单线程语言”，这只不过是一层糖衣罢了。</p> <p>JavaScript 从诞生起就是单线程，原因大概是不想让浏览器变得太复杂，因为多线程需要共享资源、且有可能修改彼此的运行结果，对于一种网页脚本语言来说，这就太复杂了。</p> <p>准确的来说，我认为 JavaScript 的单线程是指 JavaScript 引擎是单线程的，JavaScript 的引擎并不是独立运行的，跨平台意味着 JavaScript 依赖其运行的宿主环境 --- 浏览器(大部分情况下是浏览器)。</p> <p>浏览器需要渲染 DOM，JavaScript 可以修改 DOM 结构，JavaScript 执行时，浏览器 DOM 渲染停止。如果 JavaScript 引擎线程不是单线程的，那么可以同时执行多段 JavaScript，如果这多段 JavaScript 都操作 DOM，那么就会出现 DOM 冲突。</p> <p>举个例子来说，在同一时刻执行两个 script 对同一个 DOM 元素进行操作，一个修改 DOM，一个删除 DOM，那这样话浏览器就会懵逼了，它就不知道到底该听谁的，会有资源竞争，这也是 JavaScript 单线程的原因之一。</p> <h2 id="浏览器"><a href="#浏览器" class="header-anchor">#</a> 浏览器</h2> <h3 id="浏览器的多线程"><a href="#浏览器的多线程" class="header-anchor">#</a> 浏览器的多线程</h3> <p>之前说过，JavaScript 运行的宿主环境浏览器是多线程的。<br>
+以 Chrome 来说，我们可以通过 Chrome 的任务管理器来看看。</p> <p><img src="https://user-gold-cdn.xitu.io/2020/3/22/17102b254e650521?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="avatar">
+当你打开一个 Tab 页面的时候，就创建了一个进程。如果从一个页面打开了另一个页面，打开的页面和当前的页面属于同一站点的话，那么这个页面会复用父页面的渲染进程。</p> <h2 id="浏览器主线程常驻线程"><a href="#浏览器主线程常驻线程" class="header-anchor">#</a> 浏览器主线程常驻线程</h2> <ol><li>GUI 渲染线程</li></ol> <ul><li>绘制页面，解析 HTML、CSS，构建 DOM 树，布局和绘制等</li> <li>页面重绘和回流</li> <li>与 JS 引擎线程互斥，也就是所谓的 JS 执行阻塞页面更新</li></ul> <ol start="2"><li>JS 引擎线程</li></ol> <ul><li>负责 JS 脚本代码的执行</li> <li>负责准执行准备好待执行的事件，即定时器计数结束，或异步请求成功并正确返回的事件</li> <li>与 GUI 渲染线程互斥，执行时间过长将阻塞页面的渲染</li></ul> <ol start="3"><li>事件触发线程</li></ol> <ul><li>负责将准备好的事件交给 JS 引擎线程执行</li> <li>多个事件加入任务队列的时候需要排队等待(JS 的单线程)</li></ul> <ol start="4"><li>定时器触发线程</li></ol> <ul><li>负责执行异步的定时器类的事件，如 setTimeout、setInterval</li> <li>定时器到时间之后把注册的回调加到任务队列的队尾</li></ul> <ol start="5"><li>HTTP 请求线程</li></ol> <ul><li>负责执行异步请求</li> <li>主线程执行代码遇到异步请求的时候会把函数交给该线程处理，当监听到状态变更事件，如果有回调函数，该线程会把回调函数加入到任务队列的队尾等待执行</li></ul> <h2 id="浏览器端的-event-loop"><a href="#浏览器端的-event-loop" class="header-anchor">#</a> 浏览器端的 Event Loop</h2> <p>看到这里，总算是进入正题了，先讲讲浏览器端的 Event Loop 是什么样的。
+<img src="https://user-gold-cdn.xitu.io/2020/3/26/171129962f45270f?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="">
+上图是一张 JS 的运行机制图，Js 运行时大致会分为几个部分：</p> <ol><li>Call Stack：调用栈(执行栈)，所有同步任务在主线程上执行，形成一个执行栈，因为 JS 单线程的原因，所以调用栈中每次只能执行一个任务，当遇到的同步任务执行完之后，由任务队列提供任务给调用栈执行。</li> <li>Task Queue：任务队列，存放着异步任务，当异步任务可以执行的时候，任务队列会通知主线程，然后该任务会进入主线程执行。任务队列中的都是已经完成的异步操作，而不是说注册一个异步任务就会被放在这个任务队列中。</li></ol> <p><br>说到这里，Event Loop 也可以理解为：不断地从任务队列中取出任务执行的一个过程。</p> <h3 id="同步任务和异步任务"><a href="#同步任务和异步任务" class="header-anchor">#</a> 同步任务和异步任务</h3> <p>上文已经说过了 JavaScript 是一门单线程的语言，一次只能执行一个任务，如果所有的任务都是同步任务，那么程序可能因为等待会出现假死状态，这对于一个用户体验很强的语言来说是非常不友好的。</p> <p>比如说向服务端请求资源，你不可能一直不停的循环判断有没有拿到数据，就好像你点了个外卖，点完之后就开始一直打电话问外卖有没有送到，外卖小哥都会抄着锅铲来打你(狗头)。因此，在 JavaScript 中任务有了同步任务和异步任务，异步任务通过注册回调函数，等到数据来了就通知主程序。</p> <h4 id="概念"><a href="#概念" class="header-anchor">#</a> 概念</h4> <p>简单的介绍一下同步任务和异步任务的概念。</p> <ol><li>同步任务：必须等到结果来了之后才能做其他的事情，举例来说就是你烧水的时候一直等在水壶旁边等水烧开，期间不做其他的任何事情。</li> <li>异步任务：不需要等到结果来了才能继续往下走，等结果期间可以做其他的事情，结果来了会收到通知。举例来说就是你烧水的时候可以去做自己想做的事情，听到水烧开的声音之后再去处理。</li></ol> <p><br>从概念就可以看出来，异步任务从一定程度上来看比同步任务更高效一些，核心是提高了用户体验。</p> <h3 id="event-loop"><a href="#event-loop" class="header-anchor">#</a> Event Loop</h3> <p>Event Loop 很好的调度了任务的运行，宏任务和微任务也知道了，现在我们就来看看它的调度运行机制。</p> <p>JavaScript 的代码执行时，主线程会从上到下一步步的执行代码，同步任务会被依次加入执行栈中先执行，异步任务会在拿到结果的时候将注册的回调函数放入任务队列，当执行栈中的没有任务在执行的时候，引擎会从任务队列中读取任务压入执行栈(Call Stack)中处理执行。</p> <h4 id="宏任务和微任务"><a href="#宏任务和微任务" class="header-anchor">#</a> 宏任务和微任务</h4> <p>现在就有一个问题了，任务队列是一个消息队列，先进先出，那就是说，后来的事件都是被加在队尾等到前面的事件执行完了才会被执行。如果在执行的过程中突然有重要的数据需要获取，或是说有事件突然需要处理一下，按照队列的先进先出顺序这些是无法得到及时处理的。这个时候就催生了宏任务和微任务，微任务使得一些异步任务得到及时的处理。</p> <p>曾经看到的一个例子很好，宏任务和微任务形象的来说就是：你去营业厅办一个业务会有一个排队号码，当叫到你的号码的时候你去窗口办充值业务(宏任务执行)，在你办理充值的时候你又想改个套餐(微任务)，这个时候工作人员会直接帮你办，不可能让你重新排队。</p> <p>所以上文说过的异步任务又分为宏任务和微任务，JS 运行时任务队列会分为宏任务队列和微任务队列，分别对应宏任务和微任务。</p> <p>先介绍一下(浏览器环境的)宏任务和微任务大致有哪些：</p> <ul><li>宏任务：</li></ul> <ol><li>script(整体的代码)</li> <li>setTimeout</li> <li>setInterval</li> <li>I/O 操作</li> <li>UI 渲染 (对这个笔者持保留意见)</li></ol> <ul><li>微任务：</li></ul> <ol><li>Promise.then</li> <li>MutationObserver</li></ol> <h4 id="事件运行顺序"><a href="#事件运行顺序" class="header-anchor">#</a> 事件运行顺序</h4> <ol><li>执行同步任务，同步任务不需要做特殊处理，直接执行(下面的步骤中遇到同步任务都是一样处理) --- 第一轮从 script 开始</li> <li>从宏任务队列中取出队头任务执行</li> <li>如果产生了宏任务，将宏任务放入宏任务队列，下次轮循的时候执行</li> <li>如果产生了微任务，将微任务放入微任务队列</li> <li>执行完当前宏任务之后，取出微任务队列中的所有任务依次执行</li> <li>如果微任务执行过程中产生了新的微任务，则继续执行微任务，直到微任务的队列为空</li> <li>轮循，循环以上 2 - 6
+总的来说就是：同步任务/宏任务 -&gt; 执行产生的所有微任务(包括微任务产生的微任务) -&gt; 同步任务/宏任务 -&gt; 执行产生的所有微任务(包括微任务产生的微任务) -&gt; 循环......</li></ol> <h4 id="举个栗子"><a href="#举个栗子" class="header-anchor">#</a> 举个栗子</h4> <p>光说不练假把式，现在就来看一个例子：</p> <div class="language- extra-class"><pre class="language-text"><code>console.log('script start')
+setTimeout(function() {
+  console.log('setTimeout')
+}, 0)
+new Promise((resolve, reject)=&gt;{
+  console.log(&quot;promise1&quot;)
+  resolve()
+})
+.then(()=&gt;{
+  console.log(&quot;then11&quot;)
+  new Promise((resolve, reject)=&gt;{
+    console.log(&quot;promise2&quot;)
+    resolve();
+  })
+  .then(() =&gt; {
+    console.log(&quot;then2-1&quot;)
+  })
+  .then(() =&gt; {
+    console.log(&quot;then2-2&quot;)
+  })
+})
+.then(()=&gt;{
+  console.log(&quot;then12&quot;)
+})
+console.log('script end')
+</code></pre></div><ol><li>首先遇到 console.log()，输出 <strong>script start</strong></li> <li>遇到 setTimeout 产生宏任务，注册到宏任务队列[setTimeout]，下一轮 Event Loop 的时候在执行</li> <li>然后遇到 new Promise 构造声明(同步)，log 输出 <strong>promise1</strong>，然后 resolve</li> <li>resolve 匹配到 promise1 的第一个 then，把这个 then 注册到微任务队列[then11]中，继续当前整体脚本的执行</li> <li>遇到最后的一个 log，输出 <strong>script end</strong>，当前执行栈清空</li> <li>从微任务队列中取出队头任务'then11' 进行执行，其中有一个 log，输出 <strong>then11</strong></li> <li>往下遇到 new Promise 构造声明(同步)，log 输出 <strong>promise2</strong> ，然后 resolve</li> <li>resolve 匹配到 promise2 的第一个 then，把这个 then 注册到微任务队列[then2-1]，当前 then11 可执行部分结束，然后产生了 promise1 的第二个 then，把这个 then 注册到微任务队列[then2-1, then12]</li> <li>拿出微任务队头任务'then2-1' 执行，log 输出 <strong>then2-1</strong>，触发 promise2 的第二个 then，注册到微任务队列[then12, then2-2]</li> <li>拿出微任务队头任务'then12'，log 输出 <strong>then12</strong></li> <li>拿出微任务队头任务'then2-2'，log 输出 <strong>then2-2</strong></li> <li>微任务队列执行完毕，别忘了宏任务队列中的 setTimeout，log 输出 <strong>setTimeout</strong></li></ol> <p>经过以上一番缜(xia)密(gao)分析，希望没有绕晕你，最后的输出结果就是：
+script start -&gt; promise1 -&gt; script end -&gt; then11 -&gt; promise2 -&gt; then2-1 -&gt; then12 -&gt; then2-2 -&gt; setTimeout</p> <h4 id="宏任务？微任务？"><a href="#宏任务？微任务？" class="header-anchor">#</a> 宏任务？微任务？</h4> <p>不知道大家看了宏任务和微任务之后会不会有一个疑惑，宏任务和微任务都是异步任务，微任务之前说过了是为了及时解决一些必要事件而产生的。</p> <ul><li><p>为什么要有微任务？<br>
+为什么要有微任务的原因前面已经说了，这里就不再赘述，简单说一下就是为了及时处理一些任务，不然等到最后再执行的时候拿到的数据可能已经是被污染的数据达不到预期目标了。</p></li> <li><p>什么是宏任务？什么是微任务？<br>
+相信大家在学习 Event Loop 查找资料的时候，肯定各种资料里面都会讲到宏任务和微任务，但是不知道你有没有灵魂拷问过你自己：什么是宏任务？什么是微任务？怎么区分宏任务和微任务？不能只是默许接受这个概念，在这里，我根据我的个人理解进行一番说(hu)明(che)</p></li> <li><p>宏任务和微任务的真面目<br>
+其实在 Chrome 的源码中并没有什么宏任务和微任务的代码或是说明，在 JS 大会上提到过微任务这个名词，但是也没有说到底什么是微任务。</p></li></ul> <p>宏任务<br>
+文章最开始的时候说过，在 chrome 里，每个页面都对应一个进程。而该进程又有多个线程，比如 JS 线程、渲染线程、IO 线程、网络线程、定时器线程等等，这些线程之间的通信是通过向对象的任务队列中添加一个任务（postTask）来实现的。宏任务的本质可以认为是多线程事件循环或消息循环，也就是线程间通信的一个消息队列。</p> <p>微任务<br>
+微任务是在运行宏任务/同步任务的时候产生的，是属于当前任务的，所以它不需要浏览器的支持，内置在 JS 当中，不需要 API 支持，直接在 JS 的引擎中就被执行掉了。</p> <p>就拿 setTimeout 举例来说，当遇到它的时候，浏览器就会对 Event Loop 说：嘿，我有一个任务交给你，Event Loop 就会说：好的，我会把它加到我的 todoList 中，之后我会执行它，它是需要调用 API 的。</p> <p><strong>宏任务的真面目是浏览器派发，与 JS 引擎无关的，参与了 Event Loop 调度的任务</strong></p> <h4 id="特殊的点"><a href="#特殊的点" class="header-anchor">#</a> 特殊的点</h4> <ol><li>async 隐式返回 Promise 作为结果</li> <li>执行完 await 之后直接跳出 async 函数，让出执行的所有权</li> <li>当前任务的其他代码执行完之后再次获得执行权进行执行</li> <li>立即 resolve 的 Promise 对象，是在本轮&quot;事件循环&quot;的结束时执行，而不是在下一轮&quot;事件循环&quot;的开始时</li></ol> <h4 id="再举个栗子"><a href="#再举个栗子" class="header-anchor">#</a> 再举个栗子</h4> <div class="language- extra-class"><pre class="language-text"><code>  console.log('script start')
+
+  async function async1() {
+      await async2()
+      console.log('async1 end')
+  }
+  async function async2() {
+      console.log('async2 end')
+  }
+  async1()
+
+  setTimeout(function() {
+      console.log('setTimeout')
+  }, 0)
+
+  new Promise(resolve =&gt; {
+      console.log('Promise')
+      resolve()
+  })
+  .then(function() {
+      console.log('promise1')
+  })
+  .then(function() {
+      console.log('promise2')
+  })
+
+  console.log('script end')
+
+</code></pre></div><p>按照之前的分析方法去分析之后就会得出一个结果：
+script start =&gt; async2 end =&gt; Promise =&gt; script end =&gt; promise1 =&gt; promise2 =&gt; async1 end =&gt; setTimeout</p> <p>可以看出 async1 函数获取执行权是作为微任务的队尾，但是，在 Chrome73(金丝雀) 版本之后，async 的执行优化了，它会在 promise1 和 promise2 的输出之前执行。笔者大概了解了一下应该是用 PromiseResolve 对 await 进行了优化，减少了 Promise 的再次创建，有兴趣的小伙伴可以看看 Chrome 的源码。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blogs/advanced/跨文档交流.html" class="prev">
+        跨文档交流
+      </a></span> <span class="next"><a href="/blogs/advanced/this指向.html">
+        this 的那些问题
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blogs/assets/js/app.f6682633.js" defer></script><script src="/blogs/assets/js/2.3ba6d93a.js" defer></script><script src="/blogs/assets/js/21.a76006d3.js" defer></script>
+  </body>
+</html>

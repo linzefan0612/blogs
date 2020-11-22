@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>vue-cli多环境配置 | 林某人的技术博客</title>
+    <meta name="description" content="分享基础知识、踩的坑、实战demo等等">
+    <meta name="generator" content="VuePress 1.4.0">
+    <link rel="icon" href="https://www.linzefan.top/images/favicon.ico">
+  <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?0d5727949bf626613621bcc26ef60fed";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+      </script>
+    
+    <link rel="preload" href="/blogs/assets/css/0.styles.7efc2f73.css" as="style"><link rel="preload" href="/blogs/assets/js/app.f6682633.js" as="script"><link rel="preload" href="/blogs/assets/js/2.3ba6d93a.js" as="script"><link rel="preload" href="/blogs/assets/js/15.36cec071.js" as="script"><link rel="prefetch" href="/blogs/assets/js/10.afee2c86.js"><link rel="prefetch" href="/blogs/assets/js/11.3e2bc908.js"><link rel="prefetch" href="/blogs/assets/js/12.88713729.js"><link rel="prefetch" href="/blogs/assets/js/13.58a66ba9.js"><link rel="prefetch" href="/blogs/assets/js/14.57e10d35.js"><link rel="prefetch" href="/blogs/assets/js/16.77b49e89.js"><link rel="prefetch" href="/blogs/assets/js/17.887acfe7.js"><link rel="prefetch" href="/blogs/assets/js/18.a085c9e8.js"><link rel="prefetch" href="/blogs/assets/js/19.9080a35c.js"><link rel="prefetch" href="/blogs/assets/js/20.5d1ac224.js"><link rel="prefetch" href="/blogs/assets/js/21.a76006d3.js"><link rel="prefetch" href="/blogs/assets/js/22.b2651397.js"><link rel="prefetch" href="/blogs/assets/js/23.ccd28672.js"><link rel="prefetch" href="/blogs/assets/js/24.e42fffcf.js"><link rel="prefetch" href="/blogs/assets/js/25.2bfed8bf.js"><link rel="prefetch" href="/blogs/assets/js/26.949650b9.js"><link rel="prefetch" href="/blogs/assets/js/27.341beabf.js"><link rel="prefetch" href="/blogs/assets/js/28.193e9b0a.js"><link rel="prefetch" href="/blogs/assets/js/29.6af09bdb.js"><link rel="prefetch" href="/blogs/assets/js/3.1aa7baf7.js"><link rel="prefetch" href="/blogs/assets/js/30.25d32756.js"><link rel="prefetch" href="/blogs/assets/js/31.e1ed34e2.js"><link rel="prefetch" href="/blogs/assets/js/32.094ecee0.js"><link rel="prefetch" href="/blogs/assets/js/33.95d15345.js"><link rel="prefetch" href="/blogs/assets/js/34.76a4730b.js"><link rel="prefetch" href="/blogs/assets/js/35.60cb64f5.js"><link rel="prefetch" href="/blogs/assets/js/36.b4aff0bd.js"><link rel="prefetch" href="/blogs/assets/js/37.583d628f.js"><link rel="prefetch" href="/blogs/assets/js/38.10f1df61.js"><link rel="prefetch" href="/blogs/assets/js/39.dc600283.js"><link rel="prefetch" href="/blogs/assets/js/4.52899354.js"><link rel="prefetch" href="/blogs/assets/js/40.f9db3b93.js"><link rel="prefetch" href="/blogs/assets/js/41.74f9c9ee.js"><link rel="prefetch" href="/blogs/assets/js/42.9a390624.js"><link rel="prefetch" href="/blogs/assets/js/43.b38524bb.js"><link rel="prefetch" href="/blogs/assets/js/44.aad304d7.js"><link rel="prefetch" href="/blogs/assets/js/45.fb10845b.js"><link rel="prefetch" href="/blogs/assets/js/46.ca9c851e.js"><link rel="prefetch" href="/blogs/assets/js/47.600b4c3e.js"><link rel="prefetch" href="/blogs/assets/js/48.d0ef1f66.js"><link rel="prefetch" href="/blogs/assets/js/49.f8022ef1.js"><link rel="prefetch" href="/blogs/assets/js/5.fbc3b8f5.js"><link rel="prefetch" href="/blogs/assets/js/50.9741f61a.js"><link rel="prefetch" href="/blogs/assets/js/51.5545444c.js"><link rel="prefetch" href="/blogs/assets/js/52.7dfc6c24.js"><link rel="prefetch" href="/blogs/assets/js/53.7d57bb01.js"><link rel="prefetch" href="/blogs/assets/js/54.ef8bacff.js"><link rel="prefetch" href="/blogs/assets/js/6.089331c4.js"><link rel="prefetch" href="/blogs/assets/js/7.f81a77bf.js"><link rel="prefetch" href="/blogs/assets/js/8.0a3fe8a0.js"><link rel="prefetch" href="/blogs/assets/js/9.4a62a533.js">
+    <link rel="stylesheet" href="/blogs/assets/css/0.styles.7efc2f73.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blogs/" class="home-link router-link-active"><img src="https://www.linzefan.top/images/logo.jpg" alt="林某人的技术博客" class="logo"> <span class="site-name can-hide">林某人的技术博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blogs/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础篇" class="dropdown-title"><span class="title">基础篇</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/sidebar/HTML/" class="nav-link">
+  Html
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/CSS/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/JS/" class="nav-link">
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/Ajax/" class="nav-link">
+  Ajax
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/VUE/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/REACT/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/SSR/" class="nav-link">
+  SSR
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/ES6/" class="nav-link">
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/JQUERY/" class="nav-link">
+  Jquery
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/WEBPACK/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/Git/" class="nav-link">
+  Git
+</a></li></ul></div></div><div class="nav-item"><a href="/blogs/advanced/实时通讯.html" class="nav-link">
+  进阶篇
+</a></div><div class="nav-item"><a href="/blogs/actual/" class="nav-link router-link-active">
+  实战篇
+</a></div><div class="nav-item"><a href="/blogs/issue/" class="nav-link">
+  踩过的那些坑
+</a></div><div class="nav-item"><a href="http://blog.poetries.top/FE-Interview-Questions/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  大牛总结面试题
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="/blogs/Gitalk/" class="nav-link">
+  留言板
+</a></div><div class="nav-item"><a href="/blogs/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="https://github.com/linzefan0612" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blogs/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础篇" class="dropdown-title"><span class="title">基础篇</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/sidebar/HTML/" class="nav-link">
+  Html
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/CSS/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/JS/" class="nav-link">
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/Ajax/" class="nav-link">
+  Ajax
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/VUE/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/REACT/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/SSR/" class="nav-link">
+  SSR
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/ES6/" class="nav-link">
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/JQUERY/" class="nav-link">
+  Jquery
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/WEBPACK/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/Git/" class="nav-link">
+  Git
+</a></li></ul></div></div><div class="nav-item"><a href="/blogs/advanced/实时通讯.html" class="nav-link">
+  进阶篇
+</a></div><div class="nav-item"><a href="/blogs/actual/" class="nav-link router-link-active">
+  实战篇
+</a></div><div class="nav-item"><a href="/blogs/issue/" class="nav-link">
+  踩过的那些坑
+</a></div><div class="nav-item"><a href="http://blog.poetries.top/FE-Interview-Questions/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  大牛总结面试题
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="/blogs/Gitalk/" class="nav-link">
+  留言板
+</a></div><div class="nav-item"><a href="/blogs/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="https://github.com/linzefan0612" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>小功能</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>h5跳转微信小程序</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>axios请求封装</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>实用的函数</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>vue-cli多环境配置</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blogs/actual/vue-cli多环境配置.html" class="active sidebar-link">vue-cli多环境配置</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blogs/actual/vue-cli多环境配置.html#vue-cli-2-x-版" class="sidebar-link">vue-cli 2.x 版</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blogs/actual/vue-cli多环境配置.html#二、修改项目package-json文件" class="sidebar-link">二、修改项目package.json文件</a></li><li class="sidebar-sub-header"><a href="/blogs/actual/vue-cli多环境配置.html#三、修改项目config配置文件" class="sidebar-link">三、修改项目config配置文件</a></li><li class="sidebar-sub-header"><a href="/blogs/actual/vue-cli多环境配置.html#四、修改项目build配置文件" class="sidebar-link">四、修改项目build配置文件</a></li></ul></li><li class="sidebar-sub-header"><a href="/blogs/actual/vue-cli多环境配置.html#vue-cli-3-x-版本" class="sidebar-link">vue-cli 3.x 版本</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blogs/actual/vue-cli多环境配置.html#一、在根目录新增3个环境变量文件" class="sidebar-link">一、在根目录新增3个环境变量文件</a></li><li class="sidebar-sub-header"><a href="/blogs/actual/vue-cli多环境配置.html#二、配置-package-json" class="sidebar-link">二、配置 package.json</a></li><li class="sidebar-sub-header"><a href="/blogs/actual/vue-cli多环境配置.html#三、访问使用" class="sidebar-link">三、访问使用</a></li></ul></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>移动端适配方案</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>拼音转换</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>tip标签拖动</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="vue-cli多环境配置"><a href="#vue-cli多环境配置" class="header-anchor">#</a> vue-cli多环境配置</h1> <h2 id="vue-cli-2-x-版"><a href="#vue-cli-2-x-版" class="header-anchor">#</a> vue-cli 2.x 版</h2> <p>###　一、安装依赖：cross-env</p> <h4 id="使用cross-env解决跨平台设置环境变量的问题"><a href="#使用cross-env解决跨平台设置环境变量的问题" class="header-anchor">#</a> 使用cross-env解决跨平台设置环境变量的问题</h4> <p>安装：npm i --save-dev cross-env</p> <h3 id="二、修改项目package-json文件"><a href="#二、修改项目package-json文件" class="header-anchor">#</a> 二、修改项目package.json文件</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token string">&quot;scripts&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token string">&quot;dev&quot;</span><span class="token operator">:</span> <span class="token string">&quot;webpack-dev-server --inline --progress --config build/webpack.dev.conf.js&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;start&quot;</span><span class="token operator">:</span> <span class="token string">&quot;npm run dev&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;lint&quot;</span><span class="token operator">:</span> <span class="token string">&quot;eslint --ext .js,.vue src --fix&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;build:dev&quot;</span><span class="token operator">:</span> <span class="token string">&quot;cross-env NODE_ENV=development ENV_CONFIG=dev node build/build.js&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;build:test&quot;</span><span class="token operator">:</span> <span class="token string">&quot;cross-env NODE_ENV=testing ENV_CONFIG=test node build/build.js&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;build:prod&quot;</span><span class="token operator">:</span> <span class="token string">&quot;cross-env NODE_ENV=production ENV_CONFIG=prod node build/build.js&quot;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><h3 id="三、修改项目config配置文件"><a href="#三、修改项目config配置文件" class="header-anchor">#</a> 三、修改项目config配置文件</h3> <h4 id="修改项目config目录下的以下文件"><a href="#修改项目config目录下的以下文件" class="header-anchor">#</a> 修改项目config目录下的以下文件</h4> <ol><li>添加test.env.js文件</li></ol> <div class="language-js extra-class"><pre class="language-js"><code><span class="token string">'use strict'</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token constant">NODE_ENV</span><span class="token operator">:</span> <span class="token string">'&quot;testing&quot;'</span><span class="token punctuation">,</span>
+  <span class="token constant">ENV_CONFIG</span><span class="token operator">:</span> <span class="token string">'&quot;test&quot;'</span><span class="token punctuation">,</span>
+  <span class="token constant">API_ROOT</span><span class="token operator">:</span> <span class="token string">'&quot;http://(线上测试环境请求地址)&quot;'</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ol start="2"><li>修改dev.env.js文件</li></ol> <div class="language-js extra-class"><pre class="language-js"><code><span class="token string">'use strict'</span>
+<span class="token keyword">const</span> merge <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'webpack-merge'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> prodEnv <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./prod.env'</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 获取NODE_ENV参数const env = process.env.NODE_ENV</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token function">merge</span><span class="token punctuation">(</span>prodEnv<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token constant">NODE_ENV</span><span class="token operator">:</span> <span class="token string">'&quot;development&quot;'</span><span class="token punctuation">,</span>
+  <span class="token constant">ENV_CONFIG</span><span class="token operator">:</span> <span class="token string">'&quot;dev&quot;'</span><span class="token punctuation">,</span>
+  <span class="token constant">API_ROOT</span><span class="token operator">:</span> env <span class="token operator">===</span> <span class="token string">'development'</span> <span class="token operator">?</span> <span class="token string">'&quot;http://(线上开发环境请求地址)&quot;'</span> <span class="token operator">:</span> <span class="token string">'&quot;/api&quot;'</span> <span class="token comment">// dev环境配制了服务代理，API_ROOT的api是配制的代理地址</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><ol start="3"><li>修改prod.env.js文件</li></ol> <div class="language-js extra-class"><pre class="language-js"><code><span class="token string">'use strict'</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token constant">NODE_ENV</span><span class="token operator">:</span> <span class="token string">'&quot;production&quot;'</span><span class="token punctuation">,</span>
+  <span class="token constant">ENV_CONFIG</span><span class="token operator">:</span> <span class="token string">'&quot;prod&quot;'</span><span class="token punctuation">,</span>
+  <span class="token constant">API_ROOT</span><span class="token operator">:</span> <span class="token string">'&quot;https://(线上生产环境请求地址)&quot;'</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ol start="4"><li>修改index.js文件
+由于本地运行时会产生浏览器跨域的问题，在此文件中配置服务代理。<br>
+dev参数下修改如下配置：</li></ol> <div class="language-js extra-class"><pre class="language-js"><code>proxyTable<span class="token operator">:</span> <span class="token punctuation">{</span>
+   <span class="token comment">// api是配制的代理地址</span>
+  <span class="token string">'/api'</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    target<span class="token operator">:</span> <span class="token string">'http://(本地开发环境请求地址)'</span><span class="token punctuation">,</span>
+    changeOrigin<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 是否允许跨域</span>
+    pathRewrite<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token string">'^/api'</span><span class="token operator">:</span> <span class="token string">''</span> <span class="token comment">// 重写</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>build参数下添加如下参数：</p> <div class="language-js extra-class"><pre class="language-js"><code>devEnv<span class="token operator">:</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./dev.env'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+testEnv<span class="token operator">:</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./test.env'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+preEnv<span class="token operator">:</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./pre.env'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+prodEnv<span class="token operator">:</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./prod.env'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>参数名与文件名对应，此处参数将在 <strong>build/webpackage.prod.conf.js</strong> 中使用到<br>
+将 <strong>build</strong> 参数下的 <strong>assetsPublicPath</strong> 参数值修改为 <strong>'./'</strong> <br>
+如果项目是在跟路径下面就设为 <strong>'./'</strong> 如果是在某个目录下面，就设为 <strong>'/目录名/'</strong></p> <h3 id="四、修改项目build配置文件"><a href="#四、修改项目build配置文件" class="header-anchor">#</a> 四、修改项目build配置文件</h3> <p>修改项目build目录下的以下文件<br></p> <ol><li>修改build.js文件</li></ol> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 将以下的原代码注释</span>
+<span class="token comment">// process.env.NODE_ENV = 'production' </span>
+<span class="token comment">// const spinner = ora('building for production...')</span>
+
+<span class="token comment">// 打包时告诉你打包信息</span>
+<span class="token keyword">const</span> spinner <span class="token operator">=</span> <span class="token function">ora</span><span class="token punctuation">(</span><span class="token string">'打包的环境 '</span> <span class="token operator">+</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">+</span> <span class="token string">' of '</span> <span class="token operator">+</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">ENV_CONFIG</span> <span class="token operator">+</span> <span class="token string">' production...'</span><span class="token punctuation">)</span>
+</code></pre></div><ol start="2"><li>修改utils.js文件</li></ol> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 原代码</span>
+exports<span class="token punctuation">.</span><span class="token function-variable function">assetsPath</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">_path</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> assetsSubDirectory <span class="token operator">=</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">===</span> <span class="token string">'production'</span>
+  <span class="token operator">?</span> config<span class="token punctuation">.</span>build<span class="token punctuation">.</span>assetsSubDirectory
+  <span class="token operator">:</span> config<span class="token punctuation">.</span>dev<span class="token punctuation">.</span>assetsSubDirectory
+  <span class="token keyword">return</span> path<span class="token punctuation">.</span>posix<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>assetsSubDirectory<span class="token punctuation">,</span> _path<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 修改后(ps:就是多加了一个环境)</span>
+exports<span class="token punctuation">.</span><span class="token function-variable function">assetsPath</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">_path</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> assetsSubDirectory <span class="token operator">=</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">===</span> <span class="token string">'production'</span> <span class="token operator">||</span>  process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">===</span> <span class="token string">'testing'</span>
+  <span class="token operator">?</span> config<span class="token punctuation">.</span>build<span class="token punctuation">.</span>assetsSubDirectory
+  <span class="token operator">:</span> config<span class="token punctuation">.</span>dev<span class="token punctuation">.</span>assetsSubDirectory
+  <span class="token keyword">return</span> path<span class="token punctuation">.</span>posix<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>assetsSubDirectory<span class="token punctuation">,</span> _path<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>这里涉及到打包和本地运行时所读取的config/index.js文件中的assetsSubDirectory参数路径
+3. 修改webpack.base.conf.js文件</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 原代码</span>
+output<span class="token operator">:</span> <span class="token punctuation">{</span>
+  path<span class="token operator">:</span> config<span class="token punctuation">.</span>build<span class="token punctuation">.</span>assetsRoot<span class="token punctuation">,</span>
+  filename<span class="token operator">:</span> <span class="token string">'[name].js'</span><span class="token punctuation">,</span>
+  publicPath<span class="token operator">:</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">===</span> <span class="token string">'production'</span>
+  <span class="token operator">?</span> config<span class="token punctuation">.</span>build<span class="token punctuation">.</span>assetsPublicPath
+  <span class="token operator">:</span> config<span class="token punctuation">.</span>dev<span class="token punctuation">.</span>assetsPublicPath
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+
+<span class="token comment">// 修改后</span>
+output<span class="token operator">:</span> <span class="token punctuation">{</span>
+  path<span class="token operator">:</span> config<span class="token punctuation">.</span>build<span class="token punctuation">.</span>assetsRoot<span class="token punctuation">,</span>
+  filename<span class="token operator">:</span> <span class="token string">'[name].js'</span><span class="token punctuation">,</span>
+  publicPath<span class="token operator">:</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">===</span> <span class="token string">'production'</span> <span class="token operator">||</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">===</span> <span class="token string">'testing'</span> 
+  <span class="token operator">?</span> config<span class="token punctuation">.</span>build<span class="token punctuation">.</span>assetsPublicPath
+  <span class="token operator">:</span> config<span class="token punctuation">.</span>dev<span class="token punctuation">.</span>assetsPublicPath
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><ol start="4"><li>修改webpack.prod.conf.js文件</li></ol> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 原代码</span>
+<span class="token keyword">const</span> env <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../config/prod.env'</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 修改后</span>
+<span class="token keyword">const</span> env <span class="token operator">=</span> config<span class="token punctuation">.</span>build<span class="token punctuation">[</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">ENV_CONFIG</span><span class="token operator">+</span><span class="token string">'Env'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+</code></pre></div><p>将会根据各打包环境设置的参数选择读取 <strong>config/index.js</strong> 文件下 <strong>build</strong> 参数中设置的环境配置参数，从而读取到 <strong>config</strong> 目录下配置的各打包环境的js文件</p> <ol start="5"><li>修改vue-loader.conf.js文件</li></ol> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 原代码：</span>
+<span class="token keyword">const</span> isProduction <span class="token operator">=</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">===</span> <span class="token string">'production'</span>
+<span class="token keyword">const</span> sourceMapEnabled <span class="token operator">=</span> isProduction
+<span class="token operator">?</span> config<span class="token punctuation">.</span>build<span class="token punctuation">.</span>productionSourceMap
+<span class="token operator">:</span> config<span class="token punctuation">.</span>dev<span class="token punctuation">.</span>cssSourceMap
+
+
+<span class="token comment">// 修改为：</span>
+<span class="token keyword">const</span> isProduction <span class="token operator">=</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">===</span> <span class="token string">'production'</span> <span class="token operator">||</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">===</span> <span class="token string">'testing'</span> 
+<span class="token keyword">const</span> sourceMapEnabled <span class="token operator">=</span> isProduction
+<span class="token operator">?</span> config<span class="token punctuation">.</span>build<span class="token punctuation">.</span>productionSourceMap
+<span class="token operator">:</span> config<span class="token punctuation">.</span>dev<span class="token punctuation">.</span>cssSourceMap
+</code></pre></div><ol start="6"><li>访问请求地址</li></ol> <div class="language-js extra-class"><pre class="language-js"><code>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">API_ROOT</span>
+</code></pre></div><h2 id="vue-cli-3-x-版本"><a href="#vue-cli-3-x-版本" class="header-anchor">#</a> vue-cli 3.x 版本</h2> <h3 id="一、在根目录新增3个环境变量文件"><a href="#一、在根目录新增3个环境变量文件" class="header-anchor">#</a> 一、在根目录新增3个环境变量文件</h3> <h4 id="env-development"><a href="#env-development" class="header-anchor">#</a> .env.development</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 关闭开发环境的路由懒加载</span>
+<span class="token constant">VUE_CLI_BABEL_TRANSPILE_MODULES</span><span class="token operator">:</span><span class="token boolean">true</span>
+</code></pre></div><h4 id="env-production"><a href="#env-production" class="header-anchor">#</a> .env.production</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token constant">NODE_ENV</span><span class="token operator">=</span><span class="token string">'production'</span>
+<span class="token constant">VUE_APP_BASEURL</span><span class="token operator">=</span><span class="token string">'线上请求地址'</span>
+</code></pre></div><h4 id="env-test"><a href="#env-test" class="header-anchor">#</a> .env.test</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token constant">NODE_ENV</span><span class="token operator">=</span><span class="token string">'test'</span>
+<span class="token constant">VUE_APP_BASEURL</span><span class="token operator">=</span><span class="token string">'线上请求地址'</span>
+</code></pre></div><h3 id="二、配置-package-json"><a href="#二、配置-package-json" class="header-anchor">#</a> 二、配置 package.json</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token string">&quot;scripts&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;dev&quot;</span><span class="token operator">:</span> <span class="token string">&quot;vue-cli-service serve&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;build:test&quot;</span><span class="token operator">:</span> <span class="token string">&quot;vue-cli-service build --mode test --minimize&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;build:pro&quot;</span><span class="token operator">:</span> <span class="token string">&quot;vue-cli-service build --mode production --minimize&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;test&quot;</span><span class="token operator">:</span> <span class="token string">&quot;vue-cli-service build test:unit&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="三、访问使用"><a href="#三、访问使用" class="header-anchor">#</a> 三、访问使用</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 会根据你的打包命令，指向你对应环境配置的线上地址</span>
+process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">VUE_APP_BASEURL</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blogs/actual/一些实用的函数.html" class="prev">
+        一些好用的函数
+      </a></span> <span class="next"><a href="/blogs/actual/移动端适配方案.html">
+        基于 postcss-pxtorem
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blogs/assets/js/app.f6682633.js" defer></script><script src="/blogs/assets/js/2.3ba6d93a.js" defer></script><script src="/blogs/assets/js/15.36cec071.js" defer></script>
+  </body>
+</html>

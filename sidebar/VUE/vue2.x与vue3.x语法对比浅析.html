@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>vue2.x 与 vue3.x 语法对比浅析 | 林某人的技术博客</title>
+    <meta name="description" content="分享基础知识、踩的坑、实战demo等等">
+    <meta name="generator" content="VuePress 1.4.0">
+    <link rel="icon" href="https://www.linzefan.top/images/favicon.ico">
+  <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?0d5727949bf626613621bcc26ef60fed";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+      </script>
+    
+    <link rel="preload" href="/blogs/assets/css/0.styles.7efc2f73.css" as="style"><link rel="preload" href="/blogs/assets/js/app.f6682633.js" as="script"><link rel="preload" href="/blogs/assets/js/2.3ba6d93a.js" as="script"><link rel="preload" href="/blogs/assets/js/52.7dfc6c24.js" as="script"><link rel="prefetch" href="/blogs/assets/js/10.afee2c86.js"><link rel="prefetch" href="/blogs/assets/js/11.3e2bc908.js"><link rel="prefetch" href="/blogs/assets/js/12.88713729.js"><link rel="prefetch" href="/blogs/assets/js/13.58a66ba9.js"><link rel="prefetch" href="/blogs/assets/js/14.57e10d35.js"><link rel="prefetch" href="/blogs/assets/js/15.36cec071.js"><link rel="prefetch" href="/blogs/assets/js/16.77b49e89.js"><link rel="prefetch" href="/blogs/assets/js/17.887acfe7.js"><link rel="prefetch" href="/blogs/assets/js/18.a085c9e8.js"><link rel="prefetch" href="/blogs/assets/js/19.9080a35c.js"><link rel="prefetch" href="/blogs/assets/js/20.5d1ac224.js"><link rel="prefetch" href="/blogs/assets/js/21.a76006d3.js"><link rel="prefetch" href="/blogs/assets/js/22.b2651397.js"><link rel="prefetch" href="/blogs/assets/js/23.ccd28672.js"><link rel="prefetch" href="/blogs/assets/js/24.e42fffcf.js"><link rel="prefetch" href="/blogs/assets/js/25.2bfed8bf.js"><link rel="prefetch" href="/blogs/assets/js/26.949650b9.js"><link rel="prefetch" href="/blogs/assets/js/27.341beabf.js"><link rel="prefetch" href="/blogs/assets/js/28.193e9b0a.js"><link rel="prefetch" href="/blogs/assets/js/29.6af09bdb.js"><link rel="prefetch" href="/blogs/assets/js/3.1aa7baf7.js"><link rel="prefetch" href="/blogs/assets/js/30.25d32756.js"><link rel="prefetch" href="/blogs/assets/js/31.e1ed34e2.js"><link rel="prefetch" href="/blogs/assets/js/32.094ecee0.js"><link rel="prefetch" href="/blogs/assets/js/33.95d15345.js"><link rel="prefetch" href="/blogs/assets/js/34.76a4730b.js"><link rel="prefetch" href="/blogs/assets/js/35.60cb64f5.js"><link rel="prefetch" href="/blogs/assets/js/36.b4aff0bd.js"><link rel="prefetch" href="/blogs/assets/js/37.583d628f.js"><link rel="prefetch" href="/blogs/assets/js/38.10f1df61.js"><link rel="prefetch" href="/blogs/assets/js/39.dc600283.js"><link rel="prefetch" href="/blogs/assets/js/4.52899354.js"><link rel="prefetch" href="/blogs/assets/js/40.f9db3b93.js"><link rel="prefetch" href="/blogs/assets/js/41.74f9c9ee.js"><link rel="prefetch" href="/blogs/assets/js/42.9a390624.js"><link rel="prefetch" href="/blogs/assets/js/43.b38524bb.js"><link rel="prefetch" href="/blogs/assets/js/44.aad304d7.js"><link rel="prefetch" href="/blogs/assets/js/45.fb10845b.js"><link rel="prefetch" href="/blogs/assets/js/46.ca9c851e.js"><link rel="prefetch" href="/blogs/assets/js/47.600b4c3e.js"><link rel="prefetch" href="/blogs/assets/js/48.d0ef1f66.js"><link rel="prefetch" href="/blogs/assets/js/49.f8022ef1.js"><link rel="prefetch" href="/blogs/assets/js/5.fbc3b8f5.js"><link rel="prefetch" href="/blogs/assets/js/50.9741f61a.js"><link rel="prefetch" href="/blogs/assets/js/51.5545444c.js"><link rel="prefetch" href="/blogs/assets/js/53.7d57bb01.js"><link rel="prefetch" href="/blogs/assets/js/54.ef8bacff.js"><link rel="prefetch" href="/blogs/assets/js/6.089331c4.js"><link rel="prefetch" href="/blogs/assets/js/7.f81a77bf.js"><link rel="prefetch" href="/blogs/assets/js/8.0a3fe8a0.js"><link rel="prefetch" href="/blogs/assets/js/9.4a62a533.js">
+    <link rel="stylesheet" href="/blogs/assets/css/0.styles.7efc2f73.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blogs/" class="home-link router-link-active"><img src="https://www.linzefan.top/images/logo.jpg" alt="林某人的技术博客" class="logo"> <span class="site-name can-hide">林某人的技术博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blogs/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础篇" class="dropdown-title"><span class="title">基础篇</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/sidebar/HTML/" class="nav-link">
+  Html
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/CSS/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/JS/" class="nav-link">
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/Ajax/" class="nav-link">
+  Ajax
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/VUE/" class="nav-link router-link-active">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/REACT/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/SSR/" class="nav-link">
+  SSR
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/ES6/" class="nav-link">
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/JQUERY/" class="nav-link">
+  Jquery
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/WEBPACK/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/Git/" class="nav-link">
+  Git
+</a></li></ul></div></div><div class="nav-item"><a href="/blogs/advanced/实时通讯.html" class="nav-link">
+  进阶篇
+</a></div><div class="nav-item"><a href="/blogs/actual/" class="nav-link">
+  实战篇
+</a></div><div class="nav-item"><a href="/blogs/issue/" class="nav-link">
+  踩过的那些坑
+</a></div><div class="nav-item"><a href="http://blog.poetries.top/FE-Interview-Questions/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  大牛总结面试题
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="/blogs/Gitalk/" class="nav-link">
+  留言板
+</a></div><div class="nav-item"><a href="/blogs/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="https://github.com/linzefan0612" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blogs/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础篇" class="dropdown-title"><span class="title">基础篇</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/sidebar/HTML/" class="nav-link">
+  Html
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/CSS/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/JS/" class="nav-link">
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/Ajax/" class="nav-link">
+  Ajax
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/VUE/" class="nav-link router-link-active">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/REACT/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/SSR/" class="nav-link">
+  SSR
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/ES6/" class="nav-link">
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/JQUERY/" class="nav-link">
+  Jquery
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/WEBPACK/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/Git/" class="nav-link">
+  Git
+</a></li></ul></div></div><div class="nav-item"><a href="/blogs/advanced/实时通讯.html" class="nav-link">
+  进阶篇
+</a></div><div class="nav-item"><a href="/blogs/actual/" class="nav-link">
+  实战篇
+</a></div><div class="nav-item"><a href="/blogs/issue/" class="nav-link">
+  踩过的那些坑
+</a></div><div class="nav-item"><a href="http://blog.poetries.top/FE-Interview-Questions/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  大牛总结面试题
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="/blogs/Gitalk/" class="nav-link">
+  留言板
+</a></div><div class="nav-item"><a href="/blogs/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="https://github.com/linzefan0612" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>HTML</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>CSS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>ES6</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Jquery</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Ajax</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Vue</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blogs/sidebar/VUE/" class="sidebar-link">Vue</a></li><li><a href="/blogs/sidebar/VUE/Vue问题集合.html" class="sidebar-link">常见问题集合</a></li><li><a href="/blogs/sidebar/VUE/vue2.x与vue3.x语法对比浅析.html" class="active sidebar-link">vue2.x 与 vue3.x 语法对比浅析</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/vue2.x与vue3.x语法对比浅析.html#项目变化" class="sidebar-link">项目变化</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/vue2.x与vue3.x语法对比浅析.html#生命周期" class="sidebar-link">生命周期</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/vue2.x与vue3.x语法对比浅析.html#main-js" class="sidebar-link">main.js</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/vue2.x与vue3.x语法对比浅析.html#router-js-创建路由" class="sidebar-link">router.js 创建路由</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/vue2.x与vue3.x语法对比浅析.html#vuex-状态管理" class="sidebar-link">vuex 状态管理</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/vue2.x与vue3.x语法对比浅析.html#composition-api" class="sidebar-link">Composition API</a></li></ul></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/vue2.x与vue3.x语法对比浅析.html#使用介绍" class="sidebar-link">使用介绍</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/vue2.x与vue3.x语法对比浅析.html#setup" class="sidebar-link">setup</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/vue2.x与vue3.x语法对比浅析.html#ref-声明基础数据类型" class="sidebar-link">ref 声明基础数据类型</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/vue2.x与vue3.x语法对比浅析.html#reactive-声明响应式数据对象" class="sidebar-link">reactive 声明响应式数据对象</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/vue2.x与vue3.x语法对比浅析.html#watcheffect-监听" class="sidebar-link">watchEffect 监听</a></li></ul></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/vue2.x与vue3.x语法对比浅析.html#router-路由" class="sidebar-link">router 路由</a></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>React</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>webpack</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Git</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>SSR</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="vue2-x-与-vue3-x-语法对比浅析"><a href="#vue2-x-与-vue3-x-语法对比浅析" class="header-anchor">#</a> vue2.x 与 vue3.x 语法对比浅析</h1> <blockquote><p>转自 web 前端进阶(今日头条) https://www.toutiao.com/i6884994558560567816/?tt_from=weixin&amp;utm_campaign=client_share&amp;wxshare_count=1&amp;timestamp=1603436841&amp;app=news_article&amp;utm_source=weixin&amp;utm_medium=toutiao_android&amp;use_new_style=1&amp;req_id=202010231507210100270461532201371D&amp;group_id=6884994558560567816</p></blockquote> <h2 id="项目变化"><a href="#项目变化" class="header-anchor">#</a> 项目变化</h2> <p>vue2.x 和 vue3.x 目录结构没有什么变化，只是一些使用方法变了，而且默认是安装了 TypeScript</p> <p><img src="https://www.linzefan.top/images/sidebar/vue/%E9%A1%B9%E7%9B%AE%E5%8F%98%E5%8C%96.png" alt="Alt text"></p> <h3 id="生命周期"><a href="#生命周期" class="header-anchor">#</a> 生命周期</h3> <p>vue3.x 的生命周期也发生了一些变化，大家可以看下面这张图。</p> <p><img src="https://www.linzefan.top/images/sidebar/vue/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png" alt="Alt text"></p> <p>在项目中具体的使用方法。</p> <p><img src="https://www.linzefan.top/images/sidebar/vue/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E4%BD%BF%E7%94%A8.png" alt="Alt text"></p> <h3 id="main-js"><a href="#main-js" class="header-anchor">#</a> main.js</h3> <ul><li>vue2.x 使用 import Vue from 'vue'，然后使用 new Vue()创建实例</li> <li>vue3.x 则是 import {createApp} from 'vue'，通过 createApp()来创建实例了。</li></ul> <p>这就导致了很多的插件或 UI 组件库不能使用，比如 ElementUI、iView...</p> <p><img src="https://www.linzefan.top/images/sidebar/vue/main.png" alt="Alt text"></p> <h3 id="router-js-创建路由"><a href="#router-js-创建路由" class="header-anchor">#</a> router.js 创建路由</h3> <p>vue3.x 需要引入 createRouter 创建地址路由。</p> <ul><li>createWebHashHistory 对应之前的 hash</li> <li>createWebHistory 对应之前的 history</li></ul> <p><img src="https://www.linzefan.top/images/sidebar/vue/router.png" alt="Alt text"></p> <h3 id="vuex-状态管理"><a href="#vuex-状态管理" class="header-anchor">#</a> vuex 状态管理</h3> <p>vue3.x 中状态管理的创建方式变为了 createStore 。代码结构更精简合理。
+<img src="https://www.linzefan.top/images/sidebar/vue/vuex.png" alt="Alt text"></p> <h3 id="composition-api"><a href="#composition-api" class="header-anchor">#</a> Composition API</h3> <p>这个是 vue3.x 变化最大的地方，vue2.x 数据存放在 data，方法在 methods，通过 this 去调用。但是在 vue3.x 这些都没有了，所有的代码全部都在 setup 里面实现，你页面需要哪些方法，就要在当前页引入即可。</p> <p><img src="https://www.linzefan.top/images/sidebar/vue/comApi.png" alt="Alt text"></p> <h2 id="使用介绍"><a href="#使用介绍" class="header-anchor">#</a> 使用介绍</h2> <h3 id="setup"><a href="#setup" class="header-anchor">#</a> setup</h3> <p>setup 有两个参数 props 和 context</p> <ol><li>props：接受父组件传的值</li> <li>context：vue3.x 里面没有 this，提供了一个 context 上下文属性，你可以通过这个属性去获取进行 一些 vue2.x 用 this 实现的操作</li></ol> <p><img src="https://www.linzefan.top/images/sidebar/vue/setup%E4%BD%BF%E7%94%A8.png" alt="Alt text"></p> <h3 id="ref-声明基础数据类型"><a href="#ref-声明基础数据类型" class="header-anchor">#</a> ref 声明基础数据类型</h3> <p>创建一个响应式的基础类型，只能监听 number、String、boolean 等简单的类型，该属性一旦发生更改，都会被检测到。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
+   <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span><span class="token punctuation">{</span><span class="token punctuation">{</span>count<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>             <span class="token comment">// 1</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span>ref<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;vue&quot;</span>
+
+<span class="token function">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+   <span class="token keyword">const</span> count <span class="token operator">=</span><span class="token function">ref</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+   count<span class="token punctuation">.</span>value<span class="token operator">++</span>    <span class="token comment">//必须要加.value</span>
+   <span class="token keyword">return</span><span class="token punctuation">{</span>
+       count        <span class="token comment">//一定要return 出去</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="reactive-声明响应式数据对象"><a href="#reactive-声明响应式数据对象" class="header-anchor">#</a> reactive 声明响应式数据对象</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
+   <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span><span class="token punctuation">{</span><span class="token punctuation">{</span>count<span class="token punctuation">.</span>name<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>             <span class="token comment">// 857</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span>reactive<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;vue&quot;</span>
+
+<span class="token function">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+   <span class="token keyword">const</span> count <span class="token operator">=</span><span class="token function">reactive</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      name<span class="token operator">:</span><span class="token string">'369'</span>
+   <span class="token punctuation">}</span><span class="token punctuation">)</span>
+   count<span class="token punctuation">.</span>name<span class="token operator">=</span><span class="token string">'857'</span>
+   <span class="token keyword">return</span><span class="token punctuation">{</span>
+      count
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>###　 computed 计算属性
+computed 和 vue2.x 差不多，只是使用前要先引入。</p> <p><img src="https://www.linzefan.top/images/sidebar/vue/computed.png" alt="Alt text"></p> <h3 id="watcheffect-监听"><a href="#watcheffect-监听" class="header-anchor">#</a> watchEffect 监听</h3> <p>通过 ref 或者 reactive 去创建多个响应式的值，当任何一个值发生改变的时候，立即触发这个函数。</p> <p><img src="https://www.linzefan.top/images/sidebar/vue/watchEffect1.png" alt="Alt text"></p> <p>watchEffect 方法会返回一个 stop handle 停止监听。</p> <p><img src="https://www.linzefan.top/images/sidebar/vue/watchEffect2.png" alt="Alt text"></p> <h2 id="router-路由"><a href="#router-路由" class="header-anchor">#</a> router 路由</h2> <ul><li>vue3.x 的 router 和 route 属性也有了很大的变化</li> <li>在 vue2.x 中使用 this.$router路由跳转，this.$route 获取当前页面路由信息。</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 路由跳转</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> useRouter<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;vue-router&quot;</span><span class="token punctuation">;</span>
+<span class="token function">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">const</span> router<span class="token operator">=</span><span class="token function">useRouter</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'/path'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 获取当前页面路由信息</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> useRoute<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;vue-router&quot;</span><span class="token punctuation">;</span>
+<span class="token function">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">const</span> route<span class="token operator">=</span><span class="token function">useRoute</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>route<span class="token punctuation">)</span> <span class="token comment">//这里的route相当于vue2.x中的this.$route</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blogs/sidebar/VUE/Vue问题集合.html" class="prev">
+        常见问题集合
+      </a></span> <span class="next"><a href="/blogs/sidebar/REACT/">
+        React
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blogs/assets/js/app.f6682633.js" defer></script><script src="/blogs/assets/js/2.3ba6d93a.js" defer></script><script src="/blogs/assets/js/52.7dfc6c24.js" defer></script>
+  </body>
+</html>

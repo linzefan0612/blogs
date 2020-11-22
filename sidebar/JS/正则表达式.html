@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>正则表达式 | 林某人的技术博客</title>
+    <meta name="description" content="分享基础知识、踩的坑、实战demo等等">
+    <meta name="generator" content="VuePress 1.4.0">
+    <link rel="icon" href="https://www.linzefan.top/images/favicon.ico">
+  <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?0d5727949bf626613621bcc26ef60fed";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+      </script>
+    
+    <link rel="preload" href="/blogs/assets/css/0.styles.7efc2f73.css" as="style"><link rel="preload" href="/blogs/assets/js/app.f6682633.js" as="script"><link rel="preload" href="/blogs/assets/js/2.3ba6d93a.js" as="script"><link rel="preload" href="/blogs/assets/js/47.600b4c3e.js" as="script"><link rel="prefetch" href="/blogs/assets/js/10.afee2c86.js"><link rel="prefetch" href="/blogs/assets/js/11.3e2bc908.js"><link rel="prefetch" href="/blogs/assets/js/12.88713729.js"><link rel="prefetch" href="/blogs/assets/js/13.58a66ba9.js"><link rel="prefetch" href="/blogs/assets/js/14.57e10d35.js"><link rel="prefetch" href="/blogs/assets/js/15.36cec071.js"><link rel="prefetch" href="/blogs/assets/js/16.77b49e89.js"><link rel="prefetch" href="/blogs/assets/js/17.887acfe7.js"><link rel="prefetch" href="/blogs/assets/js/18.a085c9e8.js"><link rel="prefetch" href="/blogs/assets/js/19.9080a35c.js"><link rel="prefetch" href="/blogs/assets/js/20.5d1ac224.js"><link rel="prefetch" href="/blogs/assets/js/21.a76006d3.js"><link rel="prefetch" href="/blogs/assets/js/22.b2651397.js"><link rel="prefetch" href="/blogs/assets/js/23.ccd28672.js"><link rel="prefetch" href="/blogs/assets/js/24.e42fffcf.js"><link rel="prefetch" href="/blogs/assets/js/25.2bfed8bf.js"><link rel="prefetch" href="/blogs/assets/js/26.949650b9.js"><link rel="prefetch" href="/blogs/assets/js/27.341beabf.js"><link rel="prefetch" href="/blogs/assets/js/28.193e9b0a.js"><link rel="prefetch" href="/blogs/assets/js/29.6af09bdb.js"><link rel="prefetch" href="/blogs/assets/js/3.1aa7baf7.js"><link rel="prefetch" href="/blogs/assets/js/30.25d32756.js"><link rel="prefetch" href="/blogs/assets/js/31.e1ed34e2.js"><link rel="prefetch" href="/blogs/assets/js/32.094ecee0.js"><link rel="prefetch" href="/blogs/assets/js/33.95d15345.js"><link rel="prefetch" href="/blogs/assets/js/34.76a4730b.js"><link rel="prefetch" href="/blogs/assets/js/35.60cb64f5.js"><link rel="prefetch" href="/blogs/assets/js/36.b4aff0bd.js"><link rel="prefetch" href="/blogs/assets/js/37.583d628f.js"><link rel="prefetch" href="/blogs/assets/js/38.10f1df61.js"><link rel="prefetch" href="/blogs/assets/js/39.dc600283.js"><link rel="prefetch" href="/blogs/assets/js/4.52899354.js"><link rel="prefetch" href="/blogs/assets/js/40.f9db3b93.js"><link rel="prefetch" href="/blogs/assets/js/41.74f9c9ee.js"><link rel="prefetch" href="/blogs/assets/js/42.9a390624.js"><link rel="prefetch" href="/blogs/assets/js/43.b38524bb.js"><link rel="prefetch" href="/blogs/assets/js/44.aad304d7.js"><link rel="prefetch" href="/blogs/assets/js/45.fb10845b.js"><link rel="prefetch" href="/blogs/assets/js/46.ca9c851e.js"><link rel="prefetch" href="/blogs/assets/js/48.d0ef1f66.js"><link rel="prefetch" href="/blogs/assets/js/49.f8022ef1.js"><link rel="prefetch" href="/blogs/assets/js/5.fbc3b8f5.js"><link rel="prefetch" href="/blogs/assets/js/50.9741f61a.js"><link rel="prefetch" href="/blogs/assets/js/51.5545444c.js"><link rel="prefetch" href="/blogs/assets/js/52.7dfc6c24.js"><link rel="prefetch" href="/blogs/assets/js/53.7d57bb01.js"><link rel="prefetch" href="/blogs/assets/js/54.ef8bacff.js"><link rel="prefetch" href="/blogs/assets/js/6.089331c4.js"><link rel="prefetch" href="/blogs/assets/js/7.f81a77bf.js"><link rel="prefetch" href="/blogs/assets/js/8.0a3fe8a0.js"><link rel="prefetch" href="/blogs/assets/js/9.4a62a533.js">
+    <link rel="stylesheet" href="/blogs/assets/css/0.styles.7efc2f73.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blogs/" class="home-link router-link-active"><img src="https://www.linzefan.top/images/logo.jpg" alt="林某人的技术博客" class="logo"> <span class="site-name can-hide">林某人的技术博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blogs/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础篇" class="dropdown-title"><span class="title">基础篇</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/sidebar/HTML/" class="nav-link">
+  Html
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/CSS/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/JS/" class="nav-link router-link-active">
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/Ajax/" class="nav-link">
+  Ajax
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/VUE/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/REACT/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/SSR/" class="nav-link">
+  SSR
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/ES6/" class="nav-link">
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/JQUERY/" class="nav-link">
+  Jquery
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/WEBPACK/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/Git/" class="nav-link">
+  Git
+</a></li></ul></div></div><div class="nav-item"><a href="/blogs/advanced/实时通讯.html" class="nav-link">
+  进阶篇
+</a></div><div class="nav-item"><a href="/blogs/actual/" class="nav-link">
+  实战篇
+</a></div><div class="nav-item"><a href="/blogs/issue/" class="nav-link">
+  踩过的那些坑
+</a></div><div class="nav-item"><a href="http://blog.poetries.top/FE-Interview-Questions/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  大牛总结面试题
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="/blogs/Gitalk/" class="nav-link">
+  留言板
+</a></div><div class="nav-item"><a href="/blogs/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="https://github.com/linzefan0612" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blogs/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础篇" class="dropdown-title"><span class="title">基础篇</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/sidebar/HTML/" class="nav-link">
+  Html
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/CSS/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/JS/" class="nav-link router-link-active">
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/Ajax/" class="nav-link">
+  Ajax
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/VUE/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/REACT/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/SSR/" class="nav-link">
+  SSR
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/ES6/" class="nav-link">
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/JQUERY/" class="nav-link">
+  Jquery
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/WEBPACK/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/Git/" class="nav-link">
+  Git
+</a></li></ul></div></div><div class="nav-item"><a href="/blogs/advanced/实时通讯.html" class="nav-link">
+  进阶篇
+</a></div><div class="nav-item"><a href="/blogs/actual/" class="nav-link">
+  实战篇
+</a></div><div class="nav-item"><a href="/blogs/issue/" class="nav-link">
+  踩过的那些坑
+</a></div><div class="nav-item"><a href="http://blog.poetries.top/FE-Interview-Questions/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  大牛总结面试题
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="/blogs/Gitalk/" class="nav-link">
+  留言板
+</a></div><div class="nav-item"><a href="/blogs/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="https://github.com/linzefan0612" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>HTML</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>CSS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>JS</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blogs/sidebar/JS/" class="sidebar-link">Js 基础</a></li><li><a href="/blogs/sidebar/JS/原型链.html" class="sidebar-link">原型链</a></li><li><a href="/blogs/sidebar/JS/常用Api.html" class="sidebar-link">常用 Api</a></li><li><a href="/blogs/sidebar/JS/正则表达式.html" class="active sidebar-link">正则表达式</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blogs/sidebar/JS/正则表达式.html#何为正则？" class="sidebar-link">何为正则？</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/JS/正则表达式.html#使用规则" class="sidebar-link">使用规则</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/JS/正则表达式.html#如何使用" class="sidebar-link">如何使用</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/JS/正则表达式.html#正则分类" class="sidebar-link">正则分类</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blogs/sidebar/JS/正则表达式.html#预定义类" class="sidebar-link">预定义类</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/JS/正则表达式.html#自定义类" class="sidebar-link">自定义类</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/JS/正则表达式.html#或和优先级" class="sidebar-link">或和优先级</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/JS/正则表达式.html#简单类" class="sidebar-link">简单类</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/JS/正则表达式.html#负向类" class="sidebar-link">负向类</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/JS/正则表达式.html#组合类" class="sidebar-link">组合类</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/JS/正则表达式.html#边界类" class="sidebar-link">边界类</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/JS/正则表达式.html#严格匹配" class="sidebar-link">严格匹配</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/JS/正则表达式.html#量词" class="sidebar-link">量词</a></li></ul></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>ES6</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Jquery</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Ajax</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>React</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>webpack</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Git</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>SSR</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="正则表达式"><a href="#正则表达式" class="header-anchor">#</a> 正则表达式</h1> <blockquote><p>ps 其实现在都不会自己写正则啦，百度 CV！</p></blockquote> <h2 id="何为正则？"><a href="#何为正则？" class="header-anchor">#</a> 何为正则？</h2> <p>正则表达式，简单来说就是一套规则
+规则是程序员自己定的，用来判断页面的某个内容是否匹配你这个规则</p> <h2 id="使用规则"><a href="#使用规则" class="header-anchor">#</a> 使用规则</h2> <p>你要用正则，就需要先 new 一个正则对象
+RegExp 正则对象
+new RegExp(规则);
+调用 test 方法来判断是否符合规则，符合得到 true，不符合得到 false
+正则字面量创建： /规则/ 记得//中间要写规则</p> <h2 id="如何使用"><a href="#如何使用" class="header-anchor">#</a> 如何使用</h2> <div class="language- extra-class"><pre class="language-text"><code>// 正则也有字面量创建方法，正则的符号：/规则/ 就是正则符号
+
+var reg = /男/; //等同于var reg = new RegExp('男');
+console.log(reg.test('强人锁男')); //true
+console.log(reg.test('左右为男')); //true
+
+// 判断内容是否包含女
+console.log(/女/.test('2020大家都能找到女朋友')); //true
+</code></pre></div><h2 id="正则分类"><a href="#正则分类" class="header-anchor">#</a> 正则分类</h2> <h3 id="预定义类"><a href="#预定义类" class="header-anchor">#</a> 预定义类</h3> <p>预定义类：其实正则里提前规定好的一些特殊符号，用来表达对应的意思</p> <ul><li>. ： 代表判断内容是否有 除了\r，\n 以外</li> <li>\d : 只要有数字（有没有 0</li> <li>\D ： 只要有非数字(除了 0 到 9 以</li> <li>\s ： 不可见字符，你打印的时候看不到，例如：空格，再例如\r \n</li> <li>\S ： 可</li> <li>\w ： 单词字符（ 字母、数字、下划</li> <li>\W ： 非单词字符（找除了字母、数字、下划线以外的）</li></ul> <h4 id="demo"><a href="#demo" class="header-anchor">#</a> Demo</h4> <div class="language- extra-class"><pre class="language-text"><code>// console.log(/./.test('哈哈哈')); //true
+// console.log(/./.test('\r')); //false
+// console.log(/./.test('\n')); //false
+// console.log(/./.test('\na')); //true
+// console.log(/./.test('\n ')); //true
+// console.log(/./.test(&quot;\r&quot;)); //false
+// console.log(/./.test(&quot;\r\n&quot;)); //false
+// console.log(/./.test(&quot;&quot; + &quot;&quot;));   //false   得到空字符串,空字符串是啥都没有，就是false
+// console.log(/./.test(&quot;\r1&quot;));//true
+// console.log(/./.test(&quot;32435dh1&quot;));//true
+// console.log(/./.test(&quot;d&quot;));//true
+
+//---------\d	数字字符--------------------------------------
+// console.log(/\d/.test(&quot;abc&quot;));  //false
+// console.log(/\d/.test(&quot;!@#$&quot;));  //false
+// console.log(/\d/.test(&quot;!@#$adfgethfe&quot;)); //false
+// console.log(/\d/.test(&quot;!@#$adfgethfe1&quot;));  //true
+// console.log(/\d/.test(&quot;123456&quot;));  //true
+
+//---------\D		非数字字符--------------------------------------
+//test检测： 只要被检测的字符串中包含了非数字字符,那么结果就是true.
+// console.log(/\D/.test(&quot;abc&quot;));   //true
+// console.log(/\D/.test(&quot;!@#$&quot;));  //true
+// console.log(/\D/.test(&quot;!@#$adfgethfe&quot;));//true
+// console.log(/\D/.test(&quot;!@#$adfgethfe1&quot;)); //true
+// console.log(/\D/.test(&quot;13243546b576871&quot;)); //true
+// console.log(/\D/.test(&quot;123456&quot;)); //false
+
+//--------\s  不可见字符-----------------------------------------
+// console.log(/\s/.test(&quot;abc\r&quot;)); //true
+// console.log(/\s/.test(&quot;abc\n&quot;)); //true
+// console.log(/\s/.test(&quot;abc\r\n&quot;));//true
+// console.log(/\s/.test(&quot; &quot;));    //true
+// console.log(/\s/.test(&quot;&quot; + &quot;&quot;));   //false  拼接后变成空字符串,空字符串毛都没有，你说要找不可见字符就找不到，找不到得false
+// console.log(/\s/.test(&quot;\r\n\t\r&quot;)); //true
+// console.log(/\s/.test(&quot;abcdeg&quot;)); //false
+// console.log(/\s/.test(&quot;12354676&quot;)); //false
+// console.log(/\s/.test(&quot;12354676aahgrjtj&quot;)); //false
+// console.log(/\s/.test(&quot;12354676aahgrjtj!@#$&quot;));//false
+
+ //--------\S  可见字符-----------------------------------------
+// console.log(/\S/.test(&quot;abc\r&quot;));  //true
+// console.log(/\S/.test(&quot;abc\n&quot;));   //true
+// console.log(/\S/.test(&quot;abc\r\n&quot;));   //true
+// console.log(/\S/.test(&quot; &quot;));   //false
+// console.log(/\S/.test(&quot;\r\n\t\r&quot;));  //false
+// console.log(/\S/.test(&quot;abcdeg&quot;));  //true
+
+//------ \w 单词字符(所有的字母数字和_)--------------------------------
+// console.log(/\w/.test(&quot;!@#$%#@#$%$#@&quot;));  //false
+// console.log(/\w/.test(&quot;!@#$%#@#$%$#@a&quot;)); //true
+// console.log(/\w/.test(&quot;!@#$%#@0#$%$#@&quot;));  //true
+// console.log(/\w/.test(&quot;!@#$%#@_#$%$#@&quot;));  //true
+// console.log(/\w/.test(&quot;!!!!!1234567&quot;)); //true
+// console.log(/\w/.test(&quot;!!!!!&quot;)); //false
+
+//------ \W 非单词字符(所有的字母数字和_ 简单来说找特殊符号)--------------------------------
+//    console.log(/\W/.test(&quot;abcserge3&quot;)); //false
+//    console.log(/\W/.test(&quot;fsdgetherg!&quot;));//true
+//    console.log(/\W/.test(&quot;!123456@&quot;));//true
+//    console.log(/\W/.test(&quot;!@#$%#@_#$%$#@&quot;));//true
+//    console.log(/\W/.test(&quot;!!!!!1234567&quot;));//true
+//    console.log(/\W/.test(&quot;!!!!!&quot;));//true
+
+
+</code></pre></div><h3 id="自定义类"><a href="#自定义类" class="header-anchor">#</a> 自定义类</h3> <p>自定义类：就是自己设置的内容</p> <h4 id="demo-2"><a href="#demo-2" class="header-anchor">#</a> Demo</h4> <div class="language- extra-class"><pre class="language-text"><code>//  找数字
+//  console.log(/\d/.test(123) );//true
+
+//  这个代表找有没有d这个单词
+//  console.log(/d/.test(123) ); //false
+
+//  找有没有@这个符号
+//  console.log(/@/.test(123) ); //false
+//  console.log(/@/.test('dsada@dsd.com') ); //true
+
+
+//  自定义类
+//  你用test检测的字符串里面，有没有包含d这个字母。如果有就是true.
+// console.log(/d/.test(&quot;123&quot;)); //false
+// console.log(/d/.test(&quot;123d&quot;)); //true
+
+
+
+//你用test检测的字符串里面， 有没有包含nihao，，如果有就是true.
+// console.log(/nihao/.test(&quot;ni&quot;)); //false
+// console.log(/nihao/.test(&quot;hao&quot;));  //false
+// console.log(/nihao/.test(&quot;nihao&quot;));  //true
+// console.log(/nihao/.test(&quot;ninihaohao&quot;)); //true
+// console.log(/nihao/.test(&quot;nini.haohao&quot;)); //false
+// console.log(/nihao/.test(&quot;nihaonihao&quot;)); //true
+// console.log(/nihao/.test(&quot;你好不好,hao&quot;)); //false
+// console.log(/nihao/.test(&quot;ni2hao3&quot;)); //false
+
+
+// 参数：
+// i: 忽略大小写
+// g：全局匹配（暂时无法演示）
+
+console.log(/a/.test('aaaaaaaa')); //true
+console.log(/a/.test('AAAAAAAA')); //false
+
+// 忽略大小写
+console.log(/a/i.test('AAAAAAAA')); //true
+</code></pre></div><h3 id="或和优先级"><a href="#或和优先级" class="header-anchor">#</a> 或和优先级</h3> <p>在正则里一个 | 就代表或，就是要么匹配左边，要么匹配右边
+()代表优先级，先用小括号得到结果</p> <h4 id="demo-3"><a href="#demo-3" class="header-anchor">#</a> Demo</h4> <div class="language- extra-class"><pre class="language-text"><code>// 要么有ni，要么有hao
+// console.log(/ni|hao/.test(&quot;ni&quot;)); //true
+// console.log(/ni|hao/.test(&quot;hao&quot;));  //true
+// console.log(/ni|hao/.test(&quot;nihao&quot;)); //true
+// console.log(/ni|hao/.test(&quot;ninihaohao&quot;));  //true
+// console.log(/ni|hao/.test(&quot;nihaonihao&quot;));  //true
+// console.log(/ni|hao/.test(&quot;ni真牛&quot;));  //true
+// console.log(/ni|hao/.test(&quot;nhiao&quot;)); //false
+
+// 先小括号得到结果，要么有h要么有a，然后跟外面组合，得到要么niho 要么niao
+// 最终找heia或者hema
+// console.log(/ni(h|a)o/.test(&quot;ni&quot;)); //false
+// console.log(/ni(h|a)o/.test(&quot;hao&quot;)); //false
+// console.log(/ni(h|a)o/.test(&quot;nihao&quot;)); //false
+// console.log(/ni(h|a)o/.test(&quot;niho&quot;)); //true
+// console.log(/ni(h|a)o/.test(&quot;niao&quot;)); //true
+// console.log(/ni(h|a)o/.test(&quot;nihaonihao&quot;)); //false
+// console.log(/ni(h|a)o/.test(&quot;nihonihao&quot;)); //true
+// console.log(/ni(h|a)o/.test(&quot;nihaonihaoniao&quot;));//true
+// console.log(/ni(h|a)o/.test(&quot;nihnihonihao&quot;));//true
+// console.log(/ni(h|a)o/.test(&quot;nihaoniao&quot;)); //false
+</code></pre></div><h3 id="简单类"><a href="#简单类" class="header-anchor">#</a> 简单类</h3> <p>[]：代表只要出现中括号中的某一个都算匹配</p> <h4 id="demo-4"><a href="#demo-4" class="header-anchor">#</a> Demo</h4> <div class="language- extra-class"><pre class="language-text"><code>// 132a中某一个
+// console.log(/[132a]/.test('abcdefg')); //true
+
+// 找132a
+// console.log(/132a/.test('abcdefg')); //false
+
+// 找abc中的任意一个
+// console.log(/[abc]/.test(&quot;a&quot;)); //true
+// console.log(/[abc]/.test(&quot;b&quot;)); //true
+// console.log(/[abc]/.test(&quot;c&quot;)); //true
+// console.log(/[abc]/.test(&quot;123456a&quot;)); //true
+// console.log(/[abc]/.test(&quot;123456abcabc&quot;)); //true
+// console.log(/[abc]/.test(&quot;123456&quot;));//false
+// console.log(/[abc]/.test(&quot;ddddddddd!!!!!!&quot;));//false
+// console.log(/[abc]/.test(&quot;dddddbdddd!!!!!!&quot;));//true
+// console.log(/[abc]/.test(&quot;dddddBdddd!!!!!!&quot;)); //false
+
+// 忽略大小写（不区分大小写）
+// console.log(/[abc]/i.test(&quot;dddddBdddd!!!!!!&quot;)); //true
+
+// 中间是要么a要么b要么c，所以最终组成 yaz 或者 ybz 或者 ycz
+// console.log(/y[abc]z/.test(&quot;yaz&quot;));  //true
+// console.log(/y[abc]z/.test(&quot;ybz&quot;));  //true
+// console.log(/y[abc]z/.test(&quot;ycz&quot;));  //true
+// console.log(/y[abc]z/.test(&quot;yz&quot;));  //false
+// console.log(/y[abc]z/.test(&quot;yabcz&quot;)); //false
+// console.log(/y[abc]z/.test(&quot;yazybzycz&quot;)); //true
+
+// 找yaaz  ybbz yccz
+console.log(/y(aa|bb|cc)z/.test(&quot;yaaz&quot;)); //true
+</code></pre></div><h3 id="负向类"><a href="#负向类" class="header-anchor">#</a> 负向类</h3> <p>[^] 负向类,不能有这些,匹配到没有的</p> <h4 id="demo-5"><a href="#demo-5" class="header-anchor">#</a> Demo</h4> <div class="language- extra-class"><pre class="language-text"><code>console.log(/[^abc]/.test('a')); //false
+console.log(/[^abc]/.test('ad')); //true
+
+
+console.log(/[^abc]/.test('abcabc'));//false
+console.log(/[^abc]/.test('abcabcd'));//true
+console.log(/[^abc]/.test('ad')); //true
+</code></pre></div><h3 id="组合类"><a href="#组合类" class="header-anchor">#</a> 组合类</h3> <p>组合类：把多个组合在一起
+在正则中-代表到  所以a-z 就是从a到z任意一个字母</p> <h4 id="demo-6"><a href="#demo-6" class="header-anchor">#</a> Demo</h4> <div class="language- extra-class"><pre class="language-text"><code>// 找要么a-m之间的要么1-5之间的
+// [a-m1-5]相当于写的是 [abcdefghijklm12345]。只要找到中间某一个
+// console.log(/[a-m1-5]/.test(&quot;b&quot;)); //true  
+// console.log(/[a-m1-5\n]/.test(&quot;2&quot;)) //true
+// console.log(/[a-m1-5]/.test(&quot;65666&quot;))//true
+// console.log(/[a-m1-5]/.test(&quot;6666&quot;)) //false
+// console.log(/[a-m1-5\n]/.test(&quot;ttttyyyyzzz66666&quot;))//false
+
+
+// 要有2个字符
+// 左边要满足不是0-5，右边要满足不是a-g
+// console.log(/[^0-5][^a-g]/.test(&quot;6z&quot;));  //true
+// console.log(/[^0-5][^a-g]/.test(&quot;6z7y&quot;)); //true
+// console.log(/[^0-5][^a-g]/.test(&quot;4&quot;)); //false
+// console.log(/[^0-5][^a-g]/.test(&quot;4b&quot;)); //false
+// console.log(/[^0-5][^a-g]/.test(&quot;4yaaabbbccc&quot;)); //false
+// console.log(/[^0-5][^a-g]/.test(&quot;4yaaabbbc7cc&quot;));   //true 
+// console.log(/[^0-5][^a-g]/.test(&quot;4yaaabbbc7cc9x&quot;));  //true
+
+
+// 因为有或代表1位就行了，要么满足不是0-5，要么满足不是a-g
+// console.log(/[^0-5]|[^a-g]/.test(&quot;4b&quot;));  //true
+// console.log(/[^0-5]|[^a-g]/.test(&quot;2&quot;));    //true
+
+// 要么满足不是0-7 要么满足不是5-9
+// console.log(/[^0-7]|[^5-9]/.test(&quot;8&quot;));    //true
+// console.log(/[^0-7]|[^5-9]/.test(&quot;5&quot;));  //false
+// console.log(/[^0-7]|[^5-9]/.test(&quot;567&quot;)); //false
+// console.log(/[^0-7]|[^5-9]/.test(&quot;5678&quot;));   //true
+
+// 要么满足不是0-7 要么满足 三位数(第一位不是5-9，第二位abcd任何一个，第三位固定a)
+// console.log(/[^0-7]|[^5-9][abcd]a/.test(&quot;5678&quot;));   //true
+
+// 第一位： 要么可满足不是0-7 要么满足不是5-9
+// 第二位：abcd随便一个
+// 第三位：a
+// console.log(/([^0-7]|[^5-9])[abcd]a/.test(&quot;5678&quot;));   //false
+// console.log(/([^0-7]|[^5-9])[abcd]a/.test(&quot;aaa&quot;));   //true
+// console.log(/([^0-7]|[^5-9])[abcd]a/.test(&quot;aaaa&quot;));   //true
+// console.log(/([^0-7]|[^5-9])[abcd]a/.test(&quot;aaab&quot;));   //true
+// console.log(/([^0-7]|[^5-9])[abcd]a/.test(&quot;aa&quot;));   //false
+</code></pre></div><h3 id="边界类"><a href="#边界类" class="header-anchor">#</a> 边界类</h3> <p>[^] 负向类
+^： 以什么开头
+$： 以什么结尾</p> <h4 id="demo-7"><a href="#demo-7" class="header-anchor">#</a> Demo</h4> <div class="language- extra-class"><pre class="language-text"><code>a. ^ 会匹配行或者字符串的起始位置
+// console.log(/\d/.test(&quot;aaabb123ccc&quot;));   //true
+
+// 这个代表找以数字开头
+// console.log(/^\d/.test(&quot;aaabb123ccc&quot;));  //false
+// console.log(/^\d/.test(&quot;1aaabb123ccc&quot;)); //true
+// console.log(/^\d/.test(&quot;1aaabbccc&quot;)); //true
+
+// 以6a开头
+// console.log(/^6a/.test(&quot;6666677776abbbb&quot;)); //false
+// console.log(/^6a/.test(&quot;6a7777777&quot;)); //true
+// console.log(&quot;=====================================&quot;);
+// console.log(/^6/.test(&quot;6&quot;));  //true
+// console.log(/^6/.test(&quot;76&quot;)); //false
+
+// 以6和除了\r\n以外的字符以及a 开头
+// console.log(/^6.a/.test(&quot;666abat &quot;));  //false
+// console.log(/^6.a/.test(&quot;66abat &quot;)); //true
+// console.log(/^6.a/.test(&quot;6*abat &quot;)); //true
+// console.log(/^6.a/.test(&quot;6\nabat &quot;)); //false
+
+// +是修饰它前一位的，代表让它前一位出现一次或多次
+// 以6开头，6出现至少1次，最多不限。后面必须接a
+// console.log(/^6+a/.test(&quot;6666a77776abbbb&quot;));  //true
+// console.log(/^6+a/.test(&quot;6a77776abbbb&quot;));  //true
+// console.log(/^6+a/.test(&quot;66666667a77776abbbb&quot;));  //false
+// console.log(/^6+a/.test(&quot;6666666aa77776abbbb&quot;));  //true
+
+----------------------------------------------------------
+
+b.$ 会匹配行或字符串的结尾位置
+// console.log(/ac/.test(&quot;ac777&quot;)); //true
+// console.log(/ac/.test(&quot;77ac7&quot;)); //true
+
+// 以ac结尾
+// console.log(/ac$/.test(&quot;ac777&quot;)); //false
+// console.log(/ac$/.test(&quot;777ac&quot;)); //true
+
+//  严格匹配  只能出现一次
+//  console.log(/^bc/.test(&quot;bcbcbc&quot;)); //bc开头，true
+//  console.log(/bc$/.test(&quot;bcbcbc&quot;)); //bc结尾，true
+ 
+//  有^和$就代表严格匹配，中间的内容就是它只能出现的内容，只能出现1次
+//  console.log(/^bc$/.test(&quot;bcbcbc&quot;)); //false
+
+// 只要有bc就可以了
+// console.log(/bc/.test(&quot;bcbcbc&quot;)); //true
+// console.log(/^bc$/.test(&quot;bc&quot;)); //true
+// console.log(/\d/.test('abdsfdsfgd1')); //true
+// console.log(/^\d$/.test('abdsfdsfgd1')); //false
+// console.log(/^\d$/.test('111111')); //false
+// console.log(/^\d$/.test('1')); //true
+// console.log(/^\d$/.test('1')); //true
+// console.log(/^\d+$/.test('132334523')); //true
+// console.log(/^\d+$/.test('132334523a')); //false
+</code></pre></div><h3 id="严格匹配"><a href="#严格匹配" class="header-anchor">#</a> 严格匹配</h3> <p>^ 以什么开头
+$ 以什么结尾
+^ 和 $  符合中间要求的只能出现一次,不能有别的东西</p> <h4 id="demo-8"><a href="#demo-8" class="header-anchor">#</a> Demo</h4> <div class="language- extra-class"><pre class="language-text"><code>//  console.log(/abc/.test(&quot;abc&quot;));  //true
+//  console.log(/abc/.test(&quot;abcabcabc&quot;)); //tru
+
+//   console.log(/^abc$/.test(&quot;abcabcabc&quot;));  //false
+//   console.log(/^abc$/.test(&quot;abc&quot;));  //true
+//   console.log(/^abc$/.test(&quot;abc1&quot;)); //false
+//   console.log(/^abc$/.test(&quot;aabc&quot;)); //false
+
+//自定义类,只要检测的字符串中包含数字就是true.
+
+//    console.log(/\d/.test(&quot;1&quot;)); //true
+//    console.log(/\d/.test(&quot;12345&quot;));//true
+//    console.log(/\d/.test(&quot;abc12345def&quot;));//true
+//    console.log(/\d/.test(&quot;abc1&quot;));//true
+//    console.log(/^\d$/.test(&quot;1&quot;)); //true
+//    console.log(/^\d$/.test(&quot;12345&quot;)); //false
+//    console.log(/^\d$/.test(&quot;abc12345def&quot;));//false
+//    console.log(/^\d$/.test(&quot;abc1def&quot;));//false
+//    console.log(/^\d$/.test(&quot;abc1&quot;));//false
+//    console.log(/^\d$/.test(&quot;a&quot;));//false
+
+// {2} 代表必须出现2次
+// 必须有2位数字，不能别的东西
+// console.log(/^\d{2}$/.test(&quot;22&quot;));//true
+// console.log(/^\d{2}$/.test(&quot;223&quot;));//false
+// console.log(/^\d{2}$/.test(&quot;22b&quot;));//false
+// console.log(/^\d$/.test(&quot;9&quot;));//true
+
+// abc加任意数字 不能有别的东西了
+//    console.log(/^abc\d$/.test(&quot;abc7&quot;));//true
+//    console.log(/^abc\d$/.test(&quot;abc7abc9&quot;)); //false
+//    console.log(/abc\d/.test(&quot;abc7abc9&quot;));//true
+</code></pre></div><h3 id="量词"><a href="#量词" class="header-anchor">#</a> 量词</h3> <ul><li>&quot;*&quot;	重复零次或更多 x&gt;=0          {0,}    //次数要 &gt;= 0</li> <li>&quot;+&quot;	重复一次或更多次 x&gt;=1        {1,}    // 至少1次</li> <li>&quot;?&quot;	重复零次或一次  x=(0||1)     {0,1}</li> <li>{n}	n次	x=n                             // 必须匹配n次，例{5} ，必须有5次</li> <li>{n,}	重复n次或更多  x&gt;=n                // 至少n次，多了不限 例： {5,} 至少5次，多了随便</li> <li>{n,m} 重复出现的次数比n多但比m少 n&lt;=x&lt;=m  // n次以上，m次以下  例：  {5,8} 至少5次，最多8次</li></ul> <h4 id="demo-9"><a href="#demo-9" class="header-anchor">#</a> Demo</h4> <div class="language- extra-class"><pre class="language-text"><code>1. *  重复零次或更多 x&gt;=0 
+// 只要有color
+// console.log(/color/.test(&quot;color&quot;));  //true
+// console.log(/color/.test(&quot;colorcolor&quot;));  //true
+
+// 严格匹配的内容是： colo(0次或多次)r  例： colr  color  coloor colooooooor
+// console.log(/^colo*r$/.test(&quot;colr&quot;)); //true
+
+//  console.log(/^colo*r$/.test(&quot;color&quot;)); //true
+//  console.log(/^colo*r$/.test(&quot;coloor&quot;)); //true
+//  console.log(/^colo*r$/.test(&quot;colooor&quot;)); //true
+//  console.log(/^colo*r$/.test(&quot;colooorcolooor&quot;));//false  
+//  console.log(/^colo*r$/.test(&quot;olooor&quot;));  //false
+
+//  整体的color可以没有，或者有多次
+//   console.log(/^(color)*$/.test(&quot;&quot;));//true
+//   console.log(/^(color)*$/.test(&quot;1&quot;));//false
+//   console.log(/^(color)*$/.test(&quot;color&quot;)); //true
+//   console.log(/^(color)*$/.test(&quot;colorcolor&quot;));//true
+//   console.log(/^(color)*$/.test(&quot;colorcolorcolor&quot;));//true
+//   console.log(/^(color)*$/.test(&quot;1colorcolorcolor&quot;)); //false
+
+//   没有*了，只能有1个color
+//   console.log(/^(color)$/.test(&quot;colorcolorcolor&quot;));  //false
+
+2. + ：1次或多次
+    
+// l后面的那个o至少出现1次
+//  console.log(/^colo+r$/.test(&quot;colr&quot;));  //false
+//  console.log(/^colo+r$/.test(&quot;color&quot;)); //true
+//  console.log(/^colo+r$/.test(&quot;coloor&quot;)); //true
+//  console.log(/^colo+r$/.test(&quot;colooor&quot;)); //true
+//  console.log(/^colo+r$/.test(&quot;colooorcolooor&quot;));   //false
+
+
+
+3. ? 0或1次
+// l后面的o要么有1次要么没有，并且严格匹配
+// console.log(/^colo?r$/.test(&quot;colr&quot;)); //true
+// console.log(/^colo?r$/.test(&quot;color&quot;)); //true
+// console.log(/^colo?r$/.test(&quot;coloor&quot;)); //false
+// console.log(/^colo?r$/.test(&quot;colooor&quot;)); //false
+// console.log(/^colo?r$/.test(&quot;colooorcolooor&quot;)); //false  
+// console.log(/^colo?r$/.test(&quot;colorcolor&quot;));   //false
+
+4. {n} n次	x=n  
+// 必须符合 coloor ,其他一切都不行
+// console.log(/^colo{2}r$/.test(&quot;colr&quot;)); //false
+// console.log(/^colo{2}r$/.test(&quot;color&quot;));//false
+// console.log(/^colo{2}r$/.test(&quot;coloor&quot;));//true
+// console.log(/^colo{2}r$/.test(&quot;colooor&quot;));//false
+// console.log(/^colo{2}r$/.test(&quot;coloorcoloor&quot;));  //false
+// console.log(/^colo{2}r$/.test(&quot;coloorc&quot;)); //false
+
+
+5. {n,}  重复n次或更多  x&gt;=n 
+// coloor 或者 colooooooooooooor 等，l后面的o至少2次
+// console.log(/^colo{2,}r$/.test(&quot;colr&quot;)); //false
+// console.log(/^colo{2,}r$/.test(&quot;color&quot;)); //false
+// console.log(/^colo{2,}r$/.test(&quot;coloor&quot;));//true
+// console.log(/^colo{2,}r$/.test(&quot;colooor&quot;));//true
+// console.log(/^colo{2,}r$/.test(&quot;coloorcoloor&quot;));  //false
+
+
+6. {n,m} 重复出现的次数比n多但比m少 n&lt;=x&lt;=m
+// 只能匹配coloor  或者 colooor
+// console.log(/^colo{2,3}r$/.test(&quot;colr&quot;));  //false
+// console.log(/^colo{2,3}r$/.test(&quot;color&quot;)); //false
+// console.log(/^colo{2,3}r$/.test(&quot;coloor&quot;)); //true
+// console.log(/^colo{2,3}r$/.test(&quot;colooor&quot;));//true
+// console.log(/^colo{2,3}r$/.test(&quot;coloooor&quot;));//false
+// console.log(/^colo{2,3}r$/.test(&quot;coloorcoloor&quot;));  //false
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blogs/sidebar/JS/常用Api.html" class="prev">
+        常用 Api
+      </a></span> <span class="next"><a href="/blogs/sidebar/ES6/箭头函数及变量声明.html">
+        箭头函数及变量声明
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blogs/assets/js/app.f6682633.js" defer></script><script src="/blogs/assets/js/2.3ba6d93a.js" defer></script><script src="/blogs/assets/js/47.600b4c3e.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Vue | 林某人的技术博客</title>
+    <meta name="description" content="分享基础知识、踩的坑、实战demo等等">
+    <meta name="generator" content="VuePress 1.4.0">
+    <link rel="icon" href="https://www.linzefan.top/images/favicon.ico">
+  <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?0d5727949bf626613621bcc26ef60fed";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+      </script>
+    
+    <link rel="preload" href="/blogs/assets/css/0.styles.7efc2f73.css" as="style"><link rel="preload" href="/blogs/assets/js/app.f6682633.js" as="script"><link rel="preload" href="/blogs/assets/js/2.3ba6d93a.js" as="script"><link rel="preload" href="/blogs/assets/js/50.9741f61a.js" as="script"><link rel="prefetch" href="/blogs/assets/js/10.afee2c86.js"><link rel="prefetch" href="/blogs/assets/js/11.3e2bc908.js"><link rel="prefetch" href="/blogs/assets/js/12.88713729.js"><link rel="prefetch" href="/blogs/assets/js/13.58a66ba9.js"><link rel="prefetch" href="/blogs/assets/js/14.57e10d35.js"><link rel="prefetch" href="/blogs/assets/js/15.36cec071.js"><link rel="prefetch" href="/blogs/assets/js/16.77b49e89.js"><link rel="prefetch" href="/blogs/assets/js/17.887acfe7.js"><link rel="prefetch" href="/blogs/assets/js/18.a085c9e8.js"><link rel="prefetch" href="/blogs/assets/js/19.9080a35c.js"><link rel="prefetch" href="/blogs/assets/js/20.5d1ac224.js"><link rel="prefetch" href="/blogs/assets/js/21.a76006d3.js"><link rel="prefetch" href="/blogs/assets/js/22.b2651397.js"><link rel="prefetch" href="/blogs/assets/js/23.ccd28672.js"><link rel="prefetch" href="/blogs/assets/js/24.e42fffcf.js"><link rel="prefetch" href="/blogs/assets/js/25.2bfed8bf.js"><link rel="prefetch" href="/blogs/assets/js/26.949650b9.js"><link rel="prefetch" href="/blogs/assets/js/27.341beabf.js"><link rel="prefetch" href="/blogs/assets/js/28.193e9b0a.js"><link rel="prefetch" href="/blogs/assets/js/29.6af09bdb.js"><link rel="prefetch" href="/blogs/assets/js/3.1aa7baf7.js"><link rel="prefetch" href="/blogs/assets/js/30.25d32756.js"><link rel="prefetch" href="/blogs/assets/js/31.e1ed34e2.js"><link rel="prefetch" href="/blogs/assets/js/32.094ecee0.js"><link rel="prefetch" href="/blogs/assets/js/33.95d15345.js"><link rel="prefetch" href="/blogs/assets/js/34.76a4730b.js"><link rel="prefetch" href="/blogs/assets/js/35.60cb64f5.js"><link rel="prefetch" href="/blogs/assets/js/36.b4aff0bd.js"><link rel="prefetch" href="/blogs/assets/js/37.583d628f.js"><link rel="prefetch" href="/blogs/assets/js/38.10f1df61.js"><link rel="prefetch" href="/blogs/assets/js/39.dc600283.js"><link rel="prefetch" href="/blogs/assets/js/4.52899354.js"><link rel="prefetch" href="/blogs/assets/js/40.f9db3b93.js"><link rel="prefetch" href="/blogs/assets/js/41.74f9c9ee.js"><link rel="prefetch" href="/blogs/assets/js/42.9a390624.js"><link rel="prefetch" href="/blogs/assets/js/43.b38524bb.js"><link rel="prefetch" href="/blogs/assets/js/44.aad304d7.js"><link rel="prefetch" href="/blogs/assets/js/45.fb10845b.js"><link rel="prefetch" href="/blogs/assets/js/46.ca9c851e.js"><link rel="prefetch" href="/blogs/assets/js/47.600b4c3e.js"><link rel="prefetch" href="/blogs/assets/js/48.d0ef1f66.js"><link rel="prefetch" href="/blogs/assets/js/49.f8022ef1.js"><link rel="prefetch" href="/blogs/assets/js/5.fbc3b8f5.js"><link rel="prefetch" href="/blogs/assets/js/51.5545444c.js"><link rel="prefetch" href="/blogs/assets/js/52.7dfc6c24.js"><link rel="prefetch" href="/blogs/assets/js/53.7d57bb01.js"><link rel="prefetch" href="/blogs/assets/js/54.ef8bacff.js"><link rel="prefetch" href="/blogs/assets/js/6.089331c4.js"><link rel="prefetch" href="/blogs/assets/js/7.f81a77bf.js"><link rel="prefetch" href="/blogs/assets/js/8.0a3fe8a0.js"><link rel="prefetch" href="/blogs/assets/js/9.4a62a533.js">
+    <link rel="stylesheet" href="/blogs/assets/css/0.styles.7efc2f73.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blogs/" class="home-link router-link-active"><img src="https://www.linzefan.top/images/logo.jpg" alt="林某人的技术博客" class="logo"> <span class="site-name can-hide">林某人的技术博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blogs/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础篇" class="dropdown-title"><span class="title">基础篇</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/sidebar/HTML/" class="nav-link">
+  Html
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/CSS/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/JS/" class="nav-link">
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/Ajax/" class="nav-link">
+  Ajax
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/VUE/" class="nav-link router-link-exact-active router-link-active">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/REACT/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/SSR/" class="nav-link">
+  SSR
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/ES6/" class="nav-link">
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/JQUERY/" class="nav-link">
+  Jquery
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/WEBPACK/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/Git/" class="nav-link">
+  Git
+</a></li></ul></div></div><div class="nav-item"><a href="/blogs/advanced/实时通讯.html" class="nav-link">
+  进阶篇
+</a></div><div class="nav-item"><a href="/blogs/actual/" class="nav-link">
+  实战篇
+</a></div><div class="nav-item"><a href="/blogs/issue/" class="nav-link">
+  踩过的那些坑
+</a></div><div class="nav-item"><a href="http://blog.poetries.top/FE-Interview-Questions/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  大牛总结面试题
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="/blogs/Gitalk/" class="nav-link">
+  留言板
+</a></div><div class="nav-item"><a href="/blogs/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="https://github.com/linzefan0612" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blogs/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础篇" class="dropdown-title"><span class="title">基础篇</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/sidebar/HTML/" class="nav-link">
+  Html
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/CSS/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/JS/" class="nav-link">
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/Ajax/" class="nav-link">
+  Ajax
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/VUE/" class="nav-link router-link-exact-active router-link-active">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/REACT/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/SSR/" class="nav-link">
+  SSR
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/ES6/" class="nav-link">
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/JQUERY/" class="nav-link">
+  Jquery
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/WEBPACK/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/Git/" class="nav-link">
+  Git
+</a></li></ul></div></div><div class="nav-item"><a href="/blogs/advanced/实时通讯.html" class="nav-link">
+  进阶篇
+</a></div><div class="nav-item"><a href="/blogs/actual/" class="nav-link">
+  实战篇
+</a></div><div class="nav-item"><a href="/blogs/issue/" class="nav-link">
+  踩过的那些坑
+</a></div><div class="nav-item"><a href="http://blog.poetries.top/FE-Interview-Questions/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  大牛总结面试题
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="/blogs/Gitalk/" class="nav-link">
+  留言板
+</a></div><div class="nav-item"><a href="/blogs/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="https://github.com/linzefan0612" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>HTML</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>CSS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>ES6</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Jquery</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Ajax</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Vue</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blogs/sidebar/VUE/" class="active sidebar-link">Vue</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#vue-是什么？" class="sidebar-link">Vue 是什么？</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#学习-vue-最好的途径！" class="sidebar-link">学习 Vue 最好的途径！</a></li></ul></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#vue-的生命周期" class="sidebar-link">Vue 的生命周期</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#先来一张图-看不到可以另存" class="sidebar-link">先来一张图(看不到可以另存)</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#创建期间的生命函数" class="sidebar-link">创建期间的生命函数</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#运行期间的生命周期函数" class="sidebar-link">运行期间的生命周期函数</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#销毁期间的生命周期函数" class="sidebar-link">销毁期间的生命周期函数</a></li></ul></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#指令" class="sidebar-link">指令</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#插值表达式" class="sidebar-link">{{}} 插值表达式</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#v-clock" class="sidebar-link">v-clock</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#v-text" class="sidebar-link">v-text</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#v-html" class="sidebar-link">v-html</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#v-bind" class="sidebar-link">v-bind</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#v-on" class="sidebar-link">v-on</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#v-if-隐藏元素" class="sidebar-link">v-if(隐藏元素)</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#v-show-隐藏元素" class="sidebar-link">v-show(隐藏元素)</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#v-model-动态更新视图" class="sidebar-link">v-model(动态更新视图)</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#v-for（循环遍历数组、对象）" class="sidebar-link">v-for（循环遍历数组、对象）</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#事件修饰符" class="sidebar-link">事件修饰符</a></li></ul></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#使用样式" class="sidebar-link">使用样式</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#使用-class-样式" class="sidebar-link">使用 class 样式</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#使用内联样式" class="sidebar-link">使用内联样式</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#在-data-上定义样式" class="sidebar-link">在 data 上定义样式</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#通过属性绑定的形式，将样式对象应用到元素中" class="sidebar-link">通过属性绑定的形式，将样式对象应用到元素中</a></li></ul></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#指令-directive" class="sidebar-link">指令(directive)</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#全局写法" class="sidebar-link">全局写法</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#局部写法-写在局部组件的-data" class="sidebar-link">局部写法(写在局部组件的 data)</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#注意点" class="sidebar-link">注意点</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#对象的里的方法（钩子函数）" class="sidebar-link">对象的里的方法（钩子函数）</a></li></ul></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#过滤器-filter" class="sidebar-link">过滤器(filter)</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#概念" class="sidebar-link">概念</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#全局过滤器" class="sidebar-link">全局过滤器</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#私有过滤器" class="sidebar-link">私有过滤器</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#注意：" class="sidebar-link">注意：</a></li></ul></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#计算属性-computed" class="sidebar-link">计算属性(computed)</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#定义" class="sidebar-link">定义</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#注意点：" class="sidebar-link">注意点：</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#特点" class="sidebar-link">特点</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#官方例子" class="sidebar-link">官方例子</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#动态获取数据" class="sidebar-link">动态获取数据</a></li></ul></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#侦听器-watch" class="sidebar-link">侦听器(watch)</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#作用：" class="sidebar-link">作用：</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#使用" class="sidebar-link">使用</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/VUE/#深度侦听" class="sidebar-link">深度侦听</a></li></ul></li></ul></li><li><a href="/blogs/sidebar/VUE/Vue问题集合.html" class="sidebar-link">常见问题集合</a></li><li><a href="/blogs/sidebar/VUE/vue2.x与vue3.x语法对比浅析.html" class="sidebar-link">vue2.x 与 vue3.x 语法对比浅析</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>React</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>webpack</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Git</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>SSR</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="vue"><a href="#vue" class="header-anchor">#</a> Vue</h1> <blockquote><p>PS:这里不会写的很详细，只是把常用的东西放上来</p></blockquote> <h2 id="vue-是什么？"><a href="#vue-是什么？" class="header-anchor">#</a> Vue 是什么？</h2> <p>Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的<strong>渐进式框架</strong>。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库<strong>只关注视图层</strong>，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p> <h3 id="学习-vue-最好的途径！"><a href="#学习-vue-最好的途径！" class="header-anchor">#</a> 学习 Vue 最好的途径！</h3> <p>当然是官网啦,没有比官网更详细的教程了.. <a href="https://cn.vuejs.org/v2/guide/" target="_Blank">https://cn.vuejs.org/v2/guide/</a></p> <h2 id="vue-的生命周期"><a href="#vue-的生命周期" class="header-anchor">#</a> Vue 的生命周期</h2> <blockquote><p>PS:为了更好的使用 Vue，生命周期是必须掌握的！！！</p></blockquote> <h3 id="先来一张图-看不到可以另存"><a href="#先来一张图-看不到可以另存" class="header-anchor">#</a> 先来一张图(看不到可以另存)</h3> <p><img src="https://www.linzefan.top/images/Vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png" alt="Alt text"></p> <h3 id="创建期间的生命函数"><a href="#创建期间的生命函数" class="header-anchor">#</a> 创建期间的生命函数</h3> <h4 id="beforecreate"><a href="#beforecreate" class="header-anchor">#</a> beforeCreate</h4> <p>表示实例完全被创建出来之前，会执行它，只有一个默认的生命周期和默认的事件，其他东西都还没初始化<br>
+注意：在 beforeCreate 生命周期函数执行的时候，data 和 methods 中的 数据都还没有没初始化</p> <h4 id="created"><a href="#created" class="header-anchor">#</a> created</h4> <p>在 created 中，data 和 methods 都已经被初始化好了！</p> <h4 id="beforemoute"><a href="#beforemoute" class="header-anchor">#</a> beforemoute</h4> <p>模板在内存中编译好了，但是未加载到页面中去，此时，页面的内容还是旧的</p> <h4 id="mounted"><a href="#mounted" class="header-anchor">#</a> mounted</h4> <p>此时整个 vue 实例已经加载完毕了，进入运行阶段</p> <h3 id="运行期间的生命周期函数"><a href="#运行期间的生命周期函数" class="header-anchor">#</a> 运行期间的生命周期函数</h3> <h4 id="beforeupdate"><a href="#beforeupdate" class="header-anchor">#</a> beforeUpdate</h4> <p>状态更新之前执行此函数， 此时 data 中的状态值是最新的，但是界面上显示的 数据还是旧的，因为此时还没有开始重新渲染 DOM 节点</p> <h4 id="updated"><a href="#updated" class="header-anchor">#</a> updated</h4> <p>实例更新完毕之后调用此函数，此时 data 中的状态值 和 界面上显示的数据，都已经完成了更新，界面已经被重新渲染好了！<br>
+注意：如果数据未更新，不会执行此阶段</p> <h3 id="销毁期间的生命周期函数"><a href="#销毁期间的生命周期函数" class="header-anchor">#</a> 销毁期间的生命周期函数</h3> <h4 id="beforedestroy"><a href="#beforedestroy" class="header-anchor">#</a> beforeDestroy</h4> <p>实例销毁之前调用。在这一步，实例仍然完全可用。</p> <h4 id="destroyed"><a href="#destroyed" class="header-anchor">#</a> destroyed</h4> <p>Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。</p> <h2 id="指令"><a href="#指令" class="header-anchor">#</a> 指令</h2> <h3 id="插值表达式"><a href="#插值表达式" class="header-anchor">#</a> {{}} 插值表达式</h3> <p>只会替换自己的占位符，不会清空文本内容
+只能输出普通文本</p> <h3 id="v-clock"><a href="#v-clock" class="header-anchor">#</a> v-clock</h3> <p>解决插值表达式闪烁的问题</p> <h3 id="v-text"><a href="#v-text" class="header-anchor">#</a> v-text</h3> <p>没有闪烁问题，会覆盖元素中原本的内容
+不会解析标签,只会输出普通文本</p> <h3 id="v-html"><a href="#v-html" class="header-anchor">#</a> v-html</h3> <p>与 text 差不多，但是会解析标签</p> <h3 id="v-bind"><a href="#v-bind" class="header-anchor">#</a> v-bind</h3> <p>简写 :
+提供绑定属性的指令</p> <h3 id="v-on"><a href="#v-on" class="header-anchor">#</a> v-on</h3> <p>简写 @
+事件绑定 例如:click、change</p> <h3 id="v-if-隐藏元素"><a href="#v-if-隐藏元素" class="header-anchor">#</a> v-if(隐藏元素)</h3> <p>会整个清除,适用于直接删除的，不再显示的元素</p> <h3 id="v-show-隐藏元素"><a href="#v-show-隐藏元素" class="header-anchor">#</a> v-show(隐藏元素)</h3> <p>加 display 属性，适用于频繁显示隐藏的元素</p> <h3 id="v-model-动态更新视图"><a href="#v-model-动态更新视图" class="header-anchor">#</a> v-model(动态更新视图)</h3> <p>双向绑定,只适用表单元素</p> <h3 id="v-for（循环遍历数组、对象）"><a href="#v-for（循环遍历数组、对象）" class="header-anchor">#</a> v-for（循环遍历数组、对象）</h3> <div class="language- extra-class"><pre class="language-text"><code>迭代数组
+&lt;li v-for=&quot;(item, i) in list&quot;&gt;索引：{{i}} --- 姓名：{{item.name}} --- 年龄：{{item.age}}&lt;/li&gt;
+迭代对象中的属性
+&lt;div v-for=&quot;(val, key, i) in userInfo&quot;&gt;{{val}} --- {{key}} --- {{i}}&lt;/div&gt;
+迭代数字
+&lt;p v-for=&quot;i in 10&quot;&gt;这是第 {{i}} 个 P 标签&lt;/p&gt;
+</code></pre></div><h3 id="事件修饰符"><a href="#事件修饰符" class="header-anchor">#</a> 事件修饰符</h3> <p>特点：修饰符可以串联,会从左到右按顺序执行</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name"><span class="token namespace">v-on:</span>click.stop.prevent</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>doThat<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>// 方法
+.stop
+阻止冒泡
+.pervent
+阻止跳转
+.capture
+实现捕获触发事件的机制
+.self
+会阻止自身的冒泡，不会阻止其他的
+.once
+只触发一次事件处理函数
+</code></pre></div><h2 id="使用样式"><a href="#使用样式" class="header-anchor">#</a> 使用样式</h2> <h3 id="使用-class-样式"><a href="#使用-class-样式" class="header-anchor">#</a> 使用 class 样式</h3> <p>数组：</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">:class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>['red', 'thin']<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>这是一个邪恶的 H1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>三元：</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">:class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>['red', 'thin', isactive?'active':'']<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>这是一个邪恶的 H1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>嵌套对象：</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">:class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>['red', 'thin', {'active': isactive}]<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>这是一个邪恶的 H1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>使用对象：</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">:class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>{red:true, italic:true, active:true, thin:true}<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  这是一个邪恶的 H1
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="使用内联样式"><a href="#使用内联样式" class="header-anchor">#</a> 使用内联样式</h3> <ul><li>通过 :style 的形式，书写样式对象</li></ul> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">:</span><span class="token style-attr language-css"><span class="token attr-name"><span class="token attr-name">style</span></span><span class="token punctuation">=&quot;</span><span class="token attr-value"><span class="token punctuation">{</span><span class="token property">color</span><span class="token punctuation">:</span> <span class="token string">'red'</span><span class="token punctuation">,</span> <span class="token string">'font-size'</span><span class="token punctuation">:</span> <span class="token string">'40px'</span><span class="token punctuation">}</span></span><span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>这是一个善良的 H1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="在-data-上定义样式"><a href="#在-data-上定义样式" class="header-anchor">#</a> 在 data 上定义样式</h3> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">:</span><span class="token style-attr language-css"><span class="token attr-name"><span class="token attr-name">style</span></span><span class="token punctuation">=&quot;</span><span class="token attr-value">h1StyleObj</span><span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>这是一个善良的 H1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code>data<span class="token operator">:</span> <span class="token punctuation">{</span>
+    h1StyleObj<span class="token operator">:</span> <span class="token punctuation">{</span> color<span class="token operator">:</span> <span class="token string">'red'</span><span class="token punctuation">,</span> <span class="token string">'font-size'</span><span class="token operator">:</span> <span class="token string">'40px'</span><span class="token punctuation">,</span> <span class="token string">'font-weight'</span><span class="token operator">:</span> <span class="token string">'200'</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="通过属性绑定的形式，将样式对象应用到元素中"><a href="#通过属性绑定的形式，将样式对象应用到元素中" class="header-anchor">#</a> 通过属性绑定的形式，将样式对象应用到元素中</h3> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">:</span><span class="token style-attr language-css"><span class="token attr-name"><span class="token attr-name">style</span></span><span class="token punctuation">=&quot;</span><span class="token attr-value">[h1StyleObj<span class="token punctuation">,</span> h1StyleObj2]</span><span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>这是一个善良的H1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="指令-directive"><a href="#指令-directive" class="header-anchor">#</a> 指令(directive)</h2> <blockquote><p>PS:这个东西我基本没怎么用过</p></blockquote> <h3 id="全局写法"><a href="#全局写法" class="header-anchor">#</a> 全局写法</h3> <ul><li>Vue.directive(绑定的指令, 对象);</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 获取焦点</span>
+Vue<span class="token punctuation">.</span><span class="token function">directive</span><span class="token punctuation">(</span><span class="token string">&quot;focus&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">inserted</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">el<span class="token punctuation">,</span> binding</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    el<span class="token punctuation">.</span><span class="token function">focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="局部写法-写在局部组件的-data"><a href="#局部写法-写在局部组件的-data" class="header-anchor">#</a> 局部写法(写在局部组件的 data)</h3> <ul><li>directives: {绑定的指令: 对象 }</li></ul> <div class="language-js extra-class"><pre class="language-js"><code> directives<span class="token operator">:</span> <span class="token punctuation">{</span>
+    color<span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 指令的定义</span>
+            <span class="token function-variable function">bind</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">el<span class="token punctuation">,</span>binding</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                el<span class="token punctuation">.</span>style<span class="token punctuation">.</span>color<span class="token operator">=</span>binding<span class="token punctuation">.</span>value
+            <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+<span class="token comment">// 简写形式,相当于同时调用了，bind和updated方法</span>
+directives<span class="token operator">:</span><span class="token punctuation">{</span>
+  <span class="token function-variable function">focus</span><span class="token operator">:</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">el</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    el<span class="token punctuation">.</span><span class="token function">focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="注意点"><a href="#注意点" class="header-anchor">#</a> 注意点</h3> <p>调用的时候，指令名称前要加上 v- 前缀来调用</p> <h3 id="对象的里的方法（钩子函数）"><a href="#对象的里的方法（钩子函数）" class="header-anchor">#</a> 对象的里的方法（钩子函数）</h3> <h4 id="bind-funtion-el-binding"><a href="#bind-funtion-el-binding" class="header-anchor">#</a> bind:funtion(el,binding){}</h4> <div class="language- extra-class"><pre><code>指令绑定到元素上的时候，会执行bind，执行一次
+特点：加在到内存中
+样式相关的行为，就用bind
+</code></pre></div><h4 id="inserted-funtion-el，binding"><a href="#inserted-funtion-el，binding" class="header-anchor">#</a> inserted:funtion(el，binding){}</h4> <div class="language- extra-class"><pre><code>元素插入dom的时候，会执行inserted，执行一次
+特点：加在到页面上
+和JS行为有关的，就用inserted，防止JS行为不生效
+</code></pre></div><h4 id="updated-funtion-el，binding"><a href="#updated-funtion-el，binding" class="header-anchor">#</a> updated:funtion(el，binding){}</h4> <div class="language- extra-class"><pre><code>VNode更新的时候会执行updated，可能触发多次
+</code></pre></div><h4 id="钩子函数的参数："><a href="#钩子函数的参数：" class="header-anchor">#</a> 钩子函数的参数：</h4> <div class="language- extra-class"><pre><code>参数一：el 指的是指令绑定的元素，指定加在谁身上，el参数是一个原生JS对象
+参数二：binding,是一个对象，有相关属性
+name：指令名，不包括 v- 前缀。
+value：指令的绑定值，例如：v-my-directive=&quot;1 + 1&quot; 中，绑定值为 2
+expression：字符串形式的指令表达式。例如 v-my-directive=&quot;1 + 1&quot; 中，表达式为 &quot;1 + 1&quot;
+arg：传给指令的参数，可选。例如 v-my-directive:foo 中，参数为 &quot;foo&quot;
+</code></pre></div><h2 id="过滤器-filter"><a href="#过滤器-filter" class="header-anchor">#</a> 过滤器(filter)</h2> <h3 id="概念"><a href="#概念" class="header-anchor">#</a> 概念</h3> <div class="language- extra-class"><pre><code>Vue.js 允许你自定义过滤器，可被用作一些常见的文本格式化。
+过滤器可以用在两个地方：mustache 插值和 v-bind 表达式*。过滤器应该被添加在 JavaScript 表达式的尾部，由“管道（|）”符指示；
+经常拿来做一些字符串的替换、时间换算等等
+</code></pre></div><h3 id="全局过滤器"><a href="#全局过滤器" class="header-anchor">#</a> 全局过滤器</h3> <div class="language- extra-class"><pre><code>定义：调用Vue.filter方法
+特点：所有VM实例都共享
+Vue.filter(过滤器名称, function (参数1) {})
+	参数1为管道符前面的数据
+</code></pre></div><h3 id="私有过滤器"><a href="#私有过滤器" class="header-anchor">#</a> 私有过滤器</h3> <div class="language- extra-class"><pre><code>定义：在实例化的Vue对象里，加一个filters方法
+filters{ 过滤器名称 : function (参数1){}}
+	参数1为管道符前面的数据
+</code></pre></div><h3 id="注意："><a href="#注意：" class="header-anchor">#</a> 注意：</h3> <ul><li>私有过滤器调用时，过滤器跟全局过滤器名定义名称一样时，<strong>采用就近原则</strong>，优先调用私有过滤器</li> <li>调用过滤器可以传多个参数</li> <li>可以多次调用过滤器，<strong>用管道符( | )隔开,从左往右依次执行</strong></li> <li>过滤器中的<strong>this 是 window</strong></li></ul> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>{{ msg | msgFormat('疯狂+1', '123') | test | test1}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="计算属性-computed"><a href="#计算属性-computed" class="header-anchor">#</a> 计算属性(computed)</h2> <h3 id="定义"><a href="#定义" class="header-anchor">#</a> 定义</h3> <p>可以定义一些【计算属性】,本质上是一个方法，使用 这些计算属性的时候，是把它们的名称，直接当作属性来使用的；并不会把 计算属性，当作方法去调用；</p> <h3 id="注意点："><a href="#注意点：" class="header-anchor">#</a> 注意点：</h3> <ol><li>计算属性，在引用的时候，一定不要加 () 去调用，直接把它 当作 普通 属性去使用就好了</li> <li>计算属性，这个 function 内部，所用到的 任何 data 中的数据发生了变化，就会 立即重新计算 这个 计算属性的值</li> <li>计算属性的求值结果，会被缓存起来，方便下次直接使用； 如果 计算属性方法中的数据都没有发生过变化，则不会重新对计算属性求值；</li></ol> <h3 id="特点"><a href="#特点" class="header-anchor">#</a> 特点</h3> <p>计算属性是基于它们的响应式依赖进行缓存的,只在相关响应式依赖发生改变时它们才会重新求值,有利于节省内存开销</p> <h3 id="官方例子"><a href="#官方例子" class="header-anchor">#</a> 官方例子</h3> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>example<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Original message: &quot;{{ message }}&quot;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Computed reversed message: &quot;{{ reversedMessage }}&quot;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  el<span class="token operator">:</span> <span class="token string">&quot;#example&quot;</span><span class="token punctuation">,</span>
+  data<span class="token operator">:</span> <span class="token punctuation">{</span>
+    message<span class="token operator">:</span> <span class="token string">&quot;Hello&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  computed<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 计算属性的 getter</span>
+    <span class="token function-variable function">reversedMessage</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// `this` 指向 vm 实例</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>message
+        <span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>// 输出
+Original message: &quot;Hello&quot;
+Computed reversed message: &quot;olleH&quot;
+</code></pre></div><h3 id="动态获取数据"><a href="#动态获取数据" class="header-anchor">#</a> 动态获取数据</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  el<span class="token operator">:</span> <span class="token string">&quot;#demo&quot;</span><span class="token punctuation">,</span>
+  data<span class="token operator">:</span> <span class="token punctuation">{</span>
+    firstName<span class="token operator">:</span> <span class="token string">&quot;Foo&quot;</span><span class="token punctuation">,</span>
+    lastName<span class="token operator">:</span> <span class="token string">&quot;Bar&quot;</span><span class="token punctuation">,</span>
+    fullName<span class="token operator">:</span> <span class="token string">&quot;Foo Bar&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  computed<span class="token operator">:</span> <span class="token punctuation">{</span>
+    fullName<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token comment">// getter 获取变化的数据</span>
+      <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>firstName <span class="token operator">+</span> <span class="token string">&quot; &quot;</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>lastName<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token comment">// setter 设置新的数据</span>
+      <span class="token function-variable function">set</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">newValue</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> names <span class="token operator">=</span> newValue<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">&quot; &quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>firstName <span class="token operator">=</span> names<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>lastName <span class="token operator">=</span> names<span class="token punctuation">[</span>names<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="侦听器-watch"><a href="#侦听器-watch" class="header-anchor">#</a> 侦听器(watch)</h2> <p>watch(newVal，oldVal)</p> <h3 id="作用："><a href="#作用：" class="header-anchor">#</a> 作用：</h3> <ol><li>可以监视 data 中指定数据的变化,然后触发这个 watch 中对应的 function 处理函数</li> <li>主要用来监听非 DOM 元素</li></ol> <ul><li>参数 1：修改的新值</li> <li>参数 2：没有修改前的值</li></ul> <h3 id="使用"><a href="#使用" class="header-anchor">#</a> 使用</h3> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>demo<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>{{ fullName }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  el<span class="token operator">:</span> <span class="token string">&quot;#demo&quot;</span><span class="token punctuation">,</span>
+  data<span class="token operator">:</span> <span class="token punctuation">{</span>
+    firstName<span class="token operator">:</span> <span class="token string">&quot;Foo&quot;</span><span class="token punctuation">,</span>
+    lastName<span class="token operator">:</span> <span class="token string">&quot;Bar&quot;</span><span class="token punctuation">,</span>
+    fullName<span class="token operator">:</span> <span class="token string">&quot;Foo Bar&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  watch<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">firstName</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">val</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>fullName <span class="token operator">=</span> val <span class="token operator">+</span> <span class="token string">&quot; &quot;</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>lastName<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">lastName</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">val</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>fullName <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>firstName <span class="token operator">+</span> <span class="token string">&quot; &quot;</span> <span class="token operator">+</span> val<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="深度侦听"><a href="#深度侦听" class="header-anchor">#</a> 深度侦听</h3> <p>作用：主要用来侦听对象，普通侦听无法侦听到对象</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  el<span class="token operator">:</span> <span class="token string">&quot;#demo&quot;</span><span class="token punctuation">,</span>
+  data<span class="token operator">:</span> <span class="token punctuation">{</span>
+    firstName<span class="token operator">:</span> <span class="token string">&quot;Foo&quot;</span><span class="token punctuation">,</span>
+    lastName<span class="token operator">:</span> <span class="token string">&quot;Bar&quot;</span><span class="token punctuation">,</span>
+    fullName<span class="token operator">:</span> <span class="token string">&quot;Foo Bar&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  watch<span class="token operator">:</span> <span class="token punctuation">{</span>
+    firstName<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token function">handler</span><span class="token punctuation">(</span><span class="token parameter">newName<span class="token punctuation">,</span> oldName</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>fullName <span class="token operator">=</span> newName <span class="token operator">+</span> <span class="token string">&quot; &quot;</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>lastName<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token comment">// 代表在wacth里声明了firstName这个方法之后立即先去执行handler方法</span>
+      immediate<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token comment">// 是否开启深度侦听</span>
+      deep<span class="token operator">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blogs/sidebar/Ajax/" class="prev">
+        Ajax
+      </a></span> <span class="next"><a href="/blogs/sidebar/VUE/Vue问题集合.html">
+        常见问题集合
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blogs/assets/js/app.f6682633.js" defer></script><script src="/blogs/assets/js/2.3ba6d93a.js" defer></script><script src="/blogs/assets/js/50.9741f61a.js" defer></script>
+  </body>
+</html>

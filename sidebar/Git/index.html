@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Git | 林某人的技术博客</title>
+    <meta name="description" content="分享基础知识、踩的坑、实战demo等等">
+    <meta name="generator" content="VuePress 1.4.0">
+    <link rel="icon" href="https://www.linzefan.top/images/favicon.ico">
+  <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?0d5727949bf626613621bcc26ef60fed";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+      </script>
+    
+    <link rel="preload" href="/blogs/assets/css/0.styles.7efc2f73.css" as="style"><link rel="preload" href="/blogs/assets/js/app.f6682633.js" as="script"><link rel="preload" href="/blogs/assets/js/2.3ba6d93a.js" as="script"><link rel="preload" href="/blogs/assets/js/38.10f1df61.js" as="script"><link rel="prefetch" href="/blogs/assets/js/10.afee2c86.js"><link rel="prefetch" href="/blogs/assets/js/11.3e2bc908.js"><link rel="prefetch" href="/blogs/assets/js/12.88713729.js"><link rel="prefetch" href="/blogs/assets/js/13.58a66ba9.js"><link rel="prefetch" href="/blogs/assets/js/14.57e10d35.js"><link rel="prefetch" href="/blogs/assets/js/15.36cec071.js"><link rel="prefetch" href="/blogs/assets/js/16.77b49e89.js"><link rel="prefetch" href="/blogs/assets/js/17.887acfe7.js"><link rel="prefetch" href="/blogs/assets/js/18.a085c9e8.js"><link rel="prefetch" href="/blogs/assets/js/19.9080a35c.js"><link rel="prefetch" href="/blogs/assets/js/20.5d1ac224.js"><link rel="prefetch" href="/blogs/assets/js/21.a76006d3.js"><link rel="prefetch" href="/blogs/assets/js/22.b2651397.js"><link rel="prefetch" href="/blogs/assets/js/23.ccd28672.js"><link rel="prefetch" href="/blogs/assets/js/24.e42fffcf.js"><link rel="prefetch" href="/blogs/assets/js/25.2bfed8bf.js"><link rel="prefetch" href="/blogs/assets/js/26.949650b9.js"><link rel="prefetch" href="/blogs/assets/js/27.341beabf.js"><link rel="prefetch" href="/blogs/assets/js/28.193e9b0a.js"><link rel="prefetch" href="/blogs/assets/js/29.6af09bdb.js"><link rel="prefetch" href="/blogs/assets/js/3.1aa7baf7.js"><link rel="prefetch" href="/blogs/assets/js/30.25d32756.js"><link rel="prefetch" href="/blogs/assets/js/31.e1ed34e2.js"><link rel="prefetch" href="/blogs/assets/js/32.094ecee0.js"><link rel="prefetch" href="/blogs/assets/js/33.95d15345.js"><link rel="prefetch" href="/blogs/assets/js/34.76a4730b.js"><link rel="prefetch" href="/blogs/assets/js/35.60cb64f5.js"><link rel="prefetch" href="/blogs/assets/js/36.b4aff0bd.js"><link rel="prefetch" href="/blogs/assets/js/37.583d628f.js"><link rel="prefetch" href="/blogs/assets/js/39.dc600283.js"><link rel="prefetch" href="/blogs/assets/js/4.52899354.js"><link rel="prefetch" href="/blogs/assets/js/40.f9db3b93.js"><link rel="prefetch" href="/blogs/assets/js/41.74f9c9ee.js"><link rel="prefetch" href="/blogs/assets/js/42.9a390624.js"><link rel="prefetch" href="/blogs/assets/js/43.b38524bb.js"><link rel="prefetch" href="/blogs/assets/js/44.aad304d7.js"><link rel="prefetch" href="/blogs/assets/js/45.fb10845b.js"><link rel="prefetch" href="/blogs/assets/js/46.ca9c851e.js"><link rel="prefetch" href="/blogs/assets/js/47.600b4c3e.js"><link rel="prefetch" href="/blogs/assets/js/48.d0ef1f66.js"><link rel="prefetch" href="/blogs/assets/js/49.f8022ef1.js"><link rel="prefetch" href="/blogs/assets/js/5.fbc3b8f5.js"><link rel="prefetch" href="/blogs/assets/js/50.9741f61a.js"><link rel="prefetch" href="/blogs/assets/js/51.5545444c.js"><link rel="prefetch" href="/blogs/assets/js/52.7dfc6c24.js"><link rel="prefetch" href="/blogs/assets/js/53.7d57bb01.js"><link rel="prefetch" href="/blogs/assets/js/54.ef8bacff.js"><link rel="prefetch" href="/blogs/assets/js/6.089331c4.js"><link rel="prefetch" href="/blogs/assets/js/7.f81a77bf.js"><link rel="prefetch" href="/blogs/assets/js/8.0a3fe8a0.js"><link rel="prefetch" href="/blogs/assets/js/9.4a62a533.js">
+    <link rel="stylesheet" href="/blogs/assets/css/0.styles.7efc2f73.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blogs/" class="home-link router-link-active"><img src="https://www.linzefan.top/images/logo.jpg" alt="林某人的技术博客" class="logo"> <span class="site-name can-hide">林某人的技术博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blogs/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础篇" class="dropdown-title"><span class="title">基础篇</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/sidebar/HTML/" class="nav-link">
+  Html
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/CSS/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/JS/" class="nav-link">
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/Ajax/" class="nav-link">
+  Ajax
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/VUE/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/REACT/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/SSR/" class="nav-link">
+  SSR
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/ES6/" class="nav-link">
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/JQUERY/" class="nav-link">
+  Jquery
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/WEBPACK/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/Git/" class="nav-link router-link-exact-active router-link-active">
+  Git
+</a></li></ul></div></div><div class="nav-item"><a href="/blogs/advanced/实时通讯.html" class="nav-link">
+  进阶篇
+</a></div><div class="nav-item"><a href="/blogs/actual/" class="nav-link">
+  实战篇
+</a></div><div class="nav-item"><a href="/blogs/issue/" class="nav-link">
+  踩过的那些坑
+</a></div><div class="nav-item"><a href="http://blog.poetries.top/FE-Interview-Questions/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  大牛总结面试题
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="/blogs/Gitalk/" class="nav-link">
+  留言板
+</a></div><div class="nav-item"><a href="/blogs/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="https://github.com/linzefan0612" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blogs/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础篇" class="dropdown-title"><span class="title">基础篇</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/sidebar/HTML/" class="nav-link">
+  Html
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/CSS/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/JS/" class="nav-link">
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/Ajax/" class="nav-link">
+  Ajax
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/VUE/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/REACT/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/SSR/" class="nav-link">
+  SSR
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/ES6/" class="nav-link">
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/JQUERY/" class="nav-link">
+  Jquery
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/WEBPACK/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/Git/" class="nav-link router-link-exact-active router-link-active">
+  Git
+</a></li></ul></div></div><div class="nav-item"><a href="/blogs/advanced/实时通讯.html" class="nav-link">
+  进阶篇
+</a></div><div class="nav-item"><a href="/blogs/actual/" class="nav-link">
+  实战篇
+</a></div><div class="nav-item"><a href="/blogs/issue/" class="nav-link">
+  踩过的那些坑
+</a></div><div class="nav-item"><a href="http://blog.poetries.top/FE-Interview-Questions/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  大牛总结面试题
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="/blogs/Gitalk/" class="nav-link">
+  留言板
+</a></div><div class="nav-item"><a href="/blogs/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="https://github.com/linzefan0612" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>HTML</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>CSS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>ES6</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Jquery</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Ajax</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>React</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>webpack</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Git</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blogs/sidebar/Git/" class="active sidebar-link">Git</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blogs/sidebar/Git/#常用命令" class="sidebar-link">常用命令</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/Git/#常见问题" class="sidebar-link">常见问题</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blogs/sidebar/Git/#git-add-提交到暂存区，出错怎么办" class="sidebar-link">git add 提交到暂存区，出错怎么办</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/Git/#git-commit-提交到本地仓库，出错怎么办？" class="sidebar-link">git commit 提交到本地仓库，出错怎么办？</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/Git/#提交错误文件" class="sidebar-link">提交错误文件</a></li></ul></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/Git/#ssh" class="sidebar-link">SSH</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blogs/sidebar/Git/#查看是否生成了-ssh-公钥" class="sidebar-link">查看是否生成了 SSH 公钥</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/Git/#设置个人信息" class="sidebar-link">设置个人信息</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/Git/#生成ssh-keygen" class="sidebar-link">生成ssh-keygen</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/Git/#查询公钥" class="sidebar-link">查询公钥</a></li></ul></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>SSR</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="git"><a href="#git" class="header-anchor">#</a> Git</h1> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>好用的手册 http://gitbook.liuhui998.com/index.html</p></div> <h2 id="常用命令"><a href="#常用命令" class="header-anchor">#</a> 常用命令</h2> <ol><li>初始开发 git 操作流程</li></ol> <div class="language- extra-class"><pre class="language-text"><code>克隆最新主分支项目代码 git clone 地址
+创建本地分支 git branch 分支名
+查看本地分支 git branch
+查看远程分支 git branch -a
+切换分支  git checkout 分支名 (一般修改未提交则无法切换，大小写问题经常会有，可强制切换  git checkout 分支名 -f  非必须慎用)
+将本地分支推送到远程分支 git push &lt;远程仓库&gt; &lt;本地分支&gt;:&lt;远程分支&gt;
+</code></pre></div><ol start="2"><li>git fetch
+将某个远程主机的更新，全部/分支 取回本地（此时之更新了 Repository）它取回的代码对你本地的开发代码没有影响，如需彻底更新需合并或使用 git pull</li> <li>git pull
+拉取远程主机某分支的更新，再与本地的指定分支合并（相当与 fetch 加上了合并分支功能的操作）</li> <li>git push
+将本地分支的更新，推送到远程主机，其命令格式与 git pull 相似</li> <li>分支操作</li></ol> <div class="language- extra-class"><pre class="language-text"><code>使用 Git 下载指定分支命令为：git clone -b 分支名仓库地址
+
+拉取远程新分支 git checkout -b serverfix origin/serverfix
+
+合并本地分支 git merge hotfix：(将 hotfix 分支合并到当前分支)
+
+合并远程分支 git merge origin/serverfix
+
+删除本地分支 git branch -d hotfix：(删除本地 hotfix 分支)
+
+删除远程分支 git push origin --delete serverfix
+
+上传新命名的本地分支：git push origin newName;
+
+创建新分支：git branch branchName：(创建名为 branchName 的本地分支)
+
+切换到新分支：git checkout branchName：(切换到 branchName 分支)
+
+创建并切换分支：git checkout -b branchName：(相当于以上两条命令的合并)
+
+查看本地分支：git branch
+
+查看远程仓库所有分支：git branch -a
+
+本地分支重命名：git branch -m oldName newName
+
+重命名远程分支对应的本地分支：git branch -m oldName newName
+
+把修改后的本地分支与远程分支关联：git branch --set-upstream-to origin/newName
+</code></pre></div><h2 id="常见问题"><a href="#常见问题" class="header-anchor">#</a> 常见问题</h2> <h3 id="git-add-提交到暂存区，出错怎么办"><a href="#git-add-提交到暂存区，出错怎么办" class="header-anchor">#</a> git add 提交到暂存区，出错怎么办</h3> <blockquote><p>一般代码提交流程为：工作区 -&gt; git status 查看状态 -&gt; git add . 将所有修改加入暂存区-&gt; git commit -m &quot;提交描述&quot; 将代码提交到 本地仓库 -&gt; git push 将本地仓库代码更新到 远程仓库</p></blockquote> <h4 id="场景-1："><a href="#场景-1：" class="header-anchor">#</a> 场景 1：</h4> <ul><li>当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令 git checkout -- file。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>// 丢弃工作区的修改
+git checkout -- &lt;文件名&gt;
+</code></pre></div><h4 id="场景-2："><a href="#场景-2：" class="header-anchor">#</a> 场景 2：</h4> <ul><li>当你不但改乱了工作区某个文件的内容，还添加到了暂存时，想丢弃修改，分两步，第一步用命令 git reset HEAD file，就回到了场景 1，第二步按场景 1 操作。</li></ul> <h3 id="git-commit-提交到本地仓库，出错怎么办？"><a href="#git-commit-提交到本地仓库，出错怎么办？" class="header-anchor">#</a> git commit 提交到本地仓库，出错怎么办？</h3> <h4 id="提交信息出错"><a href="#提交信息出错" class="header-anchor">#</a> 提交信息出错</h4> <ul><li>解决：git commit --amend -m“新提交消息”</li></ul> <h4 id="漏提交"><a href="#漏提交" class="header-anchor">#</a> 漏提交</h4> <ul><li>commit 时，遗漏提交部分更新，有两种解决方案</li></ul> <div class="language- extra-class"><pre class="language-text"><code>方案一：再次 commit
+git commit -m“提交消息”
+此时，git 上会出现两次 commit
+
+方案二：遗漏文件提交到之前 commit 上
+git add missed-file  // missed-file 为遗漏提交文件
+git commit --amend --no-edit  // no-edit 表示提交消息不会更改，在 git 上仅为一次提交
+</code></pre></div><h3 id="提交错误文件"><a href="#提交错误文件" class="header-anchor">#</a> 提交错误文件</h3> <blockquote><p>回退到上一个 commit 版本，再 commit</p></blockquote> <h4 id="git-reset"><a href="#git-reset" class="header-anchor">#</a> git reset</h4> <blockquote><p>删除指定的 commit</p></blockquote> <div class="language- extra-class"><pre class="language-text"><code>// 修改版本库，修改暂存区，修改工作区
+git reset HEAD &lt;文件名&gt; // 把暂存区的修改撤销掉（unstage），重新放回工作区。
+// git版本回退，回退到特定的commit_id版本，可以通过git log查看提交历史，以便确定要回退到哪个版本(commit 之后的即为ID);
+git reset --hard commit_id
+//将版本库回退1个版本，不仅仅是将本地版本库的头指针全部重置到指定版本，也会重置暂存区，并且会将工作区代码也回退到这个版本
+git reset --hard HEAD~1
+
+// 修改版本库，保留暂存区，保留工作区
+// 将版本库软回退1个版本，软回退表示将本地版本库的头指针全部重置到指定版本，且将这次提交之后的所有变更都移动到暂存区。
+git reset --soft HEAD~1
+</code></pre></div><h4 id="git-revert"><a href="#git-revert" class="header-anchor">#</a> git revert</h4> <blockquote><p>撤销 某次操作，此次操作之前和之后的 commit 和 history 都会保留，并且把这次撤销，作为一次最新的提交</p></blockquote> <div class="language- extra-class"><pre class="language-text"><code>// 撤销前一次 commit
+git revert HEAD
+// 撤销前前一次 commit
+git revert HEAD^
+// (比如：fa042ce57ebbe5bb9c8db709f719cec2c58ee7ff）撤销指定的版本，撤销也会作为一次提交进行保存。
+git revert commit
+</code></pre></div><h4 id="git-revert-和-git-reset-的区别"><a href="#git-revert-和-git-reset-的区别" class="header-anchor">#</a> git revert 和 git reset 的区别</h4> <div class="language- extra-class"><pre class="language-text"><code>**git revert**是用一次新的commit来回滚之前的commit，**git reset**是直接删除指定的commit。
+
+在回滚这一操作上看，效果差不多。但是在日后继续merge以前的老版本时有区别。
+因为**git revert**是用一次逆向的commit“中和”之前的提交，因此日后合并老的branch时，导致这部分改变不会再次出现，但是**git reset**是之间把某些commit在某个branch上删除，因而和老的branch再次merge时，这些被回滚的commit应该还会被引入。
+
+**git reset** 是把HEAD向后移动了一下，而**git revert**是HEAD继续前进，只是新的commit的内容和要revert的内容正好相反，能够抵消要被revert的内容。
+</code></pre></div><h2 id="ssh"><a href="#ssh" class="header-anchor">#</a> SSH</h2> <h3 id="查看是否生成了-ssh-公钥"><a href="#查看是否生成了-ssh-公钥" class="header-anchor">#</a> 查看是否生成了 SSH 公钥</h3> <div class="language- extra-class"><pre class="language-text"><code>$ cd ~/.ssh
+$ ls
+id_rsa      id_rsa.pub      known_hosts
+</code></pre></div><h3 id="设置个人信息"><a href="#设置个人信息" class="header-anchor">#</a> 设置个人信息</h3> <div class="language- extra-class"><pre class="language-text"><code>git config --list // 查看是否设置了user.name与user.email，没有的话，去设置
+// 设置全局的user.name与user.email
+git config --global user.name &quot;XX&quot;
+git config --global user.email &quot;XX&quot;
+</code></pre></div><h3 id="生成ssh-keygen"><a href="#生成ssh-keygen" class="header-anchor">#</a> 生成ssh-keygen</h3> <div class="language- extra-class"><pre class="language-text"><code>ssh-keygen 或 `ssh-keygen -t rsa -C &quot;email 或 github 个人账号&quot;`
+</code></pre></div><h3 id="查询公钥"><a href="#查询公钥" class="header-anchor">#</a> 查询公钥</h3> <div class="language- extra-class"><pre class="language-text"><code>cat ~/.ssh/id_rsa.pub
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blogs/sidebar/WEBPACK/" class="prev">
+        webpack
+      </a></span> <span class="next"><a href="/blogs/sidebar/SSR/">
+        SSR
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blogs/assets/js/app.f6682633.js" defer></script><script src="/blogs/assets/js/2.3ba6d93a.js" defer></script><script src="/blogs/assets/js/38.10f1df61.js" defer></script>
+  </body>
+</html>

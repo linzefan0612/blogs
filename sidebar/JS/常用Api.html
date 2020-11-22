@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>常用 Api | 林某人的技术博客</title>
+    <meta name="description" content="分享基础知识、踩的坑、实战demo等等">
+    <meta name="generator" content="VuePress 1.4.0">
+    <link rel="icon" href="https://www.linzefan.top/images/favicon.ico">
+  <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?0d5727949bf626613621bcc26ef60fed";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+      </script>
+    
+    <link rel="preload" href="/blogs/assets/css/0.styles.7efc2f73.css" as="style"><link rel="preload" href="/blogs/assets/js/app.f6682633.js" as="script"><link rel="preload" href="/blogs/assets/js/2.3ba6d93a.js" as="script"><link rel="preload" href="/blogs/assets/js/46.ca9c851e.js" as="script"><link rel="prefetch" href="/blogs/assets/js/10.afee2c86.js"><link rel="prefetch" href="/blogs/assets/js/11.3e2bc908.js"><link rel="prefetch" href="/blogs/assets/js/12.88713729.js"><link rel="prefetch" href="/blogs/assets/js/13.58a66ba9.js"><link rel="prefetch" href="/blogs/assets/js/14.57e10d35.js"><link rel="prefetch" href="/blogs/assets/js/15.36cec071.js"><link rel="prefetch" href="/blogs/assets/js/16.77b49e89.js"><link rel="prefetch" href="/blogs/assets/js/17.887acfe7.js"><link rel="prefetch" href="/blogs/assets/js/18.a085c9e8.js"><link rel="prefetch" href="/blogs/assets/js/19.9080a35c.js"><link rel="prefetch" href="/blogs/assets/js/20.5d1ac224.js"><link rel="prefetch" href="/blogs/assets/js/21.a76006d3.js"><link rel="prefetch" href="/blogs/assets/js/22.b2651397.js"><link rel="prefetch" href="/blogs/assets/js/23.ccd28672.js"><link rel="prefetch" href="/blogs/assets/js/24.e42fffcf.js"><link rel="prefetch" href="/blogs/assets/js/25.2bfed8bf.js"><link rel="prefetch" href="/blogs/assets/js/26.949650b9.js"><link rel="prefetch" href="/blogs/assets/js/27.341beabf.js"><link rel="prefetch" href="/blogs/assets/js/28.193e9b0a.js"><link rel="prefetch" href="/blogs/assets/js/29.6af09bdb.js"><link rel="prefetch" href="/blogs/assets/js/3.1aa7baf7.js"><link rel="prefetch" href="/blogs/assets/js/30.25d32756.js"><link rel="prefetch" href="/blogs/assets/js/31.e1ed34e2.js"><link rel="prefetch" href="/blogs/assets/js/32.094ecee0.js"><link rel="prefetch" href="/blogs/assets/js/33.95d15345.js"><link rel="prefetch" href="/blogs/assets/js/34.76a4730b.js"><link rel="prefetch" href="/blogs/assets/js/35.60cb64f5.js"><link rel="prefetch" href="/blogs/assets/js/36.b4aff0bd.js"><link rel="prefetch" href="/blogs/assets/js/37.583d628f.js"><link rel="prefetch" href="/blogs/assets/js/38.10f1df61.js"><link rel="prefetch" href="/blogs/assets/js/39.dc600283.js"><link rel="prefetch" href="/blogs/assets/js/4.52899354.js"><link rel="prefetch" href="/blogs/assets/js/40.f9db3b93.js"><link rel="prefetch" href="/blogs/assets/js/41.74f9c9ee.js"><link rel="prefetch" href="/blogs/assets/js/42.9a390624.js"><link rel="prefetch" href="/blogs/assets/js/43.b38524bb.js"><link rel="prefetch" href="/blogs/assets/js/44.aad304d7.js"><link rel="prefetch" href="/blogs/assets/js/45.fb10845b.js"><link rel="prefetch" href="/blogs/assets/js/47.600b4c3e.js"><link rel="prefetch" href="/blogs/assets/js/48.d0ef1f66.js"><link rel="prefetch" href="/blogs/assets/js/49.f8022ef1.js"><link rel="prefetch" href="/blogs/assets/js/5.fbc3b8f5.js"><link rel="prefetch" href="/blogs/assets/js/50.9741f61a.js"><link rel="prefetch" href="/blogs/assets/js/51.5545444c.js"><link rel="prefetch" href="/blogs/assets/js/52.7dfc6c24.js"><link rel="prefetch" href="/blogs/assets/js/53.7d57bb01.js"><link rel="prefetch" href="/blogs/assets/js/54.ef8bacff.js"><link rel="prefetch" href="/blogs/assets/js/6.089331c4.js"><link rel="prefetch" href="/blogs/assets/js/7.f81a77bf.js"><link rel="prefetch" href="/blogs/assets/js/8.0a3fe8a0.js"><link rel="prefetch" href="/blogs/assets/js/9.4a62a533.js">
+    <link rel="stylesheet" href="/blogs/assets/css/0.styles.7efc2f73.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blogs/" class="home-link router-link-active"><img src="https://www.linzefan.top/images/logo.jpg" alt="林某人的技术博客" class="logo"> <span class="site-name can-hide">林某人的技术博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blogs/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础篇" class="dropdown-title"><span class="title">基础篇</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/sidebar/HTML/" class="nav-link">
+  Html
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/CSS/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/JS/" class="nav-link router-link-active">
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/Ajax/" class="nav-link">
+  Ajax
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/VUE/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/REACT/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/SSR/" class="nav-link">
+  SSR
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/ES6/" class="nav-link">
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/JQUERY/" class="nav-link">
+  Jquery
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/WEBPACK/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/Git/" class="nav-link">
+  Git
+</a></li></ul></div></div><div class="nav-item"><a href="/blogs/advanced/实时通讯.html" class="nav-link">
+  进阶篇
+</a></div><div class="nav-item"><a href="/blogs/actual/" class="nav-link">
+  实战篇
+</a></div><div class="nav-item"><a href="/blogs/issue/" class="nav-link">
+  踩过的那些坑
+</a></div><div class="nav-item"><a href="http://blog.poetries.top/FE-Interview-Questions/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  大牛总结面试题
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="/blogs/Gitalk/" class="nav-link">
+  留言板
+</a></div><div class="nav-item"><a href="/blogs/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="https://github.com/linzefan0612" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blogs/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础篇" class="dropdown-title"><span class="title">基础篇</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/sidebar/HTML/" class="nav-link">
+  Html
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/CSS/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/JS/" class="nav-link router-link-active">
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/Ajax/" class="nav-link">
+  Ajax
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/VUE/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/REACT/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/SSR/" class="nav-link">
+  SSR
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/ES6/" class="nav-link">
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/JQUERY/" class="nav-link">
+  Jquery
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/WEBPACK/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/sidebar/Git/" class="nav-link">
+  Git
+</a></li></ul></div></div><div class="nav-item"><a href="/blogs/advanced/实时通讯.html" class="nav-link">
+  进阶篇
+</a></div><div class="nav-item"><a href="/blogs/actual/" class="nav-link">
+  实战篇
+</a></div><div class="nav-item"><a href="/blogs/issue/" class="nav-link">
+  踩过的那些坑
+</a></div><div class="nav-item"><a href="http://blog.poetries.top/FE-Interview-Questions/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  大牛总结面试题
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="/blogs/Gitalk/" class="nav-link">
+  留言板
+</a></div><div class="nav-item"><a href="/blogs/about/" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><a href="https://github.com/linzefan0612" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>HTML</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>CSS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>JS</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blogs/sidebar/JS/" class="sidebar-link">Js 基础</a></li><li><a href="/blogs/sidebar/JS/原型链.html" class="sidebar-link">原型链</a></li><li><a href="/blogs/sidebar/JS/常用Api.html" class="active sidebar-link">常用 Api</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blogs/sidebar/JS/常用Api.html#数组-api" class="sidebar-link">数组 Api</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/JS/常用Api.html#字符串-api" class="sidebar-link">字符串 Api</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/JS/常用Api.html#json-对象与字符串的互相转换" class="sidebar-link">json 对象与字符串的互相转换</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/JS/常用Api.html#数组循环" class="sidebar-link">数组循环</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blogs/sidebar/JS/常用Api.html#for" class="sidebar-link">for</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/JS/常用Api.html#foreach" class="sidebar-link">forEach</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/JS/常用Api.html#for-in" class="sidebar-link">for in</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/JS/常用Api.html#for-of" class="sidebar-link">for of</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/JS/常用Api.html#some" class="sidebar-link">some</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/JS/常用Api.html#filter" class="sidebar-link">filter</a></li><li class="sidebar-sub-header"><a href="/blogs/sidebar/JS/常用Api.html#map" class="sidebar-link">map</a></li></ul></li></ul></li><li><a href="/blogs/sidebar/JS/正则表达式.html" class="sidebar-link">正则表达式</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>ES6</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Jquery</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Ajax</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>React</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>webpack</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Git</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>SSR</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="常用-api"><a href="#常用-api" class="header-anchor">#</a> 常用 Api</h1> <blockquote><p>一些常见的 Api 操作方法</p></blockquote> <h2 id="数组-api"><a href="#数组-api" class="header-anchor">#</a> 数组 Api</h2> <ul><li>concat()：连接两个或多个数组</li></ul> <div class="language- extra-class"><pre class="language-text"><code>var myGirls = [&quot;Cecilie&quot;, &quot;Lone&quot;];
+var myBoys = [&quot;Emil&quot;, &quot;Tobias&quot;, &quot;Linus&quot;];
+var myChildren = myGirls.concat(myBoys);   // [&quot;Cecilie&quot;, &quot;Lone&quot;,&quot;Emil&quot;, &quot;Tobias&quot;, &quot;Linus&quot;]
+</code></pre></div><ul><li>join()：把数组中的所有元素放入一个字符串中</li></ul> <div class="language- extra-class"><pre class="language-text"><code>var arr = new Array(3);
+arr[0] = &quot;A&quot;;
+arr[1] = &quot;B&quot;;
+arr[2] = &quot;C&quot;;
+arr.join(-):  // 'A-B-C'
+</code></pre></div><ul><li>splice()：删除或者添加数据</li></ul> <div class="language- extra-class"><pre class="language-text"><code>var fruits = [&quot;Banana&quot;, &quot;Orange&quot;, &quot;Apple&quot;, &quot;Mango&quot;];
+fruits.splice(2, 0, &quot;Lemon&quot;, &quot;Kiwi&quot;);  // [&quot;Banana&quot;, &quot;Orange&quot;, &quot;Apple&quot;,&quot;Lemon&quot;, &quot;Kiwi&quot;, &quot;Mango&quot;]
+第一个参数定义了开始位置。
+第二个参数定义应删除多少元素。
+第三个参数定义要添加的新元素。
+</code></pre></div><ul><li>slice() ：用数组的某个片段切出新数组。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>var fruits = [&quot;Banana&quot;, &quot;Orange&quot;, &quot;Lemon&quot;, &quot;Apple&quot;, &quot;Mango&quot;];
+var citrus = fruits.slice(1, 3);    // [Orange,Lemon]
+参数1，开始位置
+参数2，截止位置，不包括本身
+</code></pre></div><ul><li>toString() ：把数组转换为（逗号分隔）的字符串。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>var fruits = [&quot;Banana&quot;, &quot;Orange&quot;, &quot;Apple&quot;, &quot;Mango&quot;];
+fruits.toString() // Banana,Orange,Apple,Mango
+</code></pre></div><ul><li>pop()： 删除数组最后一个元素</li></ul> <div class="language- extra-class"><pre class="language-text"><code>var fruits = [&quot;Banana&quot;, &quot;Orange&quot;, &quot;Apple&quot;, &quot;Mango&quot;];
+fruits.pop();  // 从 fruits 删除最后一个元素（&quot;Mango&quot;）
+</code></pre></div><ul><li>push()：在数组结尾处向数组添加一个新的元素</li></ul> <div class="language- extra-class"><pre class="language-text"><code>var fruits = [&quot;Banana&quot;, &quot;Orange&quot;, &quot;Apple&quot;, &quot;Mango&quot;];
+fruits.push(&quot;Kiwi&quot;);  //  向 fruits 添加一个新元素
+</code></pre></div><ul><li>shift() ：删除数组首个元素</li></ul> <div class="language- extra-class"><pre class="language-text"><code>var fruits = [&quot;Banana&quot;, &quot;Orange&quot;, &quot;Apple&quot;, &quot;Mango&quot;];
+fruits.shift();  // 从 fruits 删除第一个元素 &quot;Banana&quot;
+</code></pre></div><ul><li>unshift()：（在开头）向数组添加新元素</li></ul> <div class="language- extra-class"><pre class="language-text"><code>var fruits = [&quot;Banana&quot;, &quot;Orange&quot;, &quot;Apple&quot;, &quot;Mango&quot;];
+fruits.unshift(&quot;Ha&quot;);  // 给 fruits 数组第一个添加元素 &quot;Ha&quot;
+</code></pre></div><ul><li>reverse()：翻转数组</li></ul> <div class="language- extra-class"><pre class="language-text"><code>var fruits = [&quot;Banana&quot;, &quot;Orange&quot;, &quot;Apple&quot;, &quot;Mango&quot;];
+fruits.reverse()  // [&quot;Mango&quot;, &quot;Apple&quot;, &quot;Orange&quot;, &quot;Banana&quot;]
+</code></pre></div><h2 id="字符串-api"><a href="#字符串-api" class="header-anchor">#</a> 字符串 Api</h2> <ul><li>split() ：将字符串转换为数组</li></ul> <div class="language- extra-class"><pre class="language-text"><code>var txt = &quot;a,b,c,d,e&quot;;   // 字符串
+txt.split(&quot;,&quot;);  // [a,b,c,d,e]
+</code></pre></div><ul><li>indexOf(item,start)：返回字符串中指定文本首次出现的索引</li></ul> <div class="language- extra-class"><pre class="language-text"><code>参数1为查找的元素
+参数2位开始的位置
+var arr = [1,2,3]
+arr.indexOf(2) // 1,找出2这个元素
+arr.indexOf(2,2) // -1,找出2，并且下标为2的的元素
+</code></pre></div><ul><li>lastIndexOf()：返回指定文本在字符串中最后一次出现的索引,与 indexOf 相反,但找不到也是返回-1</li> <li>slice()：提取字符串的某个部分并在新字符串中返回被提取的部分</li></ul> <div class="language- extra-class"><pre class="language-text"><code>var str = &quot;Apple, Banana, Mango&quot;;
+var res = str.slice(7,13);       // Banana
+// 如果省略第二个参数，则该方法将裁剪字符串的剩余部分
+var str = &quot;Apple, Banana, Mango&quot;;
+var res = str.slice(7);       // Banana, Mango
+// 如果某个参数为负，则从字符串的结尾开始计数。
+var str = &quot;Apple, Banana, Mango&quot;;
+var res = str.slice(-13,-7);  // Banana
+</code></pre></div><ul><li>substring()：与 slice()相似，不同之处，是不能接受负的索引</li> <li>substr()：与 slice()相似，不同之处在于第二个参数规定被提取部分的长度</li></ul> <div class="language- extra-class"><pre class="language-text"><code>var str = &quot;Apple, Banana, Mango&quot;;
+var res = str.substr(7,6);     // Banana
+// 如果省略第二个参数，则该 substr() 将裁剪字符串的剩余部分。
+</code></pre></div><ul><li>replace()：用另一个值替换在字符串中指定的值</li></ul> <div class="language- extra-class"><pre class="language-text"><code>str = &quot;Please visit Microsoft!&quot;;
+var n = str.replace(&quot;Microsoft&quot;, &quot;W3School&quot;);
+replace() 方法不会改变改变它原有的字符串，它返回的是新字符串。
+// 默认地，replace() 只替换首个匹配
+// 默认地，replace() 对大小写敏感
+</code></pre></div><ul><li>toUpperCase() ：把字符串转换为大写</li></ul> <div class="language- extra-class"><pre class="language-text"><code>var text1 = &quot;Hello World!&quot;;
+var text2 = text1.toUpperCase();  // &quot;HELLO WORLD!&quot;
+</code></pre></div><ul><li>toLowerCase()：把字符串转换为小写</li></ul> <div class="language- extra-class"><pre class="language-text"><code>var text1 = &quot;Hello World!&quot;;       // 字符串
+var text2 = text1.toLowerCase();  // text2 是被转换为小写的 text1
+</code></pre></div><ul><li>concat()： 连接两个或多个字符串</li> <li>trim() ：删除字符串两端的空白符</li> <li>charAt()：方法返回字符串中指定下标（位置）的字符串</li></ul> <div class="language- extra-class"><pre class="language-text"><code>var str = &quot;HELLO WORLD&quot;;
+str.charAt(0);            // 返回 H
+</code></pre></div><ul><li>charCodeAt() ：返回字符串中指定索引的字符 unicode 编码</li></ul> <div class="language- extra-class"><pre class="language-text"><code>var str = &quot;HELLO WORLD&quot;;
+str.charCodeAt(0);         // 返回 72
+</code></pre></div><h2 id="json-对象与字符串的互相转换"><a href="#json-对象与字符串的互相转换" class="header-anchor">#</a> json 对象与字符串的互相转换</h2> <ol><li>JSON 字符串 转成 对象</li></ol> <ul><li>JSON.parse(jsonStr)</li></ul> <ol start="2"><li>对象 转成 JSON 字符串</li></ol> <ul><li>JSON.stringify(obj)</li></ul> <h2 id="数组循环"><a href="#数组循环" class="header-anchor">#</a> 数组循环</h2> <h3 id="for"><a href="#for" class="header-anchor">#</a> for</h3> <div class="language- extra-class"><pre class="language-text"><code>var arr = [1,2,3,4]
+for(var i =0; i&lt;arr.length;i++){
+  consolo.log(i)  // 1,2,3,4
+}
+</code></pre></div><h3 id="foreach"><a href="#foreach" class="header-anchor">#</a> forEach</h3> <blockquote><p>array.forEach(function(currentValue, index, arr), thisValue)</p></blockquote> <ul><li>forEach 循环我们可以直接取到元素，同时也可以取到 index 值。但是 forEach 也有一些局限，不能 continue 跳过或者 break 终止循环</li></ul> <div class="language- extra-class"><pre class="language-text"><code>var numbers = [65, 44, 12, 4];
+numbers.forEach(item,i,arr){
+  consolo.log(item +','+ i+',' + arr)  // 65,0,[65, 44, 12, 4]
+}
+// 对应参数
+currentValue：必需。当前元素
+index	可选。当前元素的索引值。
+arr	可选。当前元素所属的数组对象。
+thisValue：可选。传递给函数的值一般用 &quot;this&quot; 值。如果这个参数为空， &quot;undefined&quot; 会传递给 &quot;this&quot; 值
+</code></pre></div><h3 id="for-in"><a href="#for-in" class="header-anchor">#</a> for in</h3> <blockquote><p>for(var item in arr|obj){} 可以用于遍历数组和对象</p></blockquote> <ul><li>遍历数组时，item 表示索引值， arr 表示当前索引值对应的元素 arr[item]</li> <li>遍历对象时，item 表示 key 值，arr 表示 key 值对应的 value 值 obj[item]</li> <li>for in 一般循环遍历的都是对象的属性，遍历对象本身的所有可枚举属性，以及对象从其构造函数原型中继承的属性</li></ul> <div class="language- extra-class"><pre class="language-text"><code>var obj = {a:1, b:2, c:3};
+for (let item in obj) {
+  console.log(&quot;obj.&quot; + item + &quot; = &quot; + obj[item]);
+}
+// obj.a = 1
+// obj.b = 2
+// obj.c = 3
+var arr = ['a','b','c'];
+for (var item in arr) {
+    console.log(item) //0 1 2
+    console.log(arr[item]) //a b c
+}
+</code></pre></div><h3 id="for-of"><a href="#for-of" class="header-anchor">#</a> for of</h3> <ul><li>ES6 中新增加的语法 for of 语句创建一个循环来迭代可迭代的对象。在 ES6 中引入的 for of 循环，以替代 for in 和 forEach() ，并支持新的迭代协议。for of 允许你遍历 Arrays（数组）, Strings（字符串）, Maps（映射）, Sets（集合）等可迭代的数据结构等。</li></ul> <p>循环一个数组</p> <div class="language- extra-class"><pre class="language-text"><code>
+let arr = ['A', 'B', 'C']
+for (let val of arr) {
+    console.log(val)
+}
+// A B C
+</code></pre></div><p>循环一个字符串</p> <div class="language- extra-class"><pre class="language-text"><code>let iterable = &quot;abc&quot;;
+for (let value of iterable) {
+  console.log(value);
+}
+// &quot;a&quot;
+// &quot;b&quot;
+// &quot;c&quot;
+</code></pre></div><p>循环一个 Map</p> <div class="language- extra-class"><pre class="language-text"><code>let iterable = new Map([[&quot;a&quot;, 1], [&quot;b&quot;, 2], [&quot;c&quot;, 3]]);
+for (let [key, value] of iterable) {
+  console.log(value);
+}
+// 1
+// 2
+// 3
+
+for (let entry of iterable) {
+  console.log(entry);
+}
+// [a, 1]
+// [b, 2]
+// [c, 3]
+</code></pre></div><p>循环一个 Set</p> <div class="language- extra-class"><pre class="language-text"><code>let iterable = new Set([1, 1, 2, 2, 3, 3]);
+for (let value of iterable) {
+  console.log(value);
+}
+// 1
+// 2
+// 3
+</code></pre></div><h3 id="some"><a href="#some" class="header-anchor">#</a> some</h3> <blockquote><p>array.some(function(currentValue,index,arr),thisValue)</p></blockquote> <ul><li>currentValue 必须。当前元素的值</li> <li>index 可选。当前元素的索引值</li> <li>arr 可选。当前元素属于的数组对象</li> <li>thisValue 可选。对象作为该执行回调时使用，传递给函数，用作 &quot;this&quot; 的值。如果省略了 thisValue ，&quot;this&quot; 的值为 &quot;undefined&quot;
+<br></li></ul> <p><strong>特点</strong> ：</p> <ol><li>some() 不会改变原始数组</li> <li>some() 不会对空数组进行检测</li> <li>如果有一个元素满足条件，则表达式返回 true , 剩余的元素不会再执行检测,如果没有满足条件的元素，则返回 false。</li></ol> <div class="language- extra-class"><pre class="language-text"><code>const array = [1, 2, 3, 4, 5];
+// 能被2整除
+const even = (element) =&gt; element % 2 === 0;
+// 判断数组里是否有能被2整除的
+console.log(array.some(even));  // true
+</code></pre></div><h3 id="filter"><a href="#filter" class="header-anchor">#</a> filter</h3> <blockquote><p>array.filter(function(currentValue,index,arr), thisValue)</p></blockquote> <ul><li>currentValue 必须。当前元素的值</li> <li>index 可选。当前元素的索引值</li> <li>arr 可选。当前元素属于的数组对象</li> <li>thisValue 可选。对象作为该执行回调时使用，传递给函数，用作 &quot;this&quot; 的值。如果省略了 thisValue ，&quot;this&quot; 的值为 &quot;undefined&quot;
+<br></li></ul> <p><strong>特点</strong> ：</p> <ol><li>filter() 不会改变原始数组</li> <li>filter() 不会对空数组进行检测</li> <li>返回一个新的数组,新数组中的元素是通过检查指定数组中符合条件的所有元素。</li></ol> <div class="language- extra-class"><pre class="language-text"><code>const arr = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present']
+const result = words.filter(word =&gt; word.length &gt; 6);
+console.log(result); // [&quot;exuberant&quot;, &quot;destruction&quot;, &quot;present&quot;]
+</code></pre></div><p><strong>小技巧</strong></p> <ul><li>去掉数组中的 undefind <br>
+array.filter(boolean)</li> <li>将数组数据都转换成 Number 类型 <br>
+array.filter(Number)</li></ul> <h3 id="map"><a href="#map" class="header-anchor">#</a> map</h3> <blockquote><p>array.map(function(currentValue,index,arr), thisValue)</p></blockquote> <ul><li>currentValue 必须。当前元素的值</li> <li>index 可选。当前元素的索引值</li> <li>arr 可选。当前元素属于的数组对象</li> <li>thisValue 可选。对象作为该执行回调时使用，传递给函数，用作 &quot;this&quot; 的值。如果省略了 thisValue ，&quot;this&quot; 的值为 &quot;undefined&quot;
+<br></li></ul> <p><strong>特点</strong> ：</p> <ol><li>map() 不会改变原始数组</li> <li>map() 不会对空数组进行检测</li> <li>返回一个新数组，数组中的元素为原始数组元素调用函数处理后的值。</li> <li>需要配合 return 进行回调</li></ol> <div class="language- extra-class"><pre class="language-text"><code>const array = [1, 3, 6, 9];
+const newArray = array.map(function (value) {
+  return value + 1;
+});
+console.log(newArray);
+console.log(array);
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blogs/sidebar/JS/原型链.html" class="prev">
+        原型链
+      </a></span> <span class="next"><a href="/blogs/sidebar/JS/正则表达式.html">
+        正则表达式
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blogs/assets/js/app.f6682633.js" defer></script><script src="/blogs/assets/js/2.3ba6d93a.js" defer></script><script src="/blogs/assets/js/46.ca9c851e.js" defer></script>
+  </body>
+</html>
